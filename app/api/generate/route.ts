@@ -1,9 +1,9 @@
-import Anthropic from '@anthropic-ai/sdk';
 import { NextRequest, NextResponse } from 'next/server';
 
-const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY,
-});
+// Groq offers a free API tier (no credit card required) with fast, high-quality
+// open-source models. We use it here instead of a paid API to keep costs at $0.
+const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
+const GROQ_MODEL = 'llama-3.3-70b-versatile';
 
 // Very simple in-memory rate limiter (per server instance).
 // Prevents obvious abuse of the free tier. Not bulletproof, but cheap and effective.
@@ -36,7 +36,14 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Location is required.' }, { status: 400 });
     }
 
-    const systemPrompt = `You are an expert short-term rental copywriter. Write compelling, SEO-friendly property descriptions of 150-200 words that highlight unique selling points and match the specified tone. Avoid generic phrases like "cozy retreat" unless the tone specifically calls for it. Do not use markdown formatting - plain text only.`;
+    if (!process.env.GROQ_API_KEY) {
+      return NextResponse.json(
+        { error: 'Server is not configured yet (missing GROQ_API_KEY).' },
+        { status: 500 }
+      );
+    }
+
+    const systemPrompt = `You are an expert short-term rental copywriter. Write compelling, SEO-friendly property descriptions of 150-200 words that highlight unique selling points and match the specified tone. Avoid generic phrases like "cozy retreat" unless the tone specifically calls for it. Do not use markdown formatting - plain text only. Do not include any preamble, just the description itself.`;
 
     const userPrompt = `Write an Airbnb/Booking.com listing description for:
 - Property type: ${propertyType}
@@ -45,15 +52,34 @@ export async function POST(req: NextRequest) {
 - Amenities: ${Array.isArray(amenities) ? amenities.join(', ') : ''}
 - Tone: ${tone}`;
 
-    const message = await anthropic.messages.create({
-      model: 'claude-sonnet-4-6',
-      max_tokens: 500,
-      system: systemPrompt,
-      messages: [{ role: 'user', content: userPrompt }],
+    const groqRes = await fetch(GROQ_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: GROQ_MODEL,
+        messages: [
+          { role: 'system', content: systemPrompt },
+          { role: 'user', content: userPrompt },
+        ],
+        max_tokens: 500,
+        temperature: 0.8,
+      }),
     });
 
-    const textBlock = message.content.find((block) => block.type === 'text');
-    const description = textBlock && 'text' in textBlock ? textBlock.text : '';
+    if (!groqRes.ok) {
+      const errText = await groqRes.text();
+      console.error('Groq API error:', errText);
+      return NextResponse.json(
+        { error: 'Failed to generate description' },
+        { status: 500 }
+      );
+    }
+
+    const data = await groqRes.json();
+    const description = data?.choices?.[0]?.message?.content?.trim() || '';
 
     return NextResponse.json({ description });
   } catch (error) {
