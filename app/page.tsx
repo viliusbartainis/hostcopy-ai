@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const AMENITIES = [
   'WiFi', 'Pool', 'Kitchen', 'Parking', 'Pet-friendly',
@@ -8,6 +8,7 @@ const AMENITIES = [
 ];
 
 const FREE_LIMIT = 3;
+const STORAGE_KEY = 'hostcopy_uses_used';
 
 export default function Home() {
   const [propertyType, setPropertyType] = useState('Apartment');
@@ -19,8 +20,17 @@ export default function Home() {
   const [results, setResults] = useState<{ airbnb: string; booking: string; instagram: string } | null>(null);
   const [activeTab, setActiveTab] = useState<'airbnb' | 'booking' | 'instagram'>('airbnb');
   const [loading, setLoading] = useState(false);
-  const [freeUsesLeft, setFreeUsesLeft] = useState(FREE_LIMIT);
+  const [usesUsed, setUsesUsed] = useState(0);
+  const [hydrated, setHydrated] = useState(false);
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    const stored = Number(localStorage.getItem(STORAGE_KEY) || '0');
+    setUsesUsed(stored);
+    setHydrated(true);
+  }, []);
+
+  const freeUsesLeft = FREE_LIMIT - usesUsed;
 
   const toggleAmenity = (a: string) => {
     setAmenities((prev) =>
@@ -52,7 +62,9 @@ export default function Home() {
       }
       setResults({ airbnb: data.airbnb, booking: data.booking, instagram: data.instagram });
       setActiveTab('airbnb');
-      setFreeUsesLeft((prev) => prev - 1);
+      const newUsed = usesUsed + 1;
+      setUsesUsed(newUsed);
+      localStorage.setItem(STORAGE_KEY, String(newUsed));
     } catch (err) {
       setError('Something went wrong. Please try again.');
     } finally {
@@ -62,8 +74,24 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-stone-50">
+      {/* Header */}
+      <header className="max-w-3xl mx-auto px-6 pt-8 flex items-center gap-2">
+        <svg width="28" height="28" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <rect width="32" height="32" rx="8" fill="url(#hg)" />
+          <path d="M8 17L16 10L24 17V23C24 23.55 23.55 24 23 24H19V19H13V24H9C8.45 24 8 23.55 8 23V17Z" fill="white" />
+          <circle cx="24" cy="9" r="2.5" fill="#FDE68A" />
+          <defs>
+            <linearGradient id="hg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+              <stop stopColor="#EA580C" />
+              <stop offset="1" stopColor="#B45309" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span className="font-serif font-semibold text-stone-900 text-lg">HostCopy AI</span>
+      </header>
+
       {/* Hero */}
-      <section className="max-w-3xl mx-auto px-6 pt-20 pb-12 text-center">
+      <section className="max-w-3xl mx-auto px-6 pt-12 pb-12 text-center">
         <h1 className="text-4xl md:text-5xl font-serif font-semibold text-stone-900 mb-4">
           Turn Your Airbnb Into a Listing That Books Itself
         </h1>
@@ -86,14 +114,12 @@ export default function Home() {
                 ))}
               </select>
             </div>
-
             <div>
               <label className="block text-sm font-medium text-stone-700 mb-1">Location</label>
               <input value={location} onChange={(e) => setLocation(e.target.value)}
                 placeholder="e.g. Vilnius Old Town"
                 className="w-full border border-stone-300 rounded-lg px-3 py-2" />
             </div>
-
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-stone-700 mb-1">Guests</label>
@@ -108,7 +134,6 @@ export default function Home() {
                   className="w-full border border-stone-300 rounded-lg px-3 py-2" />
               </div>
             </div>
-
             <div>
               <label className="block text-sm font-medium text-stone-700 mb-2">Amenities</label>
               <div className="flex flex-wrap gap-2">
@@ -124,7 +149,6 @@ export default function Home() {
                 ))}
               </div>
             </div>
-
             <div>
               <label className="block text-sm font-medium text-stone-700 mb-1">Tone</label>
               <select value={tone} onChange={(e) => setTone(e.target.value)}
@@ -134,14 +158,12 @@ export default function Home() {
                 ))}
               </select>
             </div>
-
             {error && (
               <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
                 {error}
               </p>
             )}
-
-            <button onClick={handleGenerate} disabled={loading}
+            <button onClick={handleGenerate} disabled={loading || !hydrated}
               className="w-full bg-stone-900 text-white rounded-lg py-3 font-medium hover:bg-stone-800 disabled:opacity-50 transition-colors">
               {loading ? 'Generating...' : `Generate Description (${freeUsesLeft} free left)`}
             </button>
