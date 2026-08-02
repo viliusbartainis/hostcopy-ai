@@ -59,8 +59,9 @@ Respond with ONLY the JSON object, nothing else.`;
           { role: 'system', content: systemPrompt },
           { role: 'user', content: userPrompt },
         ],
-        max_tokens: 900,
+        max_tokens: 2000,
         temperature: 0.8,
+        reasoning_effort: 'low',
         response_format: { type: 'json_object' },
       }),
     });
