@@ -3,7 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 // Groq offers a free API tier (no credit card required) with fast, high-quality
 // open-source models. We use it here instead of a paid API to keep costs at $0.
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
-const GROQ_MODEL = 'llama-3.3-70b-versatile';
+const GROQ_MODEL = 'openai/gpt-oss-120b';
 
 // Very simple in-memory rate limiter (per server instance).
 // Prevents obvious abuse of the free tier. Not bulletproof, but cheap and effective.
