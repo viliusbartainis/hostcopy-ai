@@ -16,7 +16,8 @@ export default function Home() {
   const [bedrooms, setBedrooms] = useState(1);
   const [tone, setTone] = useState('Cozy & Homey');
   const [amenities, setAmenities] = useState<string[]>([]);
-  const [result, setResult] = useState('');
+  const [results, setResults] = useState<{ airbnb: string; booking: string; instagram: string } | null>(null);
+  const [activeTab, setActiveTab] = useState<'airbnb' | 'booking' | 'instagram'>('airbnb');
   const [loading, setLoading] = useState(false);
   const [freeUsesLeft, setFreeUsesLeft] = useState(FREE_LIMIT);
   const [error, setError] = useState('');
@@ -49,7 +50,8 @@ export default function Home() {
         setError(data.error || 'Something went wrong. Please try again.');
         return;
       }
-      setResult(data.description);
+      setResults({ airbnb: data.airbnb, booking: data.booking, instagram: data.instagram });
+      setActiveTab('airbnb');
       setFreeUsesLeft((prev) => prev - 1);
     } catch (err) {
       setError('Something went wrong. Please try again.');
@@ -66,8 +68,8 @@ export default function Home() {
           Turn Your Airbnb Into a Listing That Books Itself
         </h1>
         <p className="text-lg text-stone-600 mb-8">
-          AI-written descriptions that highlight what guests actually search for.
-          Generate a professional listing in 30 seconds.
+          One form, three ready-to-paste listings: Airbnb, Booking.com, and an Instagram caption —
+          each written for how that platform&apos;s guests actually search and scroll.
         </p>
       </section>
 
@@ -145,13 +147,31 @@ export default function Home() {
             </button>
           </div>
 
-          {result && (
-            <div className="mt-6 p-5 bg-stone-50 border border-stone-200 rounded-xl">
-              <p className="text-stone-800 whitespace-pre-wrap leading-relaxed">{result}</p>
-              <button onClick={() => navigator.clipboard.writeText(result)}
-                className="mt-4 text-sm font-medium text-stone-900 underline">
-                Copy to clipboard
-              </button>
+          {results && (
+            <div className="mt-6">
+              <div className="flex gap-1 border-b border-stone-200">
+                {([
+                  { key: 'airbnb', label: 'Airbnb' },
+                  { key: 'booking', label: 'Booking.com' },
+                  { key: 'instagram', label: 'Instagram' },
+                ] as const).map((t) => (
+                  <button key={t.key} onClick={() => setActiveTab(t.key)}
+                    className={`px-4 py-2 text-sm font-medium rounded-t-lg transition-colors ${
+                      activeTab === t.key
+                        ? 'bg-stone-50 border border-stone-200 border-b-white text-stone-900 -mb-px'
+                        : 'text-stone-500 hover:text-stone-800'
+                    }`}>
+                    {t.label}
+                  </button>
+                ))}
+              </div>
+              <div className="p-5 bg-stone-50 border border-stone-200 rounded-b-xl rounded-tr-xl">
+                <p className="text-stone-800 whitespace-pre-wrap leading-relaxed">{results[activeTab]}</p>
+                <button onClick={() => navigator.clipboard.writeText(results[activeTab])}
+                  className="mt-4 text-sm font-medium text-stone-900 underline">
+                  Copy to clipboard
+                </button>
+              </div>
             </div>
           )}
         </div>
