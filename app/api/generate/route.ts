@@ -33,14 +33,19 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Server is not configured yet (missing GROQ_API_KEY).' }, { status: 500 });
     }
 
-    const systemPrompt = `You are an expert short-term rental copywriter. Write compelling, SEO-friendly property descriptions of 150-200 words that highlight unique selling points and match the specified tone. Avoid generic phrases like "cozy retreat" unless the tone specifically calls for it. Do not use markdown formatting - plain text only. Do not include any preamble, just the description itself.`;
+    const systemPrompt = `You are an expert short-term rental copywriter. You write platform-specific listing copy that is SEO-friendly and matches the specified tone. Avoid generic phrases like "cozy retreat" unless the tone specifically calls for it. You MUST respond with ONLY a valid JSON object (no markdown, no code fences, no preamble) with exactly these three keys:
+- "airbnb": a 150-200 word Airbnb listing description (warm, story-driven, keyword-rich for Airbnb search)
+- "booking": a 100-130 word Booking.com listing description (more formal/factual tone, structured, highlights amenities clearly since Booking.com guests scan for specifics)
+- "instagram": a short 2-3 sentence Instagram caption (60-90 words) promoting the property, casual tone, ending with 3-5 relevant hashtags`;
 
-    const userPrompt = `Write an Airbnb/Booking.com listing description for:
+    const userPrompt = `Write listing copy for:
 - Property type: ${propertyType}
 - Location: ${location}
 - Guests: ${guests}, Bedrooms: ${bedrooms}
 - Amenities: ${Array.isArray(amenities) ? amenities.join(', ') : ''}
-- Tone: ${tone}`;
+- Tone: ${tone}
+
+Respond with ONLY the JSON object, nothing else.`;
 
     const groqRes = await fetch(GROQ_API_URL, {
       method: 'POST',
@@ -54,8 +59,9 @@ export async function POST(req: NextRequest) {
           { role: 'system', content: systemPrompt },
           { role: 'user', content: userPrompt },
         ],
-        max_tokens: 500,
+        max_tokens: 900,
         temperature: 0.8,
+        response_format: { type: 'json_object' },
       }),
     });
 
@@ -66,9 +72,20 @@ export async function POST(req: NextRequest) {
     }
 
     const data = await groqRes.json();
-    const description = data?.choices?.[0]?.message?.content?.trim() || '';
+    const raw = data?.choices?.[0]?.message?.content?.trim() || '{}';
 
-    return NextResponse.json({ description });
+    let parsed: { airbnb?: string; booking?: string; instagram?: string };
+    try {
+      parsed = JSON.parse(raw);
+    } catch {
+      parsed = { airbnb: raw, booking: '', instagram: '' };
+    }
+
+    return NextResponse.json({
+      airbnb: parsed.airbnb || '',
+      booking: parsed.booking || '',
+      instagram: parsed.instagram || '',
+    });
   } catch (error) {
     console.error('Generation error:', error);
     return NextResponse.json(
