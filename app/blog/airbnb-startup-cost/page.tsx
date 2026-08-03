@@ -52,6 +52,18 @@ export default function BlogPost() {
           <p>If you already own or rent the space and are only adding amenities, breakeven often arrives within the first one to three months of solid bookings. If you&apos;re furnishing a property specifically for short-term rental from empty, recouping the setup cost typically takes six to fourteen months, assuming reasonable occupancy from the start. A slow start with no reviews and no track record delays payback, so budgeting a cushion for lower occupancy in the first two or three months is more realistic than assuming full price and full calendar from day one.</p>
           <p>Part of shortening that runway is a listing description that actually converts the visitors browsing at your price point from day one. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> can help you write one in under a minute.</p>
         </div>
+                <div className="mt-10 pt-8 border-t border-stone-200">
+          <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
+          <div className="space-y-2">
+            <Link href="/blog/short-term-rental-tax-basics" className="block text-stone-900 underline">
+              Short-Term Rental Tax Basics for New Hosts
+            </Link>
+            <Link href="/blog/new-airbnb-host-checklist" className="block text-stone-900 underline">
+              The Ultimate Airbnb Host Checklist for New Listings
+            </Link>
+          </div>
+        </div>
+
       </article>
     </main>
   );
