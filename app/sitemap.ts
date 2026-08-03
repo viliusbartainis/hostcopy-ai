@@ -80,5 +80,11 @@ lastModified: new Date(),
 changeFrequency: 'monthly',
 priority: 0.7,
 },
+{
+url: 'https://hostcopy-ai.vercel.app/blog/hostcopy-ai-vs-chatgpt',
+lastModified: new Date(),
+changeFrequency: 'monthly',
+priority: 0.7,
+},
 ];
 }
