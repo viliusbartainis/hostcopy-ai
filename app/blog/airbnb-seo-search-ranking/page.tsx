@@ -52,6 +52,18 @@ export default function BlogPost() {
           </ul>
           <p>A title and description that are specific and accurate help with more than just guest impressions &mdash; they reinforce the same completeness that Airbnb&apos;s ranking rewards. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> can help you write both in under a minute.</p>
         </div>
+                <div className="mt-10 pt-8 border-t border-stone-200">
+          <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
+          <div className="space-y-2">
+            <Link href="/blog/airbnb-listing-description-guide" className="block text-stone-900 underline">
+              How to Write an Airbnb Listing Description That Actually Books
+            </Link>
+            <Link href="/blog/airbnb-photography-tips" className="block text-stone-900 underline">
+              Airbnb Photos That Get You Booked: A Host's Guide
+            </Link>
+          </div>
+        </div>
+
       </article>
     </main>
   );
