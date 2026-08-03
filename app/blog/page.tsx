@@ -62,6 +62,11 @@ slug: "short-term-rental-tax-basics",
 title: "Short-Term Rental Tax Basics for New Hosts",
 description: "General patterns in how short-term rental income is taxed, what usually needs to be declared, and commonly deductible expenses. Not tax advice.",
 },
+{
+slug: "hostcopy-ai-vs-chatgpt",
+title: "HostCopy AI vs. ChatGPT for Airbnb Listings: What's the Real Difference?",
+description: "ChatGPT can write a solid Airbnb description too. Here's an honest look at what it takes to get there, and what HostCopy AI automates instead.",
+},
 ];
 
 export default function BlogIndex() {
