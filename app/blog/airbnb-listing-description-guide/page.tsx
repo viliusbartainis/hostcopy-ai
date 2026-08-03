@@ -36,6 +36,20 @@ export default function BlogPost() {
           </ul>
           <p>Writing three good versions by hand takes 20–30 minutes per listing. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> generates all three — matched to each platform — from one form, in under a minute.</p>
         </div>
+              <div className="mt-10 pt-8 border-t border-stone-200">
+        <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
+        <div className="space-y-2">
+          <Link href="/blog/best-airbnb-amenities-2026" className="block text-stone-900 underline">
+            Airbnb Amenities Guests Actually Care About in 2026
+          </Link>
+          <Link href="/blog/how-to-get-airbnb-5-star-reviews" className="block text-stone-900 underline">
+            5-Star Reviews: How to Get Airbnb Guests to Leave Glowing Feedback
+          </Link>
+          <Link href="/blog/airbnb-photography-tips" className="block text-stone-900 underline">
+            Airbnb Photos That Get You Booked: A Host&apos;s Guide
+          </Link>
+        </div>
+      </div>
       </article>
     </main>
   );
