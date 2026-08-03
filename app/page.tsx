@@ -158,6 +158,7 @@ Turn Your Airbnb Into a Listing That Books Itself
 One form, three ready-to-paste listings: Airbnb, Booking.com, and an Instagram caption —
 each written for how that platform&apos;s guests actually search and scroll.
 </p>
+  <p className="text-sm text-stone-500 mb-8">Built by a working Airbnb host in Vilnius.</p>
 </section>
 
 {/* Tool */}
