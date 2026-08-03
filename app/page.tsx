@@ -198,6 +198,12 @@ export default function Home() {
           )}
         </div>
       </section>
+
+      <footer className="max-w-2xl mx-auto px-6 pb-16 text-center">
+        <a href="/blog/airbnb-listing-description-guide" className="text-sm text-stone-500 hover:text-stone-800 underline">
+          Read: How to write an Airbnb description that books
+        </a>
+      </footer>
     </main>
   );
 }
