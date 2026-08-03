@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "How to Price Your Airbnb Listing: A Beginner's Guide to Dynamic Pricing | HostCopy AI",
   description: "Seasonality, weekends vs. weekdays, competitor analysis, and minimum stay tricks that actually move your Airbnb revenue. A practical pricing guide.",
   keywords: "airbnb pricing strategy, how to price airbnb, dynamic pricing airbnb",
+  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/airbnb-pricing-strategy' },
 };
 
 export default function BlogPost() {
