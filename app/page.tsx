@@ -87,6 +87,10 @@ if (!location.trim()) {
 setError('Please enter a location.');
 return;
 }
+if (guests < 1 || bedrooms < 0) {
+  setError('Please enter valid guest and bedroom numbers.');
+  return;
+}
 setLoading(true);
 try {
 const res = await fetch('/api/generate', {
