@@ -69,6 +69,7 @@ const [loading, setLoading] = useState(false);
 const [usesUsed, setUsesUsed] = useState(0);
 const [hydrated, setHydrated] = useState(false);
 const [error, setError] = useState('');
+const [copied, setCopied] = useState(false);
 
 useEffect(() => {
 const stored = Number(localStorage.getItem(STORAGE_KEY) || '0');
@@ -249,9 +250,9 @@ activeTab === t.key
 </div>
 <div className="p-5 bg-stone-50 border border-stone-200 rounded-b-xl rounded-tr-xl">
 <p className="text-stone-800 whitespace-pre-wrap leading-relaxed">{results[activeTab]}</p>
-<button onClick={() => navigator.clipboard.writeText(results[activeTab])}
+          <button onClick={() => { navigator.clipboard.writeText(results[activeTab]); setCopied(true); setTimeout(() => setCopied(false), 2000); }}
 className="mt-4 text-sm font-medium text-stone-900 underline">
-Copy to clipboard
+            {copied ? 'Copied!' : 'Copy to clipboard'}
 </button>
 </div>
 </div>
