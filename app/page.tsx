@@ -255,6 +255,10 @@ className="mt-4 text-sm font-medium text-stone-900 underline">
             {copied ? 'Copied!' : 'Copy to clipboard'}
 </button>
 </div>
+  <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-xl text-center">
+  <p className="text-sm text-stone-700 mb-2">Want unlimited generations? Join the Pro waitlist — early users get a discount.</p>
+  <input type="email" placeholder="you@email.com" className="border border-stone-300 rounded-lg px-3 py-2 text-sm w-full mb-2" id="waitlist-email" />
+  <button type="button" onClick={() => alert('Thanks! We will email you when Pro launches.')} className="bg-stone-900 text-white text-sm rounded-lg px-4 py-2 font-medium">Join waitlist</button></div>
 </div>
 )}
 </div>
