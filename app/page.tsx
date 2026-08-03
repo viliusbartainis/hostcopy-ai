@@ -49,6 +49,13 @@ text: "Currently Airbnb, Booking.com, and Instagram captions — all generated f
 ],
 };
 
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "HostCopy AI",
+  url: "https://hostcopy-ai.vercel.app",
+};
+
 export default function Home() {
 const [propertyType, setPropertyType] = useState('Apartment');
 const [location, setLocation] = useState('');
@@ -121,6 +128,10 @@ return (
 type="application/ld+json"
 dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
 />
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+  />
 <main className="min-h-screen bg-stone-50">
 {/* Header */}
 <header className="max-w-3xl mx-auto px-6 pt-8 flex items-center gap-2">
