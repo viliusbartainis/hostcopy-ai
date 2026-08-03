@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "How Much Does It Cost to Start an Airbnb Business? | HostCopy AI",
   description: "Initial setup costs, recurring expenses, and realistic profit ranges by city size, so you can budget an Airbnb listing with real numbers, not guesses.",
   keywords: "airbnb startup cost, how much does airbnb host make, airbnb business expenses",
+  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/airbnb-startup-cost' },
 };
 
 export default function BlogPost() {
