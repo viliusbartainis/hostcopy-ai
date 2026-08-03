@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "SEO for Airbnb: How to Rank Higher in Airbnb Search Results | HostCopy AI",
   description: "How Airbnb's search ranking actually works: response rate, Instant Book, occupancy, and how photos, reviews, and amenities feed into your position.",
   keywords: "airbnb seo, rank higher on airbnb, airbnb search algorithm tips",
+  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/airbnb-seo-search-ranking' },
 };
 
 export default function BlogPost() {
