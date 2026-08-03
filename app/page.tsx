@@ -225,7 +225,7 @@ className="w-full border border-stone-300 rounded-lg px-3 py-2">
 )}
 <button onClick={handleGenerate} disabled={loading || !hydrated}
 className="w-full bg-stone-900 text-white rounded-lg py-3 font-medium hover:bg-stone-800 disabled:opacity-50 transition-colors">
-{loading ? 'Generating...' : `Generate Description (${freeUsesLeft} free left)`}
+{loading ? 'Writing your listings...' : `Generate Description (${freeUsesLeft} free left)`}
 </button>
 </div>
 
