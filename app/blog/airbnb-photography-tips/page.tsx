@@ -47,6 +47,20 @@ export default function BlogPost() {
           <p>A modern smartphone can produce genuinely good listing photos if you use a $15&ndash;20 tripod, shoot with the wide-angle lens instead of zooming in, and run photos through a free editing app to straighten vertical lines and correct exposure. That&apos;s enough for most standard listings. A professional photographer, usually $100&ndash;300 depending on your market, is worth the cost for a first listing when you&apos;re unsure of your own eye, for higher-end properties where the nightly rate justifies the investment, or if you&apos;re planning to list several properties and want a consistent look across all of them. A common middle path: hire a professional once to learn what good angles and lighting look like in your specific space, then replicate that setup yourself for future updates.</p>
           <p>Great photos earn the click &mdash; the words underneath still have to close the booking. If writing that description is the part you keep putting off, <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> turns your listing details into ready-to-paste copy for Airbnb, Booking.com, and Instagram in under a minute.</p>
         </div>
+              <div className="mt-10 pt-8 border-t border-stone-200">
+        <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
+        <div className="space-y-2">
+          <Link href="/blog/airbnb-listing-description-guide" className="block text-stone-900 underline">
+            How to Write an Airbnb Listing Description That Actually Books
+          </Link>
+          <Link href="/blog/best-airbnb-amenities-2026" className="block text-stone-900 underline">
+            Airbnb Amenities Guests Actually Care About in 2026
+          </Link>
+          <Link href="/blog/how-to-get-airbnb-5-star-reviews" className="block text-stone-900 underline">
+            5-Star Reviews: How to Get Airbnb Guests to Leave Glowing Feedback
+          </Link>
+        </div>
+      </div>
       </article>
     </main>
   );
