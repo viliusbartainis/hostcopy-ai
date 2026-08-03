@@ -55,6 +55,18 @@ export default function BlogPost() {
           </ul>
           <p>Pricing is one lever that gets a guest to consider your listing. The words that make them pick yours over a nearly identical listing at a similar price are the other. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> helps with that second part, turning your listing details into ready-to-paste descriptions in under a minute.</p>
         </div>
+                <div className="mt-10 pt-8 border-t border-stone-200">
+          <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
+          <div className="space-y-2">
+            <Link href="/blog/airbnb-startup-cost" className="block text-stone-900 underline">
+              How Much Does It Cost to Start an Airbnb Business?
+            </Link>
+            <Link href="/blog/new-airbnb-host-checklist" className="block text-stone-900 underline">
+              The Ultimate Airbnb Host Checklist for New Listings
+            </Link>
+          </div>
+        </div>
+
       </article>
     </main>
   );
