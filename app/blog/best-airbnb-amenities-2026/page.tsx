@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Airbnb Amenities Guests Actually Care About in 2026 | HostCopy AI",
   description: "A real workspace, tested WiFi speed, self check-in, and the small details that bring guests back. What amenities are actually worth it in 2026.",
   keywords: "best airbnb amenities, what amenities do airbnb guests want, airbnb must-haves",
+  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/best-airbnb-amenities-2026' },
 };
 
 export default function BlogPost() {
@@ -52,7 +53,16 @@ export default function BlogPost() {
           <p>Expensive gym equipment often sits unused relative to its upkeep and the space it takes up, unless a home gym is a genuine differentiator in your specific market. A hot tub&apos;s upkeep cost and liability can outweigh any booking lift depending on your location, and it can backfire hard in reviews the moment maintenance lapses. Heavily themed or novelty decor is fine as a style choice, but it should never replace comfortable basics &mdash; a great-looking room with a bad mattress still gets a mediocre review.</p>
           <p>Listing your amenities accurately, and describing them the way they actually are, matters more than the number of boxes you check. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> helps you turn your real amenities into a description guests can trust.</p>
         </div>
+        <div className="mt-10 pt-8 border-t border-stone-200">
+          <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
+          <div className="space-y-2">
+            <Link href="/blog/airbnb-photography-tips" className="block text-stone-900 underline">Airbnb Photos That Get You Booked: A Host's Guide</Link>
+            <Link href="/blog/new-airbnb-host-checklist" className="block text-stone-900 underline">The Ultimate Airbnb Host Checklist for New Listings</Link>
+          </div>
+        </div>
       </article>
     </main>
   );
+}
+
 }
