@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Short-Term Rental Tax Basics for New Hosts | HostCopy AI",
   description: "General patterns in how short-term rental income is taxed, what usually needs to be declared, and commonly deductible expenses. Not tax advice.",
   keywords: "airbnb taxes for hosts, short-term rental tax guide, do airbnb hosts pay tax",
+  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/short-term-rental-tax-basics' },
 };
 
 export default function BlogPost() {
@@ -52,6 +53,13 @@ export default function BlogPost() {
           <h2 className="text-xl font-serif font-semibold text-stone-900 pt-4">Recordkeeping habits that make tax season easier</h2>
           <p>Keep receipts from day one, even before your first confirmed booking. A separate bank account, or at minimum a clear way to track rental income apart from personal spending, saves hours later. If the property is also your home part of the year, log which dates were personal use and which were rental use, since many tax systems treat these periods differently.</p>
           <p>None of this replaces professional advice, but getting the business side organized early leaves more room to focus on the guest experience &mdash; including things like your listing description, which <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> can help you write in under a minute.</p>
+          <div className="mt-10 pt-8 border-t border-stone-200">
+            <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
+            <div className="space-y-2">
+              <Link href="/blog/airbnb-startup-cost" className="block text-stone-900 underline">How Much Does It Cost to Start an Airbnb Business?</Link>
+              <Link href="/blog/new-airbnb-host-checklist" className="block text-stone-900 underline">The Ultimate Airbnb Host Checklist for New Listings</Link>
+            </div>
+          </div>
         </div>
       </article>
     </main>
