@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "How to Handle Difficult Airbnb Guests (Without Losing Your Cool) | HostCopy AI",
   description: "Calm communication, when to escalate to Airbnb Support, how to document problems, and boundaries worth setting before a difficult guest ever books.",
   keywords: "dealing with difficult airbnb guests, airbnb guest problems, airbnb host tips",
+  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/dealing-with-difficult-airbnb-guests' },
 };
 
 export default function BlogPost() {
@@ -46,6 +47,13 @@ export default function BlogPost() {
           <h2 className="text-xl font-serif font-semibold text-stone-900 pt-4">When to cancel or refuse a guest</h2>
           <p>A reservation request that doesn&apos;t match the stated purpose &mdash; a large group booking a small listing while claiming only two people will stay &mdash; is worth a direct clarifying message before you confirm. A guest&apos;s past reviews showing a pattern of property damage or rule violations are worth weighing carefully even under Instant Book. Airbnb does allow host-initiated cancellations for genuine safety concerns without the usual penalty when properly documented, but repeated cancellations still hurt your Superhost status, so this is a tool to use sparingly and only when it&apos;s genuinely warranted.</p>
           <p>A lot of difficult-guest situations start with mismatched expectations set by the listing itself. A description that&apos;s accurate as well as appealing heads off some of these problems before they start, and <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> can help you write one in under a minute.</p>
+        </div>
+        <div className="mt-10 pt-8 border-t border-stone-200">
+          <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
+          <div className="space-y-2">
+            <Link href="/blog/how-to-get-airbnb-5-star-reviews" className="block text-stone-900 underline">5-Star Reviews: How to Get Airbnb Guests to Leave Glowing Feedback</Link>
+            <Link href="/blog/new-airbnb-host-checklist" className="block text-stone-900 underline">The Ultimate Airbnb Host Checklist for New Listings</Link>
+          </div>
         </div>
       </article>
     </main>
