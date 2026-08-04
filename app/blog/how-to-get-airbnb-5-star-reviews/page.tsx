@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "5-Star Reviews: How to Get Airbnb Guests to Leave Glowing Feedback | HostCopy AI",
   description: "Check-in experience, communication timing, small surprises that get mentioned in reviews, and how to handle a negative one. A practical review guide.",
   keywords: "how to get airbnb reviews, airbnb 5-star review tips, improve airbnb rating",
+  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/how-to-get-airbnb-5-star-reviews' },
 };
 
 export default function BlogPost() {
@@ -52,6 +53,13 @@ export default function BlogPost() {
           <h2 className="text-xl font-serif font-semibold text-stone-900 pt-4">What to do with a negative review</h2>
           <p>Reply publicly, calmly, and factually &mdash; future guests read your response as much as the review itself, and a measured reply often does more for your credibility than the negative review does damage. If the review violates Airbnb&apos;s content policy &mdash; it&apos;s unrelated to the actual stay, an extortion attempt, or discriminatory &mdash; report it to Airbnb support with documentation rather than arguing in the comment thread. If the criticism is legitimate, fix the actual issue; it&apos;s the fastest way to stop it from showing up in the next review too.</p>
           <p>A lot of negative reviews trace back to a listing description that oversold the space. Setting accurate expectations from the start is one of the simplest ways to avoid disappointment later, and <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> can help you write a description that&apos;s appealing without overpromising.</p>
+        </div>
+        <div className="mt-10 pt-8 border-t border-stone-200">
+          <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
+          <div className="space-y-2">
+            <Link href="/blog/dealing-with-difficult-airbnb-guests" className="block text-stone-900 underline">How to Handle Difficult Airbnb Guests (Without Losing Your Cool)</Link>
+            <Link href="/blog/airbnb-seo-search-ranking" className="block text-stone-900 underline">SEO for Airbnb: How to Rank Higher in Airbnb Search Results</Link>
+          </div>
         </div>
       </article>
     </main>
