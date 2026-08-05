@@ -341,7 +341,13 @@ export default function Home() {
           <a href="/blog/airbnb-listing-description-guide" className="text-sm text-stone-500 hover:text-stone-800 underline">
             Read: How to write an Airbnb description that books
           </a>
-        </footer>
+<p           className="text-xs text-stone-400 mt-4">
+        We don&apos;t store your listing data. Questions?{' '}
+        <a href="mailto:vilius.bartainis67@gmail.com" className="underline">
+          vilius.bartainis67@gmail.com
+        </a>
+      </p>
+    </footer>
       </main>
     </>
   );
