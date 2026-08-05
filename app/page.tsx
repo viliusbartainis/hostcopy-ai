@@ -164,7 +164,28 @@ export default function Home() {
           <p className="text-sm text-stone-500 mb-8">Built by a working Airbnb host in Vilnius.</p>
         </section>
 
-        {/* Tool */}
+        {/* Sample output */}
+      <section className="max-w-3xl mx-auto px-6 pb-16">
+        <h2 className="text-2xl font-serif font-semibold text-stone-900 mb-6 text-center">
+          See what you get
+        </h2>
+        <div className="grid gap-4 md:grid-cols-3">
+          <div className="bg-white rounded-xl border border-stone-200 p-5">
+            <p className="text-xs font-medium text-stone-500 mb-2 uppercase tracking-wide">Airbnb</p>
+            <p className="text-sm text-stone-700 leading-relaxed">Step into this sun-filled 1-bedroom apartment tucked into a quiet courtyard in Vilnius Old Town, just steps from Pilies Street. Original wooden beams meet a fully equipped kitchen and fast WiFi, perfect for slow mornings and late check-ins. Cobblestone cafes, the Cathedral, and the river are all an easy stroll away.</p>
+          </div>
+          <div className="bg-white rounded-xl border border-stone-200 p-5">
+            <p className="text-xs font-medium text-stone-500 mb-2 uppercase tracking-wide">Booking.com</p>
+            <p className="text-sm text-stone-700 leading-relaxed">Located in Vilnius Old Town, 350 m from Pilies Street and 600 m from Vilnius Cathedral. This 45 m² apartment sleeps up to 2 guests across 1 bedroom and includes free WiFi, a fully equipped kitchen, air conditioning, a workspace, and a balcony. Cathedral Square is a 7-minute walk away.</p>
+          </div>
+          <div className="bg-white rounded-xl border border-stone-200 p-5">
+            <p className="text-xs font-medium text-stone-500 mb-2 uppercase tracking-wide">Instagram</p>
+            <p className="text-sm text-stone-700 leading-relaxed">Old Town mornings hit different. Tucked behind Pilies Street with cobblestones outside and a rooftop view. Link in bio to book. #VilniusOldTown #AirbnbHost</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Tool */}
         <section className="max-w-2xl mx-auto px-6 pb-24">
           <div className="bg-white rounded-2xl shadow-sm border border-stone-200 p-8">
             <div className="grid gap-5">
