@@ -284,7 +284,8 @@ className="mt-4 text-sm font-medium text-stone-900 underline">
   </div>
       </div>
       )}
-      </section>
+            </div>
+</section>
 
 <section className="max-w-2xl mx-auto px-6 pb-16">
 <h2 className="text-2xl font-serif font-semibold text-stone-900 mb-6 text-center">
