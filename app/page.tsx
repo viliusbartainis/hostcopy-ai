@@ -69,6 +69,7 @@ const [loading, setLoading] = useState(false);
 const [usesUsed, setUsesUsed] = useState(0);
 const [hydrated, setHydrated] = useState(false);
 const [error, setError] = useState('');
+  const [checkoutLoading, setCheckoutLoading] = useState(false);
 const [copied, setCopied] = useState(false);
 
 useEffect(() => {
@@ -256,10 +257,31 @@ className="mt-4 text-sm font-medium text-stone-900 underline">
 </button>
 </div>
   <div className="mt-6 p-4 bg-amber-50 border border-amber-200 rounded-xl text-center">
-  <p className="text-sm text-stone-700 mb-2">Want unlimited generations? Join the Pro waitlist — early users get a discount.</p>
-  <input type="email" placeholder="you@email.com" className="border border-stone-300 rounded-lg px-3 py-2 text-sm w-full mb-2" id="waitlist-email" />
-  <button type="button" onClick={() => alert('Thanks! We will email you when Pro launches.')} className="bg-stone-900 text-white text-sm rounded-lg px-4 py-2 font-medium">Join waitlist</button></div>
-</div>
+    <p className="text-sm text-stone-700 mb-2">Want unlimited generations? Upgrade to Pro for €9/month.</p>
+    <button
+      type="button"
+      disabled={checkoutLoading}
+      onClick={async () => {
+        setCheckoutLoading(true);
+        try {
+          const res = await fetch('/api/checkout', { method: 'POST' });
+          const data = await res.json();
+          if (data.url) {
+            window.location.href = data.url;
+          } else {
+            alert('Something went wrong. Please try again shortly.');
+          }
+        } catch {
+          alert('Something went wrong. Please try again shortly.');
+        } finally {
+          setCheckoutLoading(false);
+        }
+      }}
+      className="bg-stone-900 text-white text-sm rounded-lg px-4 py-2 font-medium disabled:opacity-50"
+    >
+      {checkoutLoading ? 'Redirecting...' : 'Upgrade to Pro — €9/month'}
+    </button>
+  </div>
 )}
 </div>
 </section>
