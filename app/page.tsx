@@ -155,7 +155,7 @@ export default function Home() {
         {/* Hero */}
         <section className="max-w-3xl mx-auto px-6 pt-12 pb-12 text-center">
           <h1 className="text-4xl md:text-5xl font-serif font-semibold text-stone-900 mb-4">
-            Turn Your Airbnb Into a Listing That Books Itself
+            Write Your Airbnb, Booking.com and Instagram Listings in One Go
           </h1>
           <p className="text-lg text-stone-600 mb-8">
             One form, three ready-to-paste listings: Airbnb, Booking.com, and an Instagram caption —
