@@ -87,10 +87,28 @@ export default function Home() {
     );
   };
 
-  const handleGenerate = async () => {
+const handleCheckout = async () => {
+        setCheckoutLoading(true);
+        setCheckoutError('');
+        try {
+                  const res = await fetch('/api/checkout', { method: 'POST' });
+                  const data = await res.json();
+                  if (data.url) {
+                              window.location.href = data.url;
+                  } else {
+                              setCheckoutError(data.error || 'Unknown error — no URL returned');
+                  }
+        } catch (err) {
+                  setCheckoutError(err instanceof Error ? err.message : 'Network error');
+        } finally {
+                  setCheckoutLoading(false);
+        }
+};
+  
+      const handleGenerate = async () => {
     setError('');
     if (freeUsesLeft <= 0) {
-      setError('Free limit reached! Pro plan coming soon — check back shortly.');
+              setError('');
       return;
     }
     if (!location.trim()) {
@@ -251,6 +269,23 @@ export default function Home() {
                 className="w-full bg-stone-900 text-white rounded-lg py-3 font-medium hover:bg-stone-800 disabled:opacity-50 transition-colors">
                 {loading ? 'Writing your listings...' : `Generate Description (${freeUsesLeft} free left)`}
               </button>
+              {hydrated && freeUsesLeft <= 0 && (
+                      <div className="p-5 bg-amber-50 border-2 border-amber-300 rounded-xl text-center">
+                                        <p className="font-serif font-semibold text-stone-900 mb-1">You&apos;ve used your 3 free generations</p>
+                                        <p className="text-sm text-stone-600 mb-4">Upgrade to Pro for unlimited listings — all three platforms, every property, no limits.</p>
+                                        <button
+                                                              type="button"
+                                                              disabled={checkoutLoading}
+                                                              onClick={handleCheckout}
+                                                              className="w-full bg-stone-900 text-white rounded-lg py-3 font-medium hover:bg-stone-800 disabled:opacity-50 transition-colors"
+                                                            >
+                                          {checkoutLoading ? 'Redirecting...' : 'Upgrade to Pro — €9/month'}
+                                        </button>
+                        {checkoutError && (
+                                            <p className="text-xs text-red-600 mt-2">Error: {checkoutError}</p>
+                                        )}
+                      </div>
+                          )}</div>
             </div>
 
             {results && (
