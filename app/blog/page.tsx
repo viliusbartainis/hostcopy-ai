@@ -82,6 +82,21 @@ const posts = [
     title: "How to Write House Rules Guests Actually Read",
     description: "Why long house rules lists get skimmed past, what actually belongs in them, and how to phrase them so guests follow them without feeling scolded.",
   },
+  {
+        slug: "airbnb-instagram-marketing",
+        title: "How to Promote Your Airbnb on Instagram: Captions, Hashtags, and Story Ideas",
+        description: "What to actually post, a caption formula that works for vacation rentals, and a hashtag approach that doesn't waste your reach.",
+  },
+  {
+        slug: "airbnb-title-that-gets-clicks",
+        title: "How to Write an Airbnb Title That Gets Clicks",
+        description: "The formula top Airbnb titles follow, real before/after examples, and the words quietly costing you clicks in search results.",
+  },
+  {
+        slug: "booking-com-description-guide",
+        title: "How to Write a Booking.com Property Description That Converts",
+        description: "Booking.com guests search and skim differently than Airbnb guests. Here's how to structure a property description that matches how the platform actually works.",
+  },
 ];
 
 export default function BlogIndex() {
