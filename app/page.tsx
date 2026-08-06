@@ -286,8 +286,7 @@ const handleCheckout = async () => {
                                         )}
                       </div>
                           )}</div>
-            </div>
-
+            
             {results && (
               <div className="mt-6">
                 <div className="flex gap-1 border-b border-stone-200">
