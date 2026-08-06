@@ -104,5 +104,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
+      {
+              url: 'https://hostcopy-ai.vercel.app/blog/airbnb-instagram-marketing',
+              lastModified: new Date(),
+              changeFrequency: 'monthly',
+              priority: 0.7,
+      },
+    {
+            url: 'https://hostcopy-ai.vercel.app/blog/airbnb-title-that-gets-clicks',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+    },
+    {
+            url: 'https://hostcopy-ai.vercel.app/blog/booking-com-description-guide',
+            lastModified: new Date(),
+            changeFrequency: 'monthly',
+            priority: 0.7,
+    },
   ];
 }
