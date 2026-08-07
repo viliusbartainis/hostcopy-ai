@@ -387,8 +387,8 @@ export default function Home() {
               <ul className="space-y-3 text-sm text-stone-200 mb-7 flex-1">
                 <li className="flex gap-2"><span className="text-orange-400">✓</span> Unlimited generations</li>
                 <li className="flex gap-2"><span className="text-orange-400">✓</span> All three platforms</li>
-                <li className="flex gap-2"><span className="text-orange-400">✓</span> Priority faster generation</li>
-                <li className="flex gap-2"><span className="text-orange-400">✓</span> Save &amp; re-edit descriptions</li>
+                <li className="flex gap-2"><span className="text-orange-400">✓</span> Every property type &amp; tone</li>
+                <li className="flex gap-2"><span className="text-orange-400">✓</span> No signup, cancel anytime</li>
               </ul>
               <button
                 type="button"
