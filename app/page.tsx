@@ -193,48 +193,28 @@ export default function Home() {
               </defs>
             </svg>
             <span className="font-serif font-semibold text-stone-900 text-lg">HostCopy AI</span>
-          </div>
           {hydrated && isPro ? (
-
-                  <div className="flex items-center gap-3">
-                  
-                                
-                  
-                                  href="https://billing.stripe.com/p/login/5kQ00j6Kla888b53S09k400"
-                  
-                                  target="_blank"
-                  197
-                    
-                                  rel="noopener noreferrer"
-                  
-                                  className="text-xs font-medium text-stone-500 hover:text-stone-800 underline"
-                  
-                                >
-                  
-                                  Manage subscription
-                  
-                  </      
-                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-800 bg-amber-100 border border-amber-200 rounded-full px-3 py-1.5">
-                    
-                                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> Pro active
-                    
-                    </span>
-      
-      </div>
-      
-                ) : (
-      
-                    href="#pricing"
-      
-                    className="text-sm font-medium text-white bg-stone-900 hover:bg-stone-800 rounded-full px-4 py-2 transition-colors"
-      
-                  >
-      
-                    Buy Premium
-      
-      </>a>
-      
-                )}</div>
+            <div className="flex items-center gap-3">
+              
+                href="https://billing.stripe.com/p/login/5kQ00j6Kla888b53S09k400"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-medium text-stone-500 hover:text-stone-800 underline"
+              >
+                Manage subscription
+              </a>
+              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-800 bg-amber-100 border border-amber-200 rounded-full px-3 py-1.5">
+                <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> Pro active
+              </span>
+            </div>
+          ) : (
+            
+              href="#pricing"
+              className="text-sm font-medium text-white bg-stone-900 hover:bg-stone-800 rounded-full px-4 py-2 transition-colors"
+            >
+              Buy Premium
+            </a>
+          )}
         </header>
 
         <section className="max-w-3xl mx-auto px-6 pt-12 pb-12 text-center">
