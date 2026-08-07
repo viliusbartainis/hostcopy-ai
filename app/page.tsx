@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-
 const AMENITIES = [
   'WiFi', 'Pool', 'Kitchen', 'Parking', 'Pet-friendly',
   'Balcony', 'Hot tub', 'Workspace', 'Air conditioning',
@@ -196,11 +195,27 @@ export default function Home() {
             <span className="font-serif font-semibold text-stone-900 text-lg">HostCopy AI</span>
           </div>
           {hydrated && isPro ? (
-            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-800 bg-amber-100 border border-amber-200 rounded-full px-3 py-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> Pro active
-            </span>
-          ) : (
-            <a
+
+                <div className="flex items-center gap-3">
+                
+                              <a
+                                                href="https://billing.stripe.com/p/login/5kQ00j6Kla888b53S09k400"
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-xs font-medium text-stone-500 hover:text-stone-800 underline"
+                                              >
+                                              Manage subscription
+                              </a>a>
+                
+                              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-800 bg-amber-100 border border-amber-200 rounded-full px-3 py-1.5">
+                              
+                                              <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> Pro active
+                              
+                              </span>span>
+                  
+                </div>div>
+      
+                ) : (<a
               href="#pricing"
               className="text-sm font-medium text-white bg-stone-900 hover:bg-stone-800 rounded-full px-4 py-2 transition-colors"
             >
