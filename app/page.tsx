@@ -193,29 +193,49 @@ export default function Home() {
               </defs>
             </svg>
             <span className="font-serif font-semibold text-stone-900 text-lg">HostCopy AI</span>
-          {hydrated && isPro ? (
-            <div className="flex items-center gap-3">
-              
-                href="https://billing.stripe.com/p/login/5kQ00j6Kla888b53S09k400"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-medium text-stone-500 hover:text-stone-800 underline"
-              >
-                Manage subscription
-              </a>
-              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-800 bg-amber-100 border border-amber-200 rounded-full px-3 py-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> Pro active
-              </span>
-            </div>
-          ) : (
+            {hydrated && isPro ? (
+
+                  <div className="flex items-center gap-3">
+                  
+                                
+                  
+                                  href="https://billing.stripe.com/p/login/5kQ00j6Kla888b53S09k400"
+                  
+                                  target="_blank"
+                  
+                                  rel="noopener noreferrer"
+                  
+                                  className="text-xs font-medium text-stone-500 hover:text-stone-800 underline"
+                  
+                                >
+                  
+                                  Manage subscription
+                  
+                  </div>a>
+      
+                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-amber-800 bg-amber-100 border border-amber-200 rounded-full px-3 py-1.5">
+                    
+                                    <span className="w-1.5 h-1.5 rounded-full bg-amber-500" /> Pro active
+                    
+                    </span>span>
+      
+      </div>
+      
+                ) : (
+      
+                    href="#pricing"
+      
+                    className="text-sm font-medium text-white bg-stone-900 hover:bg-stone-800 rounded-full px-4 py-2 transition-colors"
+      
+                  >
+      
+                    Buy Premium
+      
+      </>a>
+      
+                )}
+          237
             
-              href="#pricing"
-              className="text-sm font-medium text-white bg-stone-900 hover:bg-stone-800 rounded-full px-4 py-2 transition-colors"
-            >
-              Buy Premium
-            </a>
-          )}
-        </header>
 
         <section className="max-w-3xl mx-auto px-6 pt-12 pb-12 text-center">
           <h1 className="text-4xl md:text-5xl font-serif font-semibold text-stone-900 mb-4">
@@ -471,6 +491,7 @@ export default function Home() {
           </p>
         </footer>
       </main>
-    </>
+    237
+          Page_UpPage_UpPage_UpPage_UpPage_Up
   );
 }
