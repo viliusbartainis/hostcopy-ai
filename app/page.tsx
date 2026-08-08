@@ -197,7 +197,7 @@ export default function Home() {
           {hydrated && isPro ? (
               <div className="flex items-center gap-3">
                 <a
-                  href="https://billing.stripe.com/p/login/5kQ00j6Kla888b53S09k400"
+                  href="https://billing.stripe.com/p/login/5kQ00j6KIa888b53S09k400"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-xs font-medium text-stone-500 hover:text-stone-800 underline"
