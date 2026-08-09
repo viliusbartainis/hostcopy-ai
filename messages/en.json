@@ -1,0 +1,135 @@
+{
+  "Header": {
+    "manageSubscription": "Manage subscription",
+    "proActive": "Pro active",
+    "buyPremium": "Buy Premium"
+  },
+  "Hero": {
+    "title": "Write Your Airbnb, Booking.com and Instagram Listings in One Go",
+    "subtitle": "One form, three ready-to-paste listings: Airbnb, Booking.com, and an Instagram caption — each written for how that platform's guests actually search and scroll.",
+    "builtBy": "Built by a working Airbnb host in Vilnius."
+  },
+  "Form": {
+    "propertyTypeLabel": "Property type",
+    "locationLabel": "Location",
+    "locationPlaceholder": "e.g. Vilnius Old Town",
+    "guestsLabel": "Guests",
+    "bedroomsLabel": "Bedrooms",
+    "amenitiesLabel": "Amenities",
+    "toneLabel": "Tone"
+  },
+  "PropertyTypes": {
+    "apartment": "Apartment",
+    "house": "House",
+    "villa": "Villa",
+    "cabin": "Cabin",
+    "loft": "Loft",
+    "studio": "Studio"
+  },
+  "Amenities": {
+    "wifi": "WiFi",
+    "pool": "Pool",
+    "kitchen": "Kitchen",
+    "parking": "Parking",
+    "petFriendly": "Pet-friendly",
+    "balcony": "Balcony",
+    "hotTub": "Hot tub",
+    "workspace": "Workspace",
+    "airConditioning": "Air conditioning"
+  },
+  "Tones": {
+    "luxury": "Luxury",
+    "cozy": "Cozy & Homey",
+    "familyFriendly": "Family-friendly",
+    "businessTraveler": "Business Traveler",
+    "minimalist": "Minimalist"
+  },
+  "Errors": {
+    "locationRequired": "Please enter a location.",
+    "invalidNumbers": "Please enter valid guest and bedroom numbers.",
+    "generic": "Something went wrong. Please try again.",
+    "checkoutUnknown": "Unknown error — no URL returned",
+    "checkoutNetwork": "Network error",
+    "errorPrefix": "Error: {message}"
+  },
+  "Generate": {
+    "loading": "Writing your listings...",
+    "default": "Generate Description",
+    "withFreeLeft": "Generate Description ({count} free left)"
+  },
+  "LimitReached": {
+    "title": "You've used your {limit} free generations",
+    "description": "Upgrade to Pro for unlimited listings — all three platforms, every property, no limits.",
+    "redirecting": "Redirecting...",
+    "upgradeButton": "Upgrade to Pro — €9/month"
+  },
+  "Results": {
+    "airbnb": "Airbnb",
+    "booking": "Booking.com",
+    "instagram": "Instagram",
+    "copy": "Copy to clipboard",
+    "copied": "Copied!"
+  },
+  "Pricing": {
+    "eyebrow": "Pricing",
+    "title": "Built for every kind of host",
+    "subtitle": "Start free, upgrade when it pays for itself. Every plan writes all three platform versions from one form.",
+    "free": {
+      "name": "Free",
+      "tagline": "For trying it out",
+      "price": "€0",
+      "feature1": "{limit} generations total",
+      "feature2": "All three platforms",
+      "feature3": "No signup required",
+      "cta": "Start free"
+    },
+    "pro": {
+      "badge": "Most popular",
+      "name": "Pro",
+      "tagline": "For active hosts",
+      "price": "€9",
+      "period": "/month",
+      "feature1": "Unlimited generations",
+      "feature2": "All three platforms",
+      "feature3": "Every property type & tone",
+      "feature4": "No signup, cancel anytime",
+      "cta": "Upgrade to Pro",
+      "redirecting": "Redirecting..."
+    },
+    "premium": {
+      "name": "Premium",
+      "tagline": "For property managers",
+      "price": "€29",
+      "period": "/month",
+      "feature1": "Everything in Pro",
+      "feature2": "AI property walkthrough from photos",
+      "feature3": "Bulk generation for multiple listings",
+      "feature4": "Priority support",
+      "cta": "Contact for early access"
+    },
+    "footnote": "Prices in EUR. Cancel anytime. Premium features roll out to early-access users first."
+  },
+  "Faq": {
+    "title": "Frequently asked questions",
+    "q1": "Is it really free?",
+    "a1": "Yes — you get {limit} free generations with no signup required. Pro unlocks unlimited use for €9/month.",
+    "q2": "Why three different versions instead of one description?",
+    "a2": "Airbnb guests read stories, Booking.com guests scan facts, and Instagram needs a short caption. HostCopy AI writes each one for how that platform's guests actually read.",
+    "q3": "What does the Premium plan add?",
+    "a3": "Premium adds an AI property walkthrough — upload photos or a link and it drafts a room-by-room tour — plus bulk generation for managing multiple listings at once.",
+    "q4": "Do you store my listing information?",
+    "a4": "No — your inputs are only used to generate the description and are not saved or shared."
+  },
+  "Footer": {
+    "blogLink": "Read our Airbnb hosting guides →",
+    "privacyNote": "We don't store your listing data. Questions?"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "description": "The page you're looking for doesn't exist.",
+    "backHome": "Go back home"
+  },
+  "LanguageSwitcher": {
+    "label": "Language"
+  }
+}
