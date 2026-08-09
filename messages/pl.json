@@ -1,0 +1,135 @@
+{
+  "Header": {
+    "manageSubscription": "Zarządzaj subskrypcją",
+    "proActive": "Pro aktywne",
+    "buyPremium": "Kup Premium"
+  },
+  "Hero": {
+    "title": "Napisz oferty na Airbnb, Booking.com i Instagram za jednym razem",
+    "subtitle": "Jeden formularz, trzy gotowe do wklejenia oferty: Airbnb, Booking.com i podpis na Instagram — każda napisana tak, jak goście tej platformy naprawdę szukają i przeglądają.",
+    "builtBy": "Stworzone przez aktywnego gospodarza Airbnb z Wilna."
+  },
+  "Form": {
+    "propertyTypeLabel": "Typ obiektu",
+    "locationLabel": "Lokalizacja",
+    "locationPlaceholder": "np. Stare Miasto w Wilnie",
+    "guestsLabel": "Goście",
+    "bedroomsLabel": "Sypialnie",
+    "amenitiesLabel": "Udogodnienia",
+    "toneLabel": "Ton"
+  },
+  "PropertyTypes": {
+    "apartment": "Mieszkanie",
+    "house": "Dom",
+    "villa": "Willa",
+    "cabin": "Domek",
+    "loft": "Loft",
+    "studio": "Kawalerka"
+  },
+  "Amenities": {
+    "wifi": "WiFi",
+    "pool": "Basen",
+    "kitchen": "Kuchnia",
+    "parking": "Parking",
+    "petFriendly": "Zwierzęta mile widziane",
+    "balcony": "Balkon",
+    "hotTub": "Jacuzzi",
+    "workspace": "Miejsce do pracy",
+    "airConditioning": "Klimatyzacja"
+  },
+  "Tones": {
+    "luxury": "Luksusowy",
+    "cozy": "Przytulny",
+    "familyFriendly": "Przyjazny rodzinom",
+    "businessTraveler": "Podróżujący służbowo",
+    "minimalist": "Minimalistyczny"
+  },
+  "Errors": {
+    "locationRequired": "Podaj lokalizację.",
+    "invalidNumbers": "Podaj prawidłową liczbę gości i sypialni.",
+    "generic": "Coś poszło nie tak. Spróbuj ponownie.",
+    "checkoutUnknown": "Nieznany błąd — nie zwrócono adresu URL",
+    "checkoutNetwork": "Błąd sieci",
+    "errorPrefix": "Błąd: {message}"
+  },
+  "Generate": {
+    "loading": "Piszemy Twoje oferty...",
+    "default": "Wygeneruj opis",
+    "withFreeLeft": "Wygeneruj opis (pozostało {count} darmowych)"
+  },
+  "LimitReached": {
+    "title": "Wykorzystałeś swoje {limit} darmowe generacje",
+    "description": "Przejdź na Pro, aby uzyskać nieograniczoną liczbę ofert — wszystkie trzy platformy, każdy obiekt, bez limitów.",
+    "redirecting": "Przekierowywanie...",
+    "upgradeButton": "Przejdź na Pro — 9 €/miesiąc"
+  },
+  "Results": {
+    "airbnb": "Airbnb",
+    "booking": "Booking.com",
+    "instagram": "Instagram",
+    "copy": "Kopiuj do schowka",
+    "copied": "Skopiowano!"
+  },
+  "Pricing": {
+    "eyebrow": "Cennik",
+    "title": "Stworzone dla każdego typu gospodarza",
+    "subtitle": "Zacznij za darmo, przejdź wyżej, gdy się to opłaci. Każdy plan tworzy wszystkie trzy wersje platform z jednego formularza.",
+    "free": {
+      "name": "Darmowy",
+      "tagline": "Aby wypróbować",
+      "price": "0 €",
+      "feature1": "{limit} generacji łącznie",
+      "feature2": "Wszystkie trzy platformy",
+      "feature3": "Bez rejestracji",
+      "cta": "Zacznij za darmo"
+    },
+    "pro": {
+      "badge": "Najpopularniejszy",
+      "name": "Pro",
+      "tagline": "Dla aktywnych gospodarzy",
+      "price": "9 €",
+      "period": "/miesiąc",
+      "feature1": "Nieograniczone generacje",
+      "feature2": "Wszystkie trzy platformy",
+      "feature3": "Każdy typ obiektu i ton",
+      "feature4": "Bez rejestracji, anuluj w każdej chwili",
+      "cta": "Przejdź na Pro",
+      "redirecting": "Przekierowywanie..."
+    },
+    "premium": {
+      "name": "Premium",
+      "tagline": "Dla zarządców nieruchomości",
+      "price": "29 €",
+      "period": "/miesiąc",
+      "feature1": "Wszystko z planu Pro",
+      "feature2": "Wirtualne oprowadzenie po obiekcie generowane przez AI ze zdjęć",
+      "feature3": "Generowanie masowe dla wielu ofert",
+      "feature4": "Priorytetowe wsparcie",
+      "cta": "Skontaktuj się w sprawie wczesnego dostępu"
+    },
+    "footnote": "Ceny w euro. Anuluj w każdej chwili. Funkcje Premium będą udostępniane najpierw użytkownikom z wczesnym dostępem."
+  },
+  "Faq": {
+    "title": "Najczęściej zadawane pytania",
+    "q1": "Czy to naprawdę darmowe?",
+    "a1": "Tak — otrzymujesz {limit} darmowych generacji bez rejestracji. Pro odblokowuje nieograniczone korzystanie za 9 €/miesiąc.",
+    "q2": "Dlaczego trzy różne wersje zamiast jednego opisu?",
+    "a2": "Goście Airbnb czytają historie, goście Booking.com skanują fakty, a Instagram potrzebuje krótkiego podpisu. HostCopy AI pisze każdą wersję tak, jak goście danej platformy naprawdę czytają.",
+    "q3": "Co dodaje plan Premium?",
+    "a3": "Premium dodaje wirtualne oprowadzenie po obiekcie generowane przez AI — prześlij zdjęcia lub link, a system stworzy opis pokój po pokoju — a także generowanie masowe do zarządzania wieloma ofertami naraz.",
+    "q4": "Czy przechowujecie informacje o moim obiekcie?",
+    "a4": "Nie — Twoje dane są używane wyłącznie do wygenerowania opisu i nie są zapisywane ani udostępniane."
+  },
+  "Footer": {
+    "blogLink": "Przeczytaj nasze poradniki dla gospodarzy Airbnb →",
+    "privacyNote": "Nie przechowujemy danych Twojego obiektu. Masz pytania?"
+  },
+  "NotFound": {
+    "title": "Strona nie znaleziona",
+    "description": "Strona, której szukasz, nie istnieje.",
+    "backHome": "Wróć do strony głównej"
+  },
+  "LanguageSwitcher": {
+    "label": "Język"
+  }
+}
