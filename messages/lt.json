@@ -1,0 +1,135 @@
+{
+  "Header": {
+    "manageSubscription": "Valdyti prenumeratą",
+    "proActive": "Pro aktyvus",
+    "buyPremium": "Įsigyti Premium"
+  },
+  "Hero": {
+    "title": "Parašykite Airbnb, Booking.com ir Instagram skelbimus per vieną kartą",
+    "subtitle": "Viena forma, trys paruošti naudoti skelbimai: Airbnb, Booking.com ir Instagram aprašymas — kiekvienas parašytas taip, kaip tos platformos svečiai iš tikrųjų ieško ir skaito.",
+    "builtBy": "Sukurta dirbančio Airbnb šeimininko iš Vilniaus."
+  },
+  "Form": {
+    "propertyTypeLabel": "Būsto tipas",
+    "locationLabel": "Vieta",
+    "locationPlaceholder": "pvz., Vilniaus senamiestis",
+    "guestsLabel": "Svečiai",
+    "bedroomsLabel": "Miegamieji",
+    "amenitiesLabel": "Patogumai",
+    "toneLabel": "Tonas"
+  },
+  "PropertyTypes": {
+    "apartment": "Butas",
+    "house": "Namas",
+    "villa": "Vila",
+    "cabin": "Trobelė",
+    "loft": "Palėpė",
+    "studio": "Studija"
+  },
+  "Amenities": {
+    "wifi": "Wi-Fi",
+    "pool": "Baseinas",
+    "kitchen": "Virtuvė",
+    "parking": "Automobilių stovėjimo aikštelė",
+    "petFriendly": "Galima su gyvūnais",
+    "balcony": "Balkonas",
+    "hotTub": "Sūkurinė vonia",
+    "workspace": "Darbo vieta",
+    "airConditioning": "Oro kondicionierius"
+  },
+  "Tones": {
+    "luxury": "Prabangus",
+    "cozy": "Jaukus ir namų",
+    "familyFriendly": "Tinka šeimoms",
+    "businessTraveler": "Verslo keliautojams",
+    "minimalist": "Minimalistinis"
+  },
+  "Errors": {
+    "locationRequired": "Įveskite vietą.",
+    "invalidNumbers": "Įveskite teisingą svečių ir miegamųjų skaičių.",
+    "generic": "Kažkas nutiko ne taip. Bandykite dar kartą.",
+    "checkoutUnknown": "Nežinoma klaida — nuoroda negrąžinta",
+    "checkoutNetwork": "Tinklo klaida",
+    "errorPrefix": "Klaida: {message}"
+  },
+  "Generate": {
+    "loading": "Rašome jūsų skelbimus...",
+    "default": "Generuoti aprašymą",
+    "withFreeLeft": "Generuoti aprašymą (liko {count} nemokamų)"
+  },
+  "LimitReached": {
+    "title": "Išnaudojote {limit} nemokamus generavimus",
+    "description": "Atnaujinkite į Pro ir gaukite neribotą skelbimų generavimą — visos trys platformos, kiekvienas būstas, jokių apribojimų.",
+    "redirecting": "Nukreipiama...",
+    "upgradeButton": "Atnaujinti į Pro — 9 €/mėn."
+  },
+  "Results": {
+    "airbnb": "Airbnb",
+    "booking": "Booking.com",
+    "instagram": "Instagram",
+    "copy": "Kopijuoti",
+    "copied": "Nukopijuota!"
+  },
+  "Pricing": {
+    "eyebrow": "Kainos",
+    "title": "Sukurta kiekvienam šeimininkui",
+    "subtitle": "Pradėkite nemokamai, atnaujinkite, kai tai atsipirks. Kiekvienas planas parašo visų trijų platformų versijas iš vienos formos.",
+    "free": {
+      "name": "Nemokamas",
+      "tagline": "Išbandymui",
+      "price": "0 €",
+      "feature1": "Iš viso {limit} generavimai",
+      "feature2": "Visos trys platformos",
+      "feature3": "Registracija nereikalinga",
+      "cta": "Pradėti nemokamai"
+    },
+    "pro": {
+      "badge": "Populiariausias",
+      "name": "Pro",
+      "tagline": "Aktyviems šeimininkams",
+      "price": "9 €",
+      "period": "/mėn.",
+      "feature1": "Neribotas generavimas",
+      "feature2": "Visos trys platformos",
+      "feature3": "Visi būsto tipai ir tonai",
+      "feature4": "Registracija nereikalinga, atsisakyti bet kada",
+      "cta": "Atnaujinti į Pro",
+      "redirecting": "Nukreipiama..."
+    },
+    "premium": {
+      "name": "Premium",
+      "tagline": "Nekilnojamojo turto valdytojams",
+      "price": "29 €",
+      "period": "/mėn.",
+      "feature1": "Viskas, kas yra Pro",
+      "feature2": "AI būsto apžvalga iš nuotraukų",
+      "feature3": "Masinis generavimas keliems skelbimams",
+      "feature4": "Prioritetinis palaikymas",
+      "cta": "Susisiekti dėl ankstyvos prieigos"
+    },
+    "footnote": "Kainos nurodytos eurais. Galite atsisakyti bet kada. Premium funkcijos pirmiausia pasieks ankstyvosios prieigos naudotojus."
+  },
+  "Faq": {
+    "title": "Dažniausiai užduodami klausimai",
+    "q1": "Ar tikrai nemokama?",
+    "a1": "Taip — gaunate {limit} nemokamus generavimus be registracijos. Pro atrakina neribotą naudojimą už 9 €/mėn.",
+    "q2": "Kodėl trys skirtingos versijos vietoj vieno aprašymo?",
+    "a2": "Airbnb svečiai skaito istorijas, Booking.com svečiai peržvelgia faktus, o Instagram reikia trumpo aprašymo. HostCopy AI parašo kiekvieną taip, kaip tos platformos svečiai iš tikrųjų skaito.",
+    "q3": "Ką papildomai suteikia Premium planas?",
+    "a3": "Premium prideda AI būsto apžvalgą — įkeliate nuotraukas ar nuorodą, o sistema parengia kambarį po kambario apžvalgą — bei masinį generavimą keliems skelbimams tvarkyti vienu metu.",
+    "q4": "Ar saugote mano skelbimo informaciją?",
+    "a4": "Ne — jūsų įvesti duomenys naudojami tik aprašymui generuoti ir nėra išsaugomi ar dalinami."
+  },
+  "Footer": {
+    "blogLink": "Skaitykite mūsų Airbnb šeimininkavimo vadovus →",
+    "privacyNote": "Mes nesaugome jūsų skelbimo duomenų. Turite klausimų?"
+  },
+  "NotFound": {
+    "title": "Puslapis nerastas",
+    "description": "Puslapio, kurio ieškote, nėra.",
+    "backHome": "Grįžti į pradžią"
+  },
+  "LanguageSwitcher": {
+    "label": "Kalba"
+  }
+}
