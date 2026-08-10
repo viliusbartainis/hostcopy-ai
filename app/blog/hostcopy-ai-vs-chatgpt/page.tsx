@@ -6,7 +6,7 @@ title: "HostCopy AI vs. ChatGPT for Airbnb Listings: What's the Real Difference?
 description: "ChatGPT can write a solid Airbnb description too. Here's an honest look at what it takes to get there, and what HostCopy AI automates instead.",
 keywords: "hostcopy ai vs chatgpt, chatgpt airbnb description, ai airbnb description tool",
 alternates: {
-canonical: "https://hostcopy-ai.vercel.app/blog/hostcopy-ai-vs-chatgpt",
+canonical: "https://hostcopyai.com/blog/hostcopy-ai-vs-chatgpt",
 },
 };
 
@@ -21,7 +21,7 @@ publisher: { "@type": "Organization", name: "HostCopy AI" },
 datePublished: "2026-08-04",
 mainEntityOfPage: {
 "@type": "WebPage",
-"@id": "https://hostcopy-ai.vercel.app/blog/hostcopy-ai-vs-chatgpt",
+"@id": "https://hostcopyai.com/blog/hostcopy-ai-vs-chatgpt",
 },
 };
 
