@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Airbnb vs Booking.com vs Vrbo: Where Should You List Your Property? | HostCopy AI",
   description: "Audience, commission fees, and description tone compared across Airbnb, Booking.com, and Vrbo, plus when it actually pays to list on more than one.",
   keywords: "airbnb vs booking.com, best platform for vacation rental, airbnb vs vrbo",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/airbnb-vs-booking-vs-vrbo' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-vs-booking-vs-vrbo' },
 };
 
 export default function BlogPost() {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     datePublished: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://hostcopy-ai.vercel.app/blog/airbnb-vs-booking-vs-vrbo",
+      "@id": "https://hostcopyai.com/blog/airbnb-vs-booking-vs-vrbo",
     },
   };
 
