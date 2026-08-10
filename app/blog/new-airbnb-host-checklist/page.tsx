@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "The Ultimate Airbnb Host Checklist for New Listings | HostCopy AI",
   description: "Safety, keys, cleaning, listing settings, insurance basics, and the first-week mistakes new Airbnb hosts make. A practical checklist before you publish.",
   keywords: "airbnb host checklist, new airbnb listing checklist, starting airbnb business",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/new-airbnb-host-checklist' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/new-airbnb-host-checklist' },
 };
 
 export default function BlogPost() {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     datePublished: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://hostcopy-ai.vercel.app/blog/new-airbnb-host-checklist",
+      "@id": "https://hostcopyai.com/blog/new-airbnb-host-checklist",
     },
   };
 
