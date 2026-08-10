@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "How to Write a Booking.com Property Description That Converts | HostCopy AI",
   description: "Booking.com guests search and skim differently than Airbnb guests. Here's how to structure a property description that matches how the platform actually works.",
   keywords: "booking.com description, how to write booking.com listing, booking.com property description tips",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/booking-com-description-guide' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/booking-com-description-guide' },
 };
 
 export default function BlogPost() {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     datePublished: "2026-08-06",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://hostcopy-ai.vercel.app/blog/booking-com-description-guide",
+      "@id": "https://hostcopyai.com/blog/booking-com-description-guide",
     },
   };
 

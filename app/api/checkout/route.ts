@@ -17,8 +17,8 @@ export async function POST() {
           const session = await stripe.checkout.sessions.create({
                   mode: 'subscription',
                   line_items: [{ price: process.env.STRIPE_PRICE_ID, quantity: 1 }],
-                  success_url: `${process.env.NEXT_PUBLIC_URL || 'https://hostcopy-ai.vercel.app'}?success=true`,
-                  cancel_url: `${process.env.NEXT_PUBLIC_URL || 'https://hostcopy-ai.vercel.app'}?canceled=true`,
+                  success_url: `${process.env.NEXT_PUBLIC_URL || 'https://hostcopyai.com'}?success=true`,
+                  cancel_url: `${process.env.NEXT_PUBLIC_URL || 'https://hostcopyai.com'}?canceled=true`,
           });
           return NextResponse.json({ url: session.url });
     } catch (err) {

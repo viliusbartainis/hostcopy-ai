@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://hostcopy-ai.vercel.app/sitemap.xml',
+    sitemap: 'https://hostcopyai.com/sitemap.xml',
   };
 }

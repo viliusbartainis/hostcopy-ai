@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "How to Write an Airbnb Listing Description That Books | HostCopy AI",
   description: "Most Airbnb descriptions sound the same. Here's the exact structure that gets guests to click Book — plus real examples for Airbnb, Booking.com, and Instagram.",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/airbnb-listing-description-guide' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-listing-description-guide' },
 };
 
 export default function BlogPost() {

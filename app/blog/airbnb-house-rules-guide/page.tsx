@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "How to Write House Rules Guests Actually Read | HostCopy AI",
   description: "Why long house rules lists get skimmed past, what actually belongs in them, and how to phrase them so guests follow them without feeling scolded.",
   keywords: "airbnb house rules examples, how to write house rules, airbnb guest rules",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/airbnb-house-rules-guide' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-house-rules-guide' },
 };
 
 export default function BlogPost() {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     datePublished: "2026-08-04",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://hostcopy-ai.vercel.app/blog/airbnb-house-rules-guide",
+      "@id": "https://hostcopyai.com/blog/airbnb-house-rules-guide",
     },
   };
 

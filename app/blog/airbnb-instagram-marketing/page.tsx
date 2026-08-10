@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "How to Promote Your Airbnb on Instagram: Captions, Hashtags, and Story Ideas | HostCopy AI",
   description: "What to actually post, a caption formula that works for vacation rentals, and a hashtag approach that doesn't waste your reach.",
   keywords: "airbnb instagram caption, how to promote airbnb on instagram, vacation rental instagram marketing",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/airbnb-instagram-marketing' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-instagram-marketing' },
 };
 
 export default function BlogPost() {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     datePublished: "2026-08-06",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://hostcopy-ai.vercel.app/blog/airbnb-instagram-marketing",
+      "@id": "https://hostcopyai.com/blog/airbnb-instagram-marketing",
     },
   };
 

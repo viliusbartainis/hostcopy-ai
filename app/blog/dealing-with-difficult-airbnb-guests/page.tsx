@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "How to Handle Difficult Airbnb Guests (Without Losing Your Cool) | HostCopy AI",
   description: "Calm communication, when to escalate to Airbnb Support, how to document problems, and boundaries worth setting before a difficult guest ever books.",
   keywords: "dealing with difficult airbnb guests, airbnb guest problems, airbnb host tips",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/dealing-with-difficult-airbnb-guests' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/dealing-with-difficult-airbnb-guests' },
 };
 
 export default function BlogPost() {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     datePublished: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://hostcopy-ai.vercel.app/blog/dealing-with-difficult-airbnb-guests",
+      "@id": "https://hostcopyai.com/blog/dealing-with-difficult-airbnb-guests",
     },
   };
 

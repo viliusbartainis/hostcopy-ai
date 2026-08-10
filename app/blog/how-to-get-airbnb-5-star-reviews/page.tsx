@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "5-Star Reviews: How to Get Airbnb Guests to Leave Glowing Feedback | HostCopy AI",
   description: "Check-in experience, communication timing, small surprises that get mentioned in reviews, and how to handle a negative one. A practical review guide.",
   keywords: "how to get airbnb reviews, airbnb 5-star review tips, improve airbnb rating",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/how-to-get-airbnb-5-star-reviews' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/how-to-get-airbnb-5-star-reviews' },
 };
 
 export default function BlogPost() {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     datePublished: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://hostcopy-ai.vercel.app/blog/how-to-get-airbnb-5-star-reviews",
+      "@id": "https://hostcopyai.com/blog/how-to-get-airbnb-5-star-reviews",
     },
   };
 

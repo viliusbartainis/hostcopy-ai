@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Airbnb Superhost Requirements Explained (2026 Update) | HostCopy AI",
   description: "The four criteria Airbnb uses to award Superhost status, how often it's reviewed, and what the badge actually gets you as a host.",
   keywords: "airbnb superhost requirements, how to become airbnb superhost, superhost benefits",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/airbnb-superhost-requirements' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-superhost-requirements' },
 };
 
 export default function BlogPost() {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     datePublished: "2026-08-04",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://hostcopy-ai.vercel.app/blog/airbnb-superhost-requirements",
+      "@id": "https://hostcopyai.com/blog/airbnb-superhost-requirements",
     },
   };
 
