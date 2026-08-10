@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Airbnb Photos That Get You Booked: A Host's Guide | HostCopy AI",
   description: "Natural light vs. flash, angles that sell space, and how many photos you actually need. A practical guide to Airbnb photography that gets clicks.",
   keywords: "airbnb photography tips, best airbnb photos, how to photograph airbnb listing",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/airbnb-photography-tips' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-photography-tips' },
 };
 
 export default function BlogPost() {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     datePublished: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://hostcopy-ai.vercel.app/blog/airbnb-photography-tips",
+      "@id": "https://hostcopyai.com/blog/airbnb-photography-tips",
     },
   };
 
