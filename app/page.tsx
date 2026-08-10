@@ -80,7 +80,7 @@ const orgJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "HostCopy AI",
-  url: "https://hostcopy-ai.vercel.app",
+  url: "https://hostcopyai.com",
 };
 
 function readInitialState() {
