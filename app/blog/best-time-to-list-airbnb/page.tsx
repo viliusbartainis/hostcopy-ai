@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Best Time to List Your Airbnb Property | HostCopy AI",
   description: "When new listings should go live to build reviews and search ranking before peak season hits, and how to adjust if you can't pick your own timing.",
   keywords: "best time to list airbnb, airbnb seasonality, when to start airbnb hosting",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/best-time-to-list-airbnb' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/best-time-to-list-airbnb' },
 };
 
 export default function BlogPost() {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     datePublished: "2026-08-04",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://hostcopy-ai.vercel.app/blog/best-time-to-list-airbnb",
+      "@id": "https://hostcopyai.com/blog/best-time-to-list-airbnb",
     },
   };
 
