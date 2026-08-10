@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Airbnb Amenities Guests Actually Care About in 2026 | HostCopy AI",
   description: "A real workspace, tested WiFi speed, self check-in, and the small details that bring guests back. What amenities are actually worth it in 2026.",
   keywords: "best airbnb amenities, what amenities do airbnb guests want, airbnb must-haves",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/best-airbnb-amenities-2026' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/best-airbnb-amenities-2026' },
 };
 
 export default function BlogPost() {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     datePublished: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://hostcopy-ai.vercel.app/blog/best-airbnb-amenities-2026",
+      "@id": "https://hostcopyai.com/blog/best-airbnb-amenities-2026",
     },
   };
 
