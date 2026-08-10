@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Short-Term Rental Tax Basics for New Hosts | HostCopy AI",
   description: "General patterns in how short-term rental income is taxed, what usually needs to be declared, and commonly deductible expenses. Not tax advice.",
   keywords: "airbnb taxes for hosts, short-term rental tax guide, do airbnb hosts pay tax",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/short-term-rental-tax-basics' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/short-term-rental-tax-basics' },
 };
 
 export default function BlogPost() {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     datePublished: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://hostcopy-ai.vercel.app/blog/short-term-rental-tax-basics",
+      "@id": "https://hostcopyai.com/blog/short-term-rental-tax-basics",
     },
   };
 
