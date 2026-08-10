@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "How to Write an Airbnb Title That Gets Clicks | HostCopy AI",
   description: "The formula top Airbnb titles follow, real before/after examples, and the words quietly costing you clicks in search results.",
   keywords: "airbnb title generator, how to write airbnb title, airbnb listing title examples",
-  alternates: { canonical: 'https://hostcopy-ai.vercel.app/blog/airbnb-title-that-gets-clicks' },
+  alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-title-that-gets-clicks' },
 };
 
 export default function BlogPost() {
@@ -19,7 +19,7 @@ export default function BlogPost() {
     datePublished: "2026-08-06",
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": "https://hostcopy-ai.vercel.app/blog/airbnb-title-that-gets-clicks",
+      "@id": "https://hostcopyai.com/blog/airbnb-title-that-gets-clicks",
     },
   };
 
