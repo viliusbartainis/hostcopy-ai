@@ -1,24 +1,47 @@
 import { NextRequest, NextResponse } from 'next/server';
+import { createClient } from 'redis';
 
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const GROQ_MODEL = 'openai/gpt-oss-120b';
 
-const requestLog = new Map<string, number[]>();
 const RATE_LIMIT = 8;
-const WINDOW_MS = 60 * 60 * 1000;
+const WINDOW_SECONDS = 60 * 60;
 
-function isRateLimited(ip: string): boolean {
-  const now = Date.now();
-  const timestamps = (requestLog.get(ip) || []).filter((t) => now - t < WINDOW_MS);
-  timestamps.push(now);
-  requestLog.set(ip, timestamps);
-  return timestamps.length > RATE_LIMIT;
+let redisClient: ReturnType<typeof createClient> | null = null;
+
+async function getRedis() {
+  if (!process.env.KV_REDIS_URL) return null;
+  if (!redisClient) {
+    redisClient = createClient({ url: process.env.KV_REDIS_URL });
+    redisClient.on('error', (err) => console.error('Redis client error:', err));
+  }
+  if (!redisClient.isOpen) {
+    await redisClient.connect();
+  }
+  return redisClient;
+}
+
+async function isRateLimited(ip: string): Promise<boolean> {
+  try {
+    const redis = await getRedis();
+    // Fail open if Redis is not configured/available so generation still works.
+    if (!redis) return false;
+    const key = `ratelimit:${ip}`;
+    const count = await redis.incr(key);
+    if (count === 1) {
+      await redis.expire(key, WINDOW_SECONDS);
+    }
+    return count > RATE_LIMIT;
+  } catch (err) {
+    console.error('Rate limit check failed, allowing request:', err);
+    return false;
+  }
 }
 
 export async function POST(req: NextRequest) {
   try {
     const ip = req.headers.get('x-forwarded-for') || 'unknown';
-    if (isRateLimited(ip)) {
+    if (await isRateLimited(ip)) {
       return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
     }
 
@@ -44,7 +67,6 @@ export async function POST(req: NextRequest) {
 - Guests: ${guests}, Bedrooms: ${bedrooms}
 - Amenities: ${Array.isArray(amenities) ? amenities.join(', ') : ''}
 - Tone: ${tone}
-
 Respond with ONLY the JSON object, nothing else.`;
 
     const groqRes = await fetch(GROQ_API_URL, {
@@ -73,7 +95,7 @@ Respond with ONLY the JSON object, nothing else.`;
     }
 
     const data = await groqRes.json();
-    const raw = data?.choices?.[0]?.message?.content?.trim() || '{}';
+    const raw = data.choices?.[0]?.message?.content?.trim() || '{}';
 
     let parsed: { airbnb?: string; booking?: string; instagram?: string };
     try {
