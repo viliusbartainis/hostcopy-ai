@@ -22,7 +22,10 @@ export async function POST() {
     });
     return NextResponse.json({ url: session.url });
   } catch (err) {
-    const message = err instanceof Error ? err.message : 'Unknown error';
-    return NextResponse.json({ error: message }, { status: 500 });
+    console.error('Checkout error:', err);
+    return NextResponse.json(
+      { error: 'Checkout failed. Please try again in a moment.' },
+      { status: 500 }
+    );
   }
 }

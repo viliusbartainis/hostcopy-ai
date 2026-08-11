@@ -68,8 +68,8 @@ Respond with ONLY the JSON object, nothing else.`;
 
     if (!groqRes.ok) {
       const errText = await groqRes.text();
-      console.error('Groq API error:', errText);
-      return NextResponse.json({ error: `Groq error (${groqRes.status}): ${errText}` }, { status: 500 });
+      console.error(`Groq API error (${groqRes.status}):`, errText);
+      return NextResponse.json({ error: 'Generation failed. Please try again in a moment.' }, { status: 500 });
     }
 
     const data = await groqRes.json();
@@ -90,7 +90,7 @@ Respond with ONLY the JSON object, nothing else.`;
   } catch (error) {
     console.error('Generation error:', error);
     return NextResponse.json(
-      { error: `Exception: ${error instanceof Error ? error.message : String(error)}` },
+      { error: 'Generation failed. Please try again in a moment.' },
       { status: 500 }
     );
   }
