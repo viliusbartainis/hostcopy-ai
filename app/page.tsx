@@ -507,6 +507,11 @@ export default function Home() {
           <a href="/blog" className="text-sm text-stone-500 hover:text-stone-800 underline">
             {tFooter('blogLink')}
           </a>
+          <p className="text-xs text-stone-400 mt-2">
+            <a href="/privacy" className="underline hover:text-stone-600">
+              Privacy Policy
+            </a>
+          </p>
           <p className="text-xs text-stone-400 mt-4">
             {tFooter('privacyNote')}{' '}
             <a href="mailto:vilius.bartainis67@gmail.com" className="underline">
