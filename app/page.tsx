@@ -87,11 +87,6 @@ function readInitialState() {
   if (typeof window === 'undefined') {
     return { pro: false, used: 0 };
   }
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('success') === 'true') {
-    localStorage.setItem(PRO_KEY, 'true');
-    window.history.replaceState({}, '', '/');
-  }
   return {
     pro: localStorage.getItem(PRO_KEY) === 'true',
     used: Number(localStorage.getItem(STORAGE_KEY) || '0'),
@@ -135,6 +130,27 @@ export default function Home() {
     setIsPro(initial.pro);
     setUsesUsed(initial.used);
     setHydrated(true);
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('success') === 'true') {
+      const sessionId = params.get('session_id');
+      if (sessionId) {
+        fetch(`/api/verify-session?session_id=${encodeURIComponent(sessionId)}`)
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.valid === true) {
+              localStorage.setItem(PRO_KEY, 'true');
+              setIsPro(true);
+            }
+          })
+          .catch(() => {})
+          .finally(() => {
+            window.history.replaceState({}, '', '/');
+          });
+      } else {
+        window.history.replaceState({}, '', '/');
+      }
+    }
   }, []);
 
   const freeUsesLeft = FREE_LIMIT - usesUsed;
