@@ -527,6 +527,10 @@ export default function Home() {
             <a href="/privacy" className="underline hover:text-stone-600">
               Privacy Policy
             </a>
+            {' · '}
+            <a href="/terms" className="underline hover:text-stone-600">
+              Terms of Service
+            </a>
           </p>
           <p className="text-xs text-stone-400 mt-4">
             {tFooter('privacyNote')}{' '}
