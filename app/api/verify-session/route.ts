@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import Stripe from 'stripe';
+import { createProToken, COOKIE_NAME, TOKEN_TTL_SECONDS } from '@/app/lib/proToken';
 
 const API_VERSION = '2025-03-31.basil' as Stripe.StripeConfig['apiVersion'];
 
@@ -8,16 +9,32 @@ export async function GET(req: NextRequest) {
   if (!sessionId) {
     return NextResponse.json({ valid: false }, { status: 400 });
   }
+
   if (!process.env.STRIPE_SECRET_KEY) {
     return NextResponse.json({ valid: false }, { status: 503 });
   }
+
   try {
     const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: API_VERSION });
     const session = await stripe.checkout.sessions.retrieve(sessionId);
+
     const valid =
       session.payment_status === 'paid' &&
       session.status === 'complete';
-    return NextResponse.json({ valid });
+
+    const res = NextResponse.json({ valid });
+
+    if (valid) {
+      res.cookies.set(COOKIE_NAME, createProToken(), {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'lax',
+        path: '/',
+        maxAge: TOKEN_TTL_SECONDS,
+      });
+    }
+
+    return res;
   } catch {
     return NextResponse.json({ valid: false }, { status: 400 });
   }
