@@ -1,9 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from 'redis';
+import { verifyProToken, COOKIE_NAME } from '@/app/lib/proToken';
 
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const GROQ_MODEL = 'openai/gpt-oss-120b';
-
 const RATE_LIMIT = 8;
 const WINDOW_SECONDS = 60 * 60;
 
@@ -24,7 +24,6 @@ async function getRedis() {
 async function isRateLimited(ip: string): Promise<boolean> {
   try {
     const redis = await getRedis();
-    // Fail open if Redis is not configured/available so generation still works.
     if (!redis) return false;
     const key = `ratelimit:${ip}`;
     const count = await redis.incr(key);
@@ -41,7 +40,9 @@ async function isRateLimited(ip: string): Promise<boolean> {
 export async function POST(req: NextRequest) {
   try {
     const ip = req.headers.get('x-forwarded-for') || 'unknown';
-    if (await isRateLimited(ip)) {
+    const isPro = verifyProToken(req.cookies.get(COOKIE_NAME)?.value);
+
+    if (!isPro && (await isRateLimited(ip))) {
       return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
     }
 
@@ -67,6 +68,7 @@ export async function POST(req: NextRequest) {
 - Guests: ${guests}, Bedrooms: ${bedrooms}
 - Amenities: ${Array.isArray(amenities) ? amenities.join(', ') : ''}
 - Tone: ${tone}
+
 Respond with ONLY the JSON object, nothing else.`;
 
     const groqRes = await fetch(GROQ_API_URL, {
