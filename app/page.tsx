@@ -538,6 +538,7 @@ export default function Home() {
               vilius.bartainis67@gmail.com
             </a>
           </p>
+          <p className="mt-4"><a href="https://twelve.tools" target="_blank" rel="noopener noreferrer"><img src="https://twelve.tools/badge0-white.svg" alt="Featured on Twelve Tools" width={148} height={40} /></a></p>
         </footer>
       </main>
     </>
