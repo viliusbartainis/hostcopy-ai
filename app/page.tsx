@@ -203,10 +203,20 @@ export default function Home() {
       const data = await res.json();
       if (!res.ok) {
         setError(data.error || tErrors('generic'));
+        if (typeof window !== 'undefined' && window.gtag) {
+          window.gtag('event', 'generate_failed', { reason: data.error || 'unknown' });
+        }
         return;
       }
       setResults({ airbnb: data.airbnb, booking: data.booking, instagram: data.instagram });
       setActiveTab('airbnb');
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'generate_description', {
+          is_pro: isPro,
+          property_type: propertyType,
+          tone,
+        });
+      }
       if (!isPro) {
         const newUsed = usesUsed + 1;
         setUsesUsed(newUsed);
