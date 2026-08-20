@@ -2,7 +2,8 @@
   "Header": {
     "manageSubscription": "Zarządzaj subskrypcją",
     "proActive": "Pro aktywne",
-    "buyPremium": "Kup Premium"
+    "buyPremium": "Kup Premium",
+    "blog": "Blog"
   },
   "Hero": {
     "title": "Napisz oferty na Airbnb, Booking.com i Instagram za jednym razem",
@@ -70,6 +71,14 @@
     "copy": "Kopiuj do schowka",
     "copied": "Skopiowano!"
   },
+  "Showcase": {
+    "eyebrow": "Zobacz to w akcji",
+    "title": "Prawdziwy przykład, nie film demonstracyjny",
+    "subtitle": "Oto, co HostCopy AI faktycznie generuje z jednego formularza — żadnych zmyślonych statystyk, tylko wynik.",
+    "label": "Wersja Airbnb · przykładowy wynik",
+    "propertyLabel": "Mieszkanie 2-pokojowe, Stare Miasto w Wilnie",
+    "text": "Obudź się przy brukowanych uliczkach i biciu kościelnych dzwonów: to słoneczne mieszkanie z 2 sypialniami znajduje się przy cichym podwórku, zaledwie dwie minuty od ulicy Pilies, w samym sercu wileńskiego Starego Miasta. Wysokie sufity, w pełni wyposażona kuchnia i prywatny balkon sprawiają, że czujesz się jak w domu — niezależnie od tego, czy zostajesz na weekend, czy na miesiąc. Kawiarnie, katedra i rzeka są w zasięgu spaceru. Szybkie WiFi i porządne biurko sprawiają, że sprawdzi się też do pracy zdalnej. Idealne dla par, małych rodzin lub dwójki znajomych, którzy chcą naprawdę mieszkać na Starym Mieście, a nie tylko je zwiedzać."
+  },
   "Pricing": {
     "eyebrow": "Cennik",
     "title": "Stworzone dla każdego typu gospodarza",
@@ -93,6 +102,9 @@
       "feature2": "Wszystkie trzy platformy",
       "feature3": "Każdy typ obiektu i ton",
       "feature4": "Bez rejestracji, anuluj w każdej chwili",
+      "feature5": "Priorytetowa generacja — bez limitów szybkości",
+      "feature6": "Wszystkie 8 języków do wyboru",
+      "feature7": "Wsparcie e-mailowe",
       "cta": "Przejdź na Pro",
       "redirecting": "Przekierowywanie..."
     },
@@ -105,6 +117,7 @@
       "feature2": "Wirtualne oprowadzenie po obiekcie generowane przez AI ze zdjęć",
       "feature3": "Generowanie masowe dla wielu ofert",
       "feature4": "Priorytetowe wsparcie",
+      "feature5": "Priorytetowy dostęp do nowych funkcji",
       "cta": "Skontaktuj się w sprawie wczesnego dostępu"
     },
     "footnote": "Ceny w euro. Anuluj w każdej chwili. Funkcje Premium będą udostępniane najpierw użytkownikom z wczesnym dostępem."
@@ -118,7 +131,9 @@
     "q3": "Co dodaje plan Premium?",
     "a3": "Premium dodaje wirtualne oprowadzenie po obiekcie generowane przez AI — prześlij zdjęcia lub link, a system stworzy opis pokój po pokoju — a także generowanie masowe do zarządzania wieloma ofertami naraz.",
     "q4": "Czy przechowujecie informacje o moim obiekcie?",
-    "a4": "Nie — Twoje dane są używane wyłącznie do wygenerowania opisu i nie są zapisywane ani udostępniane."
+    "a4": "Nie — Twoje dane są używane wyłącznie do wygenerowania opisu i nie są zapisywane ani udostępniane.",
+    "q5": "Dlaczego warto wybrać HostCopy AI zamiast ChatGPT lub innego narzędzia AI?",
+    "a5": "Technicznie mógłbyś sam napisać prompt w ChatGPT — różnica polega na tym, że HostCopy AI ma już wbudowane trzy osobne, dopracowane prompty (ciepły, narracyjny ton Airbnb, rzeczowy, łatwy do przeskanowania format Booking.com, krótki styl podpisu na Instagramie), więc otrzymujesz wszystkie trzy poprawnie sformatowane za jednym kliknięciem, zamiast samodzielnie pisać i dostosowywać trzy prompty za każdym razem, gdy wystawiasz ofertę."
   },
   "Footer": {
     "blogLink": "Przeczytaj nasze poradniki dla gospodarzy Airbnb →",

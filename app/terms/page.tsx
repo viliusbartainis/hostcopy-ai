@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Terms of Service | HostCopy AI",
@@ -8,9 +9,14 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="max-w-3xl mx-auto px-6 py-16 prose prose-neutral">
+    <main className="min-h-screen bg-background">
+      <div className="max-w-3xl mx-auto px-6 py-16">
+        <Link href="/" className="text-sm text-navy/60 hover:text-navy transition-colors">
+          &larr; Back to HostCopy AI
+        </Link>
+        <div className="legal-content mt-8">
       <h1>Terms of Service</h1>
-      <p className="text-sm text-neutral-500">Last updated: August 2026</p>
+      <p className="text-sm">Last updated: August 2026</p>
       <p>
         These Terms of Service ("Terms") govern your use of HostCopy AI
         ("the Service"), operated from Vilnius, Lithuania. By using the
@@ -58,6 +64,8 @@ export default function TermsPage() {
       <p>These Terms are governed by the laws of the Republic of Lithuania.</p>
       <h2>Contact</h2>
       <p>Questions? Reach out via the contact details on our homepage.</p>
+        </div>
+      </div>
     </main>
   );
 }

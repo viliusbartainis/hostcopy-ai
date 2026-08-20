@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | HostCopy AI",
@@ -9,9 +10,14 @@ export const metadata: Metadata = {
 
 export default function PrivacyPolicyPage() {
   return (
-    <main className="max-w-3xl mx-auto px-6 py-16 prose prose-neutral">
+    <main className="min-h-screen bg-background">
+      <div className="max-w-3xl mx-auto px-6 py-16">
+        <Link href="/" className="text-sm text-navy/60 hover:text-navy transition-colors">
+          &larr; Back to HostCopy AI
+        </Link>
+        <div className="legal-content mt-8">
       <h1>Privacy Policy</h1>
-      <p className="text-sm text-neutral-500">Last updated: August 2026</p>
+      <p className="text-sm">Last updated: August 2026</p>
       <p>
         HostCopy AI (&quot;we&quot;, &quot;us&quot;) is a tool that generates
         Airbnb, Booking.com, and Instagram listing descriptions from
@@ -96,6 +102,8 @@ export default function PrivacyPolicyPage() {
         Questions about this policy? Reach out via the contact details on
         our homepage.
       </p>
+        </div>
+      </div>
     </main>
   );
 }

@@ -2,7 +2,8 @@
   "Header": {
     "manageSubscription": "Gérer l'abonnement",
     "proActive": "Pro actif",
-    "buyPremium": "Acheter Premium"
+    "buyPremium": "Acheter Premium",
+    "blog": "Blog"
   },
   "Hero": {
     "title": "Rédigez vos annonces Airbnb, Booking.com et Instagram en une seule fois",
@@ -70,6 +71,14 @@
     "copy": "Copier",
     "copied": "Copié !"
   },
+  "Showcase": {
+    "eyebrow": "Voyez-le en action",
+    "title": "Un exemple réel, pas une vidéo de démonstration",
+    "subtitle": "Voici ce que HostCopy AI génère réellement à partir d'un seul formulaire — aucune statistique inventée, juste le résultat.",
+    "label": "Version Airbnb · exemple de résultat",
+    "propertyLabel": "Appartement 2 chambres, vieille ville de Vilnius",
+    "text": "Réveillez-vous au son des pavés et des cloches d'église : cet appartement lumineux de 2 chambres donne sur une cour tranquille, à deux minutes seulement de la rue Pilies, au cœur de la vieille ville de Vilnius. Plafonds hauts, cuisine entièrement équipée et balcon privé donnent une vraie impression de chez-soi — que ce soit pour un week-end ou un mois. Cafés, cathédrale et rivière sont à quelques pas. Le WiFi rapide et un vrai bureau permettent aussi de télétravailler. Idéal pour les couples, les petites familles ou deux amis qui veulent vraiment vivre la vieille ville, pas seulement la visiter."
+  },
   "Pricing": {
     "eyebrow": "Tarifs",
     "title": "Conçu pour chaque type d'hôte",
@@ -93,6 +102,9 @@
       "feature2": "Les trois plateformes",
       "feature3": "Tous types de logements et tons",
       "feature4": "Sans inscription, annulez à tout moment",
+      "feature5": "Génération prioritaire, sans limite de débit",
+      "feature6": "Les 8 langues disponibles au choix",
+      "feature7": "Support par e-mail",
       "cta": "Passer à Pro",
       "redirecting": "Redirection..."
     },
@@ -105,6 +117,7 @@
       "feature2": "Visite guidée du logement générée par IA à partir de photos",
       "feature3": "Génération en masse pour plusieurs annonces",
       "feature4": "Support prioritaire",
+      "feature5": "Accès prioritaire aux nouvelles fonctionnalités",
       "cta": "Contacter pour un accès anticipé"
     },
     "footnote": "Prix en euros. Annulez à tout moment. Les fonctionnalités Premium seront déployées en priorité aux utilisateurs en accès anticipé."
@@ -118,7 +131,9 @@
     "q3": "Que propose le plan Premium ?",
     "a3": "Premium ajoute une visite guidée du logement générée par IA — téléchargez des photos ou un lien et il rédige une visite pièce par pièce — ainsi qu'une génération en masse pour gérer plusieurs annonces à la fois.",
     "q4": "Stockez-vous les informations de mon logement ?",
-    "a4": "Non — vos données ne servent qu'à générer la description et ne sont ni enregistrées ni partagées."
+    "a4": "Non — vos données ne servent qu'à générer la description et ne sont ni enregistrées ni partagées.",
+    "q5": "Pourquoi utiliser HostCopy AI plutôt que ChatGPT ou un autre outil d'IA ?",
+    "a5": "Vous pourriez techniquement rédiger le prompt vous-même dans ChatGPT — la différence, c'est que HostCopy AI intègre déjà trois prompts distincts et ajustés (le ton chaleureux et narratif d'Airbnb, le format factuel et facile à parcourir de Booking.com, le style de légende courte d'Instagram), afin d'obtenir les trois correctement formatés en un clic, au lieu d'écrire et d'ajuster trois prompts vous-même à chaque annonce."
   },
   "Footer": {
     "blogLink": "Lisez nos guides pour hôtes Airbnb →",

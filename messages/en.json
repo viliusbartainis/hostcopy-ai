@@ -2,7 +2,8 @@
   "Header": {
     "manageSubscription": "Manage subscription",
     "proActive": "Pro active",
-    "buyPremium": "Buy Premium"
+    "buyPremium": "Buy Premium",
+    "blog": "Blog"
   },
   "Hero": {
     "title": "Write Your Airbnb, Booking.com and Instagram Listings in One Go",
@@ -70,6 +71,14 @@
     "copy": "Copy to clipboard",
     "copied": "Copied!"
   },
+  "Showcase": {
+    "eyebrow": "See it in action",
+    "title": "A real example, not a demo video",
+    "subtitle": "Here's what HostCopy AI actually generates from one form — no invented stats, just the output.",
+    "label": "Airbnb version · example output",
+    "propertyLabel": "2BR apartment, Vilnius Old Town",
+    "text": "Wake up to cobblestone streets and church bells: this sun-lit 2-bedroom apartment sits on a quiet courtyard just two minutes from Pilies Street, in the heart of Vilnius Old Town. High ceilings, a fully equipped kitchen, and a private balcony make it feel like home — whether you're here for a weekend or a month. Cafés, the Cathedral, and the river are all an easy walk away. Fast WiFi and a proper desk mean it works for remote workdays too. Perfect for couples, small families, or two friends who want to actually live in the Old Town, not just visit it."
+  },
   "Pricing": {
     "eyebrow": "Pricing",
     "title": "Built for every kind of host",
@@ -93,6 +102,9 @@
       "feature2": "All three platforms",
       "feature3": "Every property type & tone",
       "feature4": "No signup, cancel anytime",
+      "feature5": "Priority generation — no rate limits",
+      "feature6": "All 8 languages to choose from",
+      "feature7": "Email support",
       "cta": "Upgrade to Pro",
       "redirecting": "Redirecting..."
     },
@@ -105,6 +117,7 @@
       "feature2": "AI property walkthrough from photos",
       "feature3": "Bulk generation for multiple listings",
       "feature4": "Priority support",
+      "feature5": "Priority access to new features",
       "cta": "Contact for early access"
     },
     "footnote": "Prices in EUR. Cancel anytime. Premium features roll out to early-access users first."
@@ -118,7 +131,9 @@
     "q3": "What does the Premium plan add?",
     "a3": "Premium adds an AI property walkthrough — upload photos or a link and it drafts a room-by-room tour — plus bulk generation for managing multiple listings at once.",
     "q4": "Do you store my listing information?",
-    "a4": "No — your inputs are only used to generate the description and are not saved or shared."
+    "a4": "No — your inputs are only used to generate the description and are not saved or shared.",
+    "q5": "Why use HostCopy AI instead of ChatGPT or another AI tool?",
+    "a5": "You technically could prompt ChatGPT yourself — the difference is HostCopy AI already has three separate, tuned prompts (Airbnb's warm/story tone, Booking.com's factual/scannable format, Instagram's short caption style) built in, so you get all three correctly formatted in one click instead of writing and adjusting three prompts yourself each time you list something."
   },
   "Footer": {
     "blogLink": "Read our Airbnb hosting guides →",

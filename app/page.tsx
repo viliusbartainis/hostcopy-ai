@@ -73,6 +73,14 @@ const faqJsonLd = {
         text: "Currently Airbnb, Booking.com, and Instagram captions — all generated from one form.",
       },
     },
+    {
+      "@type": "Question",
+      name: "Why use HostCopy AI instead of ChatGPT or another AI tool?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You technically could prompt ChatGPT yourself — the difference is HostCopy AI already has three separate, tuned prompts (Airbnb's warm/story tone, Booking.com's factual/scannable format, Instagram's short caption style) built in, so you get all three correctly formatted in one click instead of writing and adjusting three prompts yourself each time you list something.",
+      },
+    },
   ],
 };
 
@@ -104,6 +112,7 @@ export default function Home() {
   const tGenerate = useTranslations('Generate');
   const tLimit = useTranslations('LimitReached');
   const tResults = useTranslations('Results');
+  const tShowcase = useTranslations('Showcase');
   const tPricing = useTranslations('Pricing');
   const tFaq = useTranslations('Faq');
   const tFooter = useTranslations('Footer');
@@ -245,24 +254,29 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
-      <main className="min-h-screen bg-white">
+      <main className="min-h-screen bg-background">
         <div className="hero-gradient">
           <header className="max-w-5xl mx-auto px-6 pt-6 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <rect width="32" height="32" rx="8" fill="url(#hg)" />
-                <path d="M8 17L16 10L24 17V23C24 23.55 23.55 24 23 24H19V19H13V24H9C8.45 24 8 23.55 8 23V17Z" fill="white" />
-                <circle cx="24" cy="9" r="2.5" fill="#F6EFE0" />
+                <rect width="32" height="32" rx="10" fill="url(#hg)" />
+                <text x="16" y="21.5" textAnchor="middle" fontFamily="Lora, serif" fontSize="13" fontWeight="600" fill="#FAF6EE">HC</text>
                 <defs>
                   <linearGradient id="hg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#C9973E" />
-                    <stop offset="1" stopColor="#1B2A4A" />
+                    <stop stopColor="#B5652E" />
+                    <stop offset="1" stopColor="#3B2F26" />
                   </linearGradient>
                 </defs>
               </svg>
               <span className="font-display font-semibold text-navy text-lg">HostCopy AI</span>
             </div>
             <div className="flex items-center gap-3">
+              <a
+                href="/blog"
+                className="text-sm font-medium text-navy/70 hover:text-navy transition-colors"
+              >
+                {tHeader('blog')}
+              </a>
               <LanguageSwitcher />
               {hydrated && isPro ? (
                 <div className="flex items-center gap-3">
@@ -274,14 +288,14 @@ export default function Home() {
                   >
                     {tHeader('manageSubscription')}
                   </a>
-                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-brass-dark bg-white border border-brass/40 rounded-full px-3 py-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-brass" /> {tHeader('proActive')}
+                  <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-300 rounded-full px-3 py-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> {tHeader('proActive')}
                   </span>
                 </div>
               ) : (
                 <a
                   href="#pricing"
-                  className="text-sm font-medium text-parchment bg-navy hover:bg-navy-light rounded-full px-4 py-2 transition-colors"
+                  className="text-sm font-medium text-parchment bg-brass hover:bg-brass-dark rounded-full px-4 py-2 transition-colors"
                 >
                   {tHeader('buyPremium')}
                 </a>
@@ -362,7 +376,7 @@ export default function Home() {
                 </p>
               )}
               <button onClick={handleGenerate} disabled={loading || !hydrated || limitReached}
-                className="w-full bg-navy text-parchment rounded-lg py-3 font-medium hover:bg-navy-light disabled:opacity-50 transition-colors">
+                className="w-full bg-brass text-white rounded-lg py-3 font-medium hover:bg-brass-dark disabled:opacity-50 transition-colors">
                 {genLabel}
               </button>
               {hydrated && limitReached && (
@@ -395,14 +409,14 @@ export default function Home() {
                     <button key={rt.key} onClick={() => setActiveTab(rt.key)}
                       className={`px-4 py-2 text-sm font-mono uppercase tracking-wide rounded-t-lg transition-colors ${
                         activeTab === rt.key
-                          ? 'bg-white text-navy border border-navy/15 border-b-0'
+                          ? 'bg-parchment text-navy border border-navy/15 border-b-0'
                           : 'text-navy/40 hover:text-navy/70'
                       }`}>
                       {rt.label}
                     </button>
                   ))}
                 </div>
-                <div className="ticket-perforation p-5 bg-white border border-navy/15 border-t-0 rounded-b-xl rounded-tr-xl">
+                <div className="ticket-perforation p-5 bg-parchment border border-navy/15 border-t-0 rounded-b-xl rounded-tr-xl">
                   <p className="text-ink whitespace-pre-wrap leading-relaxed">{results[activeTab]}</p>
                   <button
                     onClick={() => {
@@ -419,6 +433,25 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="max-w-2xl mx-auto px-6 pb-16">
+          <div className="text-center mb-6">
+            <p className="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-3">{tShowcase('eyebrow')}</p>
+            <h2 className="font-display text-2xl md:text-3xl font-semibold text-navy mb-3">
+              {tShowcase('title')}
+            </h2>
+            <p className="text-navy/60 max-w-xl mx-auto">
+              {tShowcase('subtitle')}
+            </p>
+          </div>
+          <div className="bg-parchment rounded-2xl border border-navy/15 p-8">
+            <div className="flex items-center justify-between mb-4">
+              <span className="font-mono text-xs uppercase tracking-wide text-navy/50">{tShowcase('label')}</span>
+              <span className="font-mono text-xs uppercase tracking-wide text-navy/50">{tShowcase('propertyLabel')}</span>
+            </div>
+            <p className="text-ink leading-relaxed whitespace-pre-wrap">{tShowcase('text')}</p>
+          </div>
+        </section>
+
         <section id="pricing" className="max-w-5xl mx-auto px-6 pb-20 scroll-mt-8">
           <div className="text-center mb-3">
             <p className="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-3">{tPricing('eyebrow')}</p>
@@ -431,7 +464,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-5 mt-10 items-stretch">
-            <div className="flex flex-col rounded-2xl border border-navy/15 bg-white p-7">
+            <div className="flex flex-col rounded-2xl border border-navy/15 bg-parchment p-7">
               <p className="font-display text-lg text-navy">{tPricing('free.name')}</p>
               <p className="text-sm text-navy/50 mb-5">{tPricing('free.tagline')}</p>
               <p className="mb-6">
@@ -462,6 +495,9 @@ export default function Home() {
                 <li className="flex gap-2"><span className="text-brass">✓</span> {tPricing('pro.feature2')}</li>
                 <li className="flex gap-2"><span className="text-brass">✓</span> {tPricing('pro.feature3')}</li>
                 <li className="flex gap-2"><span className="text-brass">✓</span> {tPricing('pro.feature4')}</li>
+                <li className="flex gap-2"><span className="text-brass">✓</span> {tPricing('pro.feature5')}</li>
+                <li className="flex gap-2"><span className="text-brass">✓</span> {tPricing('pro.feature6')}</li>
+                <li className="flex gap-2"><span className="text-brass">✓</span> {tPricing('pro.feature7')}</li>
               </ul>
               <button
                 type="button"
@@ -476,7 +512,7 @@ export default function Home() {
               )}
             </div>
 
-            <div className="flex flex-col rounded-2xl border border-navy/15 bg-white p-7">
+            <div className="flex flex-col rounded-2xl border border-navy/15 bg-parchment p-7">
               <p className="font-display text-lg text-navy">{tPricing('premium.name')}</p>
               <p className="text-sm text-navy/50 mb-5">{tPricing('premium.tagline')}</p>
               <p className="mb-6">
@@ -488,6 +524,7 @@ export default function Home() {
                 <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('premium.feature2')}</li>
                 <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('premium.feature3')}</li>
                 <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('premium.feature4')}</li>
+                <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('premium.feature5')}</li>
               </ul>
               <a href="mailto:vilius.bartainis67@gmail.com?subject=HostCopy%20AI%20Premium"
                 className="block text-center rounded-lg border border-navy/25 py-2.5 text-sm font-medium text-navy hover:border-navy/50 transition-colors">
@@ -506,21 +543,25 @@ export default function Home() {
             {tFaq('title')}
           </h2>
           <div className="space-y-4">
-            <details className="bg-white rounded-xl border border-navy/15 p-5">
+            <details className="bg-parchment rounded-xl border border-navy/15 p-5">
               <summary className="font-medium text-navy cursor-pointer">{tFaq('q1')}</summary>
               <p className="text-navy/60 mt-2 text-sm">{tFaq('a1', { limit: FREE_LIMIT })}</p>
             </details>
-            <details className="bg-white rounded-xl border border-navy/15 p-5">
+            <details className="bg-parchment rounded-xl border border-navy/15 p-5">
               <summary className="font-medium text-navy cursor-pointer">{tFaq('q2')}</summary>
               <p className="text-navy/60 mt-2 text-sm">{tFaq('a2')}</p>
             </details>
-            <details className="bg-white rounded-xl border border-navy/15 p-5">
+            <details className="bg-parchment rounded-xl border border-navy/15 p-5">
               <summary className="font-medium text-navy cursor-pointer">{tFaq('q3')}</summary>
               <p className="text-navy/60 mt-2 text-sm">{tFaq('a3')}</p>
             </details>
-            <details className="bg-white rounded-xl border border-navy/15 p-5">
+            <details className="bg-parchment rounded-xl border border-navy/15 p-5">
               <summary className="font-medium text-navy cursor-pointer">{tFaq('q4')}</summary>
               <p className="text-navy/60 mt-2 text-sm">{tFaq('a4')}</p>
+            </details>
+            <details className="bg-parchment rounded-xl border border-navy/15 p-5">
+              <summary className="font-medium text-navy cursor-pointer">{tFaq('q5')}</summary>
+              <p className="text-navy/60 mt-2 text-sm">{tFaq('a5')}</p>
             </details>
           </div>
         </section>
@@ -544,7 +585,6 @@ export default function Home() {
               vilius.bartainis67@gmail.com
             </a>
           </p>
-          <p className="mt-4"><a href="https://twelve.tools" target="_blank" rel="noopener noreferrer"><img src="https://twelve.tools/badge0-white.svg" alt="Featured on Twelve Tools" width={148} height={40} /></a></p>
         </footer>
       </main>
     </>

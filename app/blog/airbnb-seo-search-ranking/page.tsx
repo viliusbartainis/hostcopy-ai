@@ -24,25 +24,25 @@ export default function BlogPost() {
   };
 
   return (
-    <main className="min-h-screen bg-stone-50">
+    <main className="min-h-screen bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
-        <h1 className="text-3xl md:text-4xl font-serif font-semibold text-stone-900 mt-4 mb-6">
+        <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           SEO for Airbnb: How to Rank Higher in Airbnb Search Results
         </h1>
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>Airbnb SEO isn&apos;t like ranking a page on Google, but the ranking factors are real, mostly documented by Airbnb itself over the years, and largely under a host&apos;s control. Most of them come down to habits, not tricks.</p>
-          <h2 className="text-xl font-serif font-semibold text-stone-900 pt-4">How Airbnb&apos;s search ranking actually weighs listings</h2>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">How Airbnb&apos;s search ranking actually weighs listings</h2>
           <p>Response rate and response time carry real weight &mdash; replying within an hour, and always within 24, signals a host who won&apos;t leave a guest hanging mid-trip. Instant Book listings get a meaningful ranking boost, especially in last-minute searches, since Airbnb wants to show guests stays they can actually confirm right away. Acceptance rate matters too: declining a lot of requests works against you, so blocking dates you don&apos;t want booked is usually better than declining a live request. Cancellation rate on the host side is weighted heavily against you, and occupancy rate at your current price point feeds in as well &mdash; Airbnb&apos;s ranking is ultimately optimizing for listings that convert into completed stays, not just listings that get looked at.</p>
-          <h2 className="text-xl font-serif font-semibold text-stone-900 pt-4">Keywords still matter, just not the way people assume</h2>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Keywords still matter, just not the way people assume</h2>
           <p>Airbnb&apos;s search box doesn&apos;t work like a Google keyword match, but filter-based search &mdash; the amenity checkboxes guests tick, like &quot;pool&quot; or &quot;dedicated workspace&quot; &mdash; is driven directly by how completely and accurately you&apos;ve filled out your listing&apos;s amenities, not by wording in your description. That single settings page probably affects how often you get surfaced more than any phrase you choose. In your title, specific, real descriptors &mdash; the neighborhood name, a standout feature &mdash; tend to perform better with guests than generic superlatives, even if the algorithm itself doesn&apos;t parse them the way a search engine would.</p>
-          <h2 className="text-xl font-serif font-semibold text-stone-900 pt-4">Photos and reviews feed ranking indirectly, but powerfully</h2>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Photos and reviews feed ranking indirectly, but powerfully</h2>
           <p>Airbnb doesn&apos;t scan your photos for keywords, but photo quality and count correlate strongly with click-through rate, and the ranking system rewards listings that get clicked and booked &mdash; so better photos improve your position through guest behavior, not direct scoring. Reviews work the same way: recent five-star reviews are a stronger trust signal than one old spike of great ratings, so consistent guest satisfaction over time matters more than a single standout month.</p>
-          <h2 className="text-xl font-serif font-semibold text-stone-900 pt-4">Practical actions that actually move your ranking</h2>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Practical actions that actually move your ranking</h2>
           <ul className="list-disc pl-6 space-y-1">
             <li>Turn on Instant Book if you&apos;re comfortable managing bookings without pre-approving each one</li>
             <li>Reply to every inquiry within an hour, consistently, for months, to build a real response-rate track record</li>
