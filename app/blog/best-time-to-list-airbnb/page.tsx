@@ -24,27 +24,27 @@ export default function BlogPost() {
   };
 
   return (
-    <main className="min-h-screen bg-stone-50">
+    <main className="min-h-screen bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
-        <h1 className="text-3xl md:text-4xl font-serif font-semibold text-stone-900 mt-4 mb-6">
+        <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           Best Time to List Your Airbnb Property
         </h1>
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>A lot of new hosts wait until the busy season is already underway before they publish their listing, thinking that&apos;s when guests are searching. It feels logical, but it usually means missing most of that season&apos;s demand, because a brand-new listing doesn&apos;t rank well or convert well on day one.</p>
-          <h2 className="text-xl font-serif font-semibold text-stone-900 pt-4">Why launch timing matters more than people think</h2>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Why launch timing matters more than people think</h2>
           <p>Airbnb&apos;s search ranking rewards listings with a track record: completed stays, guest reviews, a solid response rate, and low cancellations. None of that exists on day one. A listing published right as peak season starts is competing against established listings with dozens of reviews, while still trying to earn its first one. That gap costs bookings during the exact weeks demand is highest.</p>
-          <h2 className="text-xl font-serif font-semibold text-stone-900 pt-4">The case for listing before the season starts</h2>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">The case for listing before the season starts</h2>
           <p>If your market's busy months are, say, June through August, publishing in February or March gives your listing several months to collect its first reviews and build a response history at lower stakes, since off-peak demand is more forgiving of an unranked, review-less listing. By the time real demand arrives, you&apos;re not starting from zero anymore.</p>
-          <h2 className="text-xl font-serif font-semibold text-stone-900 pt-4">If you can&apos;t control your launch date</h2>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">If you can&apos;t control your launch date</h2>
           <p>Sometimes a property just isn&apos;t ready until later, and that&apos;s fine. A few things help close the gap: price a little below comparable listings for your first few bookings to get reviews in faster, keep minimum-stay requirements loose so more guests can book you, and reply to inquiries quickly, since response time and rate both factor into how Airbnb ranks new listings.</p>
-          <h2 className="text-xl font-serif font-semibold text-stone-900 pt-4">Seasonality isn&apos;t the same everywhere</h2>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Seasonality isn&apos;t the same everywhere</h2>
           <p>A beach property, a ski cabin, and a city-center apartment all have different demand curves. City listings often see steadier, business-travel-driven demand year-round, while vacation destinations swing hard between peak and off-season. Before assuming you know your best launch window, check the calendars of a few comparable listings in your exact area to see when they fill up and when they sit empty.</p>
-          <h2 className="text-xl font-serif font-semibold text-stone-900 pt-4">A simple launch checklist</h2>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">A simple launch checklist</h2>
           <ul className="list-disc pl-6 space-y-1">
             <li>Look at 3-5 comparable listings near you and note their busiest months</li>
             <li>Aim to publish 2-3 months before your local peak season begins</li>

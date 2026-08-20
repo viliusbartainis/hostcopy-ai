@@ -2,7 +2,8 @@
   "Header": {
     "manageSubscription": "Valdyti prenumeratą",
     "proActive": "Pro aktyvus",
-    "buyPremium": "Įsigyti Premium"
+    "buyPremium": "Įsigyti Premium",
+    "blog": "Blog"
   },
   "Hero": {
     "title": "Parašykite Airbnb, Booking.com ir Instagram skelbimus per vieną kartą",
@@ -70,6 +71,14 @@
     "copy": "Kopijuoti",
     "copied": "Nukopijuota!"
   },
+  "Showcase": {
+    "eyebrow": "Pamatykite tai veikiant",
+    "title": "Realus pavyzdys, ne demonstracinis vaizdo įrašas",
+    "subtitle": "Štai ką HostCopy AI iš tikrųjų sugeneruoja iš vienos formos — jokių išgalvotų skaičių, tik rezultatas.",
+    "label": "Airbnb versija · pavyzdinis rezultatas",
+    "propertyLabel": "2 miegamųjų butas, Vilniaus senamiestis",
+    "text": "Pabuskite nuo grindinio gatvių ir bažnyčių varpų: šis saulėtas 2 miegamųjų butas įsikūręs ramiame kiemelyje, vos per dvi minutes nuo Pilies gatvės, pačioje Vilniaus senamiesčio širdyje. Aukštos lubos, pilnai įrengta virtuvė ir privatus balkonas sukuria namų jausmą — nesvarbu, ar atvykstate savaitgaliui, ar mėnesiui. Kavinės, katedra ir upė — visos pasiekiamos pėsčiomis. Greitas „WiFi“ ir tikras darbo stalas leidžia dirbti nuotoliniu būdu. Puikiai tinka poroms, mažoms šeimoms ar dviem draugams, norintiems iš tikrųjų pagyventi senamiestyje, o ne tik jį aplankyti."
+  },
   "Pricing": {
     "eyebrow": "Kainos",
     "title": "Sukurta kiekvienam šeimininkui",
@@ -93,6 +102,9 @@
       "feature2": "Visos trys platformos",
       "feature3": "Visi būsto tipai ir tonai",
       "feature4": "Registracija nereikalinga, atsisakyti bet kada",
+      "feature5": "Prioritetinė generacija — be apribojimų",
+      "feature6": "Visos 8 kalbos pasirinkimui",
+      "feature7": "El. pašto palaikymas",
       "cta": "Atnaujinti į Pro",
       "redirecting": "Nukreipiama..."
     },
@@ -105,6 +117,7 @@
       "feature2": "AI būsto apžvalga iš nuotraukų",
       "feature3": "Masinis generavimas keliems skelbimams",
       "feature4": "Prioritetinis palaikymas",
+      "feature5": "Prioritetas naujoms funkcijoms",
       "cta": "Susisiekti dėl ankstyvos prieigos"
     },
     "footnote": "Kainos nurodytos eurais. Galite atsisakyti bet kada. Premium funkcijos pirmiausia pasieks ankstyvosios prieigos naudotojus."
@@ -118,7 +131,9 @@
     "q3": "Ką papildomai suteikia Premium planas?",
     "a3": "Premium prideda AI būsto apžvalgą — įkeliate nuotraukas ar nuorodą, o sistema parengia kambarį po kambario apžvalgą — bei masinį generavimą keliems skelbimams tvarkyti vienu metu.",
     "q4": "Ar saugote mano skelbimo informaciją?",
-    "a4": "Ne — jūsų įvesti duomenys naudojami tik aprašymui generuoti ir nėra išsaugomi ar dalinami."
+    "a4": "Ne — jūsų įvesti duomenys naudojami tik aprašymui generuoti ir nėra išsaugomi ar dalinami.",
+    "q5": "Kodėl rinktis HostCopy AI, o ne ChatGPT ar kitą AI įrankį?",
+    "a5": "Iš tiesų galėtumėte patys parašyti užklausą ChatGPT — skirtumas tas, kad HostCopy AI jau turi tris atskiras, pritaikytas užklausas (šiltą, istorijos stiliaus Airbnb toną, faktinį, lengvai peržvelgiamą Booking.com formatą, trumpo aprašymo Instagram stilių), todėl visus tris teisingai suformatuotus tekstus gaunate vienu paspaudimu, o ne rašydami ir derindami tris užklausas patys kiekvieną kartą, kai talpinate skelbimą."
   },
   "Footer": {
     "blogLink": "Skaitykite mūsų Airbnb šeimininkavimo vadovus →",

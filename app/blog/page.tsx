@@ -101,14 +101,14 @@ const posts = [
 
 export default function BlogIndex() {
   return (
-    <main className="min-h-screen bg-stone-50">
+    <main className="min-h-screen bg-background">
       <div className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
-        <h1 className="text-3xl md:text-4xl font-serif font-semibold text-stone-900 mt-4 mb-10">Blog</h1>
+        <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-10">Blog</h1>
         <div className="space-y-8">
           {posts.map((post) => (
             <div key={post.slug}>
-              <Link href={`/blog/${post.slug}`} className="text-xl font-serif font-semibold text-stone-900 underline">
+              <Link href={`/blog/${post.slug}`} className="text-xl font-display font-semibold text-stone-900 underline">
                 {post.title}
               </Link>
               <p className="text-stone-600 mt-2 text-sm">{post.description}</p>

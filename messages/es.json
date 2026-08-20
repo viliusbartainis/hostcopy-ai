@@ -2,7 +2,8 @@
   "Header": {
     "manageSubscription": "Gestionar suscripción",
     "proActive": "Pro activo",
-    "buyPremium": "Comprar Premium"
+    "buyPremium": "Comprar Premium",
+    "blog": "Blog"
   },
   "Hero": {
     "title": "Escriba sus anuncios de Airbnb, Booking.com e Instagram de una sola vez",
@@ -70,6 +71,14 @@
     "copy": "Copiar al portapapeles",
     "copied": "¡Copiado!"
   },
+  "Showcase": {
+    "eyebrow": "Véalo en acción",
+    "title": "Un ejemplo real, no un vídeo de demostración",
+    "subtitle": "Esto es lo que HostCopy AI genera realmente a partir de un formulario — sin estadísticas inventadas, solo el resultado.",
+    "label": "Versión Airbnb · ejemplo de resultado",
+    "propertyLabel": "Apartamento de 2 habitaciones, casco antiguo de Vilna",
+    "text": "Despierta con calles de adoquines y campanas de iglesia: este luminoso apartamento de 2 habitaciones está en un patio tranquilo, a solo dos minutos de la calle Pilies, en el corazón del casco antiguo de Vilna. Techos altos, cocina totalmente equipada y balcón privado hacen que se sienta como en casa, ya sea para un fin de semana o un mes. Cafés, la catedral y el río están a un paseo. WiFi rápido y un escritorio adecuado permiten trabajar en remoto sin problemas. Perfecto para parejas, familias pequeñas o dos amigos que quieren vivir realmente el casco antiguo, no solo visitarlo."
+  },
   "Pricing": {
     "eyebrow": "Precios",
     "title": "Diseñado para todo tipo de anfitrión",
@@ -93,6 +102,9 @@
       "feature2": "Las tres plataformas",
       "feature3": "Todos los tipos de alojamiento y tonos",
       "feature4": "Sin registro, cancele cuando quiera",
+      "feature5": "Generación prioritaria, sin límites de velocidad",
+      "feature6": "Los 8 idiomas disponibles para elegir",
+      "feature7": "Soporte por correo electrónico",
       "cta": "Actualizar a Pro",
       "redirecting": "Redirigiendo..."
     },
@@ -105,6 +117,7 @@
       "feature2": "Recorrido del alojamiento con IA a partir de fotos",
       "feature3": "Generación masiva para varios anuncios",
       "feature4": "Soporte prioritario",
+      "feature5": "Acceso prioritario a nuevas funciones",
       "cta": "Contactar para acceso anticipado"
     },
     "footnote": "Precios en euros. Cancele cuando quiera. Las funciones Premium se lanzarán primero a los usuarios de acceso anticipado."
@@ -118,7 +131,9 @@
     "q3": "¿Qué añade el plan Premium?",
     "a3": "Premium añade un recorrido del alojamiento con IA — sube fotos o un enlace y genera un recorrido habitación por habitación — además de generación masiva para gestionar varios anuncios a la vez.",
     "q4": "¿Guardan la información de mi anuncio?",
-    "a4": "No — sus datos solo se usan para generar la descripción y no se guardan ni se comparten."
+    "a4": "No — sus datos solo se usan para generar la descripción y no se guardan ni se comparten.",
+    "q5": "¿Por qué usar HostCopy AI en lugar de ChatGPT u otra herramienta de IA?",
+    "a5": "Técnicamente podría escribir el prompt usted mismo en ChatGPT — la diferencia es que HostCopy AI ya tiene integrados tres prompts distintos y ajustados (el tono cálido y narrativo de Airbnb, el formato factual y escaneable de Booking.com, el estilo de subtítulo corto de Instagram), así que obtiene los tres correctamente formateados con un solo clic, en lugar de escribir y ajustar tres prompts usted mismo cada vez que publica un anuncio."
   },
   "Footer": {
     "blogLink": "Lea nuestras guías para anfitriones de Airbnb →",
