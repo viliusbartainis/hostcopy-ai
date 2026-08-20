@@ -90,6 +90,8 @@
       "feature1": "{limit} generations total",
       "feature2": "All three platforms",
       "feature3": "No signup required",
+      "feature4": "All 8 languages included",
+      "feature5": "Your data is never stored or shared",
       "cta": "Start free"
     },
     "pro": {
@@ -100,10 +102,10 @@
       "period": "/month",
       "feature1": "Unlimited generations",
       "feature2": "All three platforms",
-      "feature3": "Every property type & tone",
+      "feature3": "Manage your subscription anytime",
       "feature4": "No signup, cancel anytime",
       "feature5": "Priority generation — no rate limits",
-      "feature6": "All 8 languages to choose from",
+      "feature6": "Your data is never stored or shared",
       "feature7": "Email support",
       "cta": "Upgrade to Pro",
       "redirecting": "Redirecting..."
