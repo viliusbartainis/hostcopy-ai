@@ -90,6 +90,8 @@
       "feature1": "Iš viso {limit} generavimai",
       "feature2": "Visos trys platformos",
       "feature3": "Registracija nereikalinga",
+      "feature4": "Visos 8 kalbos įtrauktos",
+      "feature5": "Jūsų duomenys niekada nesaugomi ir nedalijami",
       "cta": "Pradėti nemokamai"
     },
     "pro": {
@@ -100,10 +102,10 @@
       "period": "/mėn.",
       "feature1": "Neribotas generavimas",
       "feature2": "Visos trys platformos",
-      "feature3": "Visi būsto tipai ir tonai",
+      "feature3": "Valdykite prenumeratą bet kada",
       "feature4": "Registracija nereikalinga, atsisakyti bet kada",
       "feature5": "Prioritetinė generacija — be apribojimų",
-      "feature6": "Visos 8 kalbos pasirinkimui",
+      "feature6": "Jūsų duomenys niekada nesaugomi ir nedalijami",
       "feature7": "El. pašto palaikymas",
       "cta": "Atnaujinti į Pro",
       "redirecting": "Nukreipiama..."
