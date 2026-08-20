@@ -122,5 +122,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
             changeFrequency: 'monthly',
             priority: 0.7,
     },
+    {
+      url: 'https://hostcopyai.com/booking-com-description-generator',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
   ];
 }
