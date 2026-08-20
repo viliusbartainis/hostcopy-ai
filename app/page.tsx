@@ -468,6 +468,8 @@ export default function Home() {
                 <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('free.feature1', { limit: FREE_LIMIT })}</li>
                 <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('free.feature2')}</li>
                 <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('free.feature3')}</li>
+                <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('free.feature4')}</li>
+                <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('free.feature5')}</li>
               </ul>
               <a href="#" className="block text-center rounded-lg border border-navy/25 py-2.5 text-sm font-medium text-navy hover:border-navy/50 transition-colors">
                 {tPricing('free.cta')}
