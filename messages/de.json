@@ -90,6 +90,8 @@
       "feature1": "Insgesamt {limit} Generierungen",
       "feature2": "Alle drei Plattformen",
       "feature3": "Keine Registrierung erforderlich",
+      "feature4": "Alle 8 Sprachen inklusive",
+      "feature5": "Deine Daten werden nie gespeichert oder weitergegeben",
       "cta": "Kostenlos starten"
     },
     "pro": {
@@ -100,10 +102,10 @@
       "period": "/Monat",
       "feature1": "Unbegrenzte Generierungen",
       "feature2": "Alle drei Plattformen",
-      "feature3": "Alle Unterkunftstypen und Tonalitäten",
+      "feature3": "Verwalte dein Abo jederzeit selbst",
       "feature4": "Keine Registrierung, jederzeit kündbar",
       "feature5": "Bevorzugte Generierung — keine Ratenlimits",
-      "feature6": "Alle 8 Sprachen zur Auswahl",
+      "feature6": "Deine Daten werden nie gespeichert oder weitergegeben",
       "feature7": "E-Mail-Support",
       "cta": "Auf Pro upgraden",
       "redirecting": "Weiterleitung..."
