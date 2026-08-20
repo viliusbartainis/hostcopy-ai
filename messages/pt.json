@@ -90,6 +90,8 @@
       "feature1": "{limit} gerações no total",
       "feature2": "As três plataformas",
       "feature3": "Sem necessidade de registo",
+      "feature4": "Os 8 idiomas incluídos",
+      "feature5": "Os seus dados nunca são armazenados nem partilhados",
       "cta": "Começar gratuitamente"
     },
     "pro": {
@@ -100,10 +102,10 @@
       "period": "/mês",
       "feature1": "Gerações ilimitadas",
       "feature2": "As três plataformas",
-      "feature3": "Todos os tipos de alojamento e tons",
+      "feature3": "Gerencie a sua subscrição a qualquer momento",
       "feature4": "Sem registo, cancele quando quiser",
       "feature5": "Geração prioritária, sem limites de taxa",
-      "feature6": "Os 8 idiomas disponíveis para escolha",
+      "feature6": "Os seus dados nunca são armazenados nem partilhados",
       "feature7": "Suporte por e-mail",
       "cta": "Atualizar para Pro",
       "redirecting": "A redirecionar..."
