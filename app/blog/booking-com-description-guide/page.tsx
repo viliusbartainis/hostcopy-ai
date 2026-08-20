@@ -46,11 +46,14 @@ export default function BlogPost() {
           <p>Booking.com allows a longer description than Airbnb&apos;s roughly 500-character preview, so you have room to be more thorough, but that doesn&apos;t mean you should pad it. Use short paragraphs of two to three sentences, lead each paragraph with the most useful fact in it, and keep amenities in a scannable list rather than folding them into prose sentences guests have to hunt through.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">One description, two platforms, two structures</h2>
           <p>The practical takeaway isn&apos;t to abandon your Airbnb description &mdash; it&apos;s to stop assuming it will perform the same way somewhere else. Keep the vibe-forward version for Airbnb, and write a fact-forward version, logistics first, for Booking.com. The underlying property is the same; the guest reading it is comparing you against a different set of listings with different expectations.</p>
-          <p><Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> writes both versions from the same form &mdash; one generation gives you Airbnb, Booking.com, and an Instagram caption, each structured for how that platform&apos;s guests actually read.</p>
+          <p><Link href="/booking-com-description-generator" className="text-stone-900 underline font-medium">HostCopy AI&apos;s free Booking.com description generator</Link> writes both versions from the same form &mdash; one generation gives you Airbnb, Booking.com, and an Instagram caption, each structured for how that platform&apos;s guests actually read.</p>
         </div>
         <div className="mt-10 pt-8 border-t border-stone-200">
           <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
           <div className="space-y-2">
+            <Link href="/booking-com-description-generator" className="block text-stone-900 underline">
+              Try the free Booking.com description generator
+            </Link>
             <Link href="/blog/airbnb-vs-booking-vs-vrbo" className="block text-stone-900 underline">
               Airbnb vs Booking.com vs Vrbo: Where Should You List Your Property?
             </Link>
