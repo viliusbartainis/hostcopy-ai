@@ -566,6 +566,10 @@ export default function Home() {
           <a href="/blog" className="text-sm text-navy/60 hover:text-navy underline">
             {tFooter('blogLink')}
           </a>
+          {' · '}
+          <a href="/booking-com-description-generator" className="text-sm text-navy/60 hover:text-navy underline">
+            Booking.com description generator
+          </a>
           <p className="text-xs text-navy/40 mt-2">
             <a href="/privacy" className="underline hover:text-navy/70">
               Privacy Policy
