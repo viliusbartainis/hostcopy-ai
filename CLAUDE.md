@@ -1,5 +1,6 @@
-# HostCopy AI - Projekto Taisyklės
-- Prieš pradedant darbą, sukurk arba atnaujink `TODO.md` failą.
-- Išskaidyk darbus: `- [ ] Užduotis`.
-- Vykdyk užduotis žingsnis po žingsnio ir pažymėk: `- [x] Užduotis`.
+# HostCopy AI - Taisyklės
+
+- Prieš atlikdamas bet kokį darbą, sukurk arba atnaujink `TODO.md` failą.
+- Išskaidyk darbus į aiškius žingsnius: `- [ ] Užduotis`.
+- Vykdyk užduotis paeiliui ir jas pažymėk: `- [x] Užduotis`.
 - Pabaigoje pateik tik atliktų darbų suvestinę.
