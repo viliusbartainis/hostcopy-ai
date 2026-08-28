@@ -70,9 +70,43 @@ export default async function RootLayout({
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "All",
               "offers": {
-                "@type": "Offer",
-                "price": "0",
+                "@type": "AggregateOffer",
                 "priceCurrency": "EUR",
+                "lowPrice": "0",
+                "highPrice": "29",
+                "offerCount": "3",
+                "offers": [
+                  {
+                    "@type": "Offer",
+                    "name": "Free",
+                    "price": "0",
+                    "priceCurrency": "EUR",
+                  },
+                  {
+                    "@type": "Offer",
+                    "name": "Pro",
+                    "price": "9",
+                    "priceCurrency": "EUR",
+                    "priceSpecification": {
+                      "@type": "UnitPriceSpecification",
+                      "price": "9",
+                      "priceCurrency": "EUR",
+                      "unitCode": "MON",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    "name": "Premium",
+                    "price": "29",
+                    "priceCurrency": "EUR",
+                    "priceSpecification": {
+                      "@type": "UnitPriceSpecification",
+                      "price": "29",
+                      "priceCurrency": "EUR",
+                      "unitCode": "MON",
+                    },
+                  },
+                ],
               },
             }),
           }}
