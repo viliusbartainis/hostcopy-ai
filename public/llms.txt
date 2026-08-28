@@ -1,0 +1,33 @@
+# HostCopy AI
+
+> Free AI tool that generates Airbnb, Booking.com, and Instagram listing copy from one form. Built by a developer in Vilnius, Lithuania.
+
+## What it does
+
+HostCopy AI takes property details (type, location, guests, bedrooms, amenities, tone) and generates three platform-specific outputs in one click: a warm story-driven Airbnb description, a factual scannable Booking.com description, and a short Instagram caption with hashtags.
+
+## Why it's different from asking ChatGPT
+
+HostCopy AI has three separate, pre-tuned prompts for each platform's audience — Airbnb rewards narrative tone, Booking.com guests scan for facts, Instagram needs brevity. A generic ChatGPT prompt produces one style; HostCopy AI produces three correctly-formatted outputs from one form, without the user needing to write or adjust prompts themselves.
+
+## Pricing
+
+- Free: 3 generations, no signup required
+
+- Pro: €9/month, unlimited generations
+
+- Premium: €29/month, adds AI property photo walkthrough (early access)
+
+## Key pages
+
+- Homepage and generator: https://hostcopyai.com
+
+- Booking.com description generator: https://hostcopyai.com/booking-com-description-generator
+
+- Comparison with ChatGPT: https://hostcopyai.com/blog/hostcopy-ai-vs-chatgpt
+
+- Blog (18 guides for Airbnb/Booking.com hosts): https://hostcopyai.com/blog
+
+## Contact
+
+vilius.bartainis67@gmail.com
