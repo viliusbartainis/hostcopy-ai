@@ -312,8 +312,8 @@ export default function Home() {
           <div className="bg-parchment rounded-2xl shadow-lg shadow-navy/10 border border-brass/20 p-8">
             <div className="grid gap-5">
               <div>
-                <label className="block text-sm font-medium text-navy/80 mb-1">{tForm('propertyTypeLabel')}</label>
-                <select value={propertyType} onChange={(e) => setPropertyType(e.target.value)}
+                <label htmlFor="propertyType" className="block text-sm font-medium text-navy/80 mb-1">{tForm('propertyTypeLabel')}</label>
+                <select id="propertyType" value={propertyType} onChange={(e) => setPropertyType(e.target.value)}
                   className="w-full border border-navy/20 bg-white rounded-lg px-3 py-2 text-ink focus:outline-none focus:ring-2 focus:ring-brass/50 focus:border-brass">
                   {PROPERTY_TYPES.map((pt) => (
                     <option key={pt.value} value={pt.value}>{tPropertyTypes(pt.key)}</option>
@@ -328,14 +328,14 @@ export default function Home() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-medium text-navy/80 mb-1">{tForm('guestsLabel')}</label>
-                  <input type="number" value={guests} min={1}
+                  <label htmlFor="guests" className="block text-sm font-medium text-navy/80 mb-1">{tForm('guestsLabel')}</label>
+                  <input id="guests" type="number" value={guests} min={1}
                     onChange={(e) => setGuests(Number(e.target.value))}
                     className="w-full border border-navy/20 bg-white rounded-lg px-3 py-2 text-ink font-mono focus:outline-none focus:ring-2 focus:ring-brass/50 focus:border-brass" />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-navy/80 mb-1">{tForm('bedroomsLabel')}</label>
-                  <input type="number" value={bedrooms} min={0}
+                  <label htmlFor="bedrooms" className="block text-sm font-medium text-navy/80 mb-1">{tForm('bedroomsLabel')}</label>
+                  <input id="bedrooms" type="number" value={bedrooms} min={0}
                     onChange={(e) => setBedrooms(Number(e.target.value))}
                     className="w-full border border-navy/20 bg-white rounded-lg px-3 py-2 text-ink font-mono focus:outline-none focus:ring-2 focus:ring-brass/50 focus:border-brass" />
                 </div>
