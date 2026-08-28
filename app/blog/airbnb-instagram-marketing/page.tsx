@@ -2,25 +2,48 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How to Promote Your Airbnb on Instagram: Captions, Hashtags, and Story Ideas | HostCopy AI",
+  title: "How to Promote Your Airbnb on Instagram | HostCopy AI",
   description: "What to actually post, a caption formula that works for vacation rentals, and a hashtag approach that doesn't waste your reach.",
   keywords: "airbnb instagram caption, how to promote airbnb on instagram, vacation rental instagram marketing",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-instagram-marketing' },
+  openGraph: {
+    type: "article",
+    title: "How to Promote Your Airbnb on Instagram: Captions, Hashtags, and Story Ideas",
+    description: "Airbnb search only shows your listing to guests actively searching your city.",
+    publishedTime: "2026-08-06",
+    modifiedTime: "2026-08-06",
+    url: "https://hostcopyai.com/blog/airbnb-instagram-marketing",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "How to Promote Your Airbnb on Instagram: Captions, Hashtags, and Story Ideas",
     description: "What to actually post, a caption formula that works for vacation rentals, and a hashtag approach that doesn't waste your reach.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/icon-512.png" },
+    },
     datePublished: "2026-08-06",
+    dateModified: "2026-08-06",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-instagram-marketing",
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+      { "@type": "ListItem", position: 3, name: "How to Promote Your Airbnb on Instagram: Captions, Hashtags, and Story Ideas", item: "https://hostcopyai.com/blog/airbnb-instagram-marketing" },
+    ],
   };
 
   return (
@@ -28,6 +51,10 @@ export default function BlogPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

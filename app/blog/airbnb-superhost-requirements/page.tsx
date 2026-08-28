@@ -2,25 +2,48 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Airbnb Superhost Requirements Explained (2026 Update) | HostCopy AI",
+  title: "Airbnb Superhost Requirements Explained | HostCopy AI",
   description: "The four criteria Airbnb uses to award Superhost status, how often it's reviewed, and what the badge actually gets you as a host.",
   keywords: "airbnb superhost requirements, how to become airbnb superhost, superhost benefits",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-superhost-requirements' },
+  openGraph: {
+    type: "article",
+    title: "Airbnb Superhost Requirements Explained (2026 Update)",
+    description: "Superhost is the badge Airbnb gives to hosts who consistently deliver a great guest experience.",
+    publishedTime: "2026-08-04",
+    modifiedTime: "2026-08-04",
+    url: "https://hostcopyai.com/blog/airbnb-superhost-requirements",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "Airbnb Superhost Requirements Explained (2026 Update)",
     description: "The four criteria Airbnb uses to award Superhost status, how often it's reviewed, and what the badge actually gets you as a host.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/icon-512.png" },
+    },
     datePublished: "2026-08-04",
+    dateModified: "2026-08-04",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-superhost-requirements",
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+      { "@type": "ListItem", position: 3, name: "Airbnb Superhost Requirements Explained (2026 Update)", item: "https://hostcopyai.com/blog/airbnb-superhost-requirements" },
+    ],
   };
 
   return (
@@ -28,6 +51,10 @@ export default function BlogPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

@@ -2,25 +2,48 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Airbnb vs Booking.com vs Vrbo: Where Should You List Your Property? | HostCopy AI",
+  title: "Airbnb vs Booking.com vs Vrbo | HostCopy AI",
   description: "Audience, commission fees, and description tone compared across Airbnb, Booking.com, and Vrbo, plus when it actually pays to list on more than one.",
   keywords: "airbnb vs booking.com, best platform for vacation rental, airbnb vs vrbo",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-vs-booking-vs-vrbo' },
+  openGraph: {
+    type: "article",
+    title: "Airbnb vs Booking.com vs Vrbo: Where Should You List Your Property?",
+    description: "New hosts often assume they have to pick one platform and stick with it, or that all three work the same way with a different logo.",
+    publishedTime: "2026-08-03",
+    modifiedTime: "2026-08-03",
+    url: "https://hostcopyai.com/blog/airbnb-vs-booking-vs-vrbo",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "Airbnb vs Booking.com vs Vrbo: Where Should You List Your Property?",
     description: "Audience, commission fees, and description tone compared across Airbnb, Booking.com, and Vrbo, plus when it actually pays to list on more than one.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/icon-512.png" },
+    },
     datePublished: "2026-08-03",
+    dateModified: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-vs-booking-vs-vrbo",
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+      { "@type": "ListItem", position: 3, name: "Airbnb vs Booking.com vs Vrbo: Where Should You List Your Property?", item: "https://hostcopyai.com/blog/airbnb-vs-booking-vs-vrbo" },
+    ],
   };
 
   return (
@@ -28,6 +51,10 @@ export default function BlogPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

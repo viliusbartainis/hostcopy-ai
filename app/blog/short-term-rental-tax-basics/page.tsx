@@ -6,28 +6,55 @@ export const metadata: Metadata = {
   description: "General patterns in how short-term rental income is taxed, what usually needs to be declared, and commonly deductible expenses. Not tax advice.",
   keywords: "airbnb taxes for hosts, short-term rental tax guide, do airbnb hosts pay tax",
   alternates: { canonical: 'https://hostcopyai.com/blog/short-term-rental-tax-basics' },
+  openGraph: {
+    type: "article",
+    title: "Short-Term Rental Tax Basics for New Hosts",
+    description: "Tax is one of the parts of starting a short-term rental that new hosts put off longest, often because generic answers online can be actively misleading.",
+    publishedTime: "2026-08-03",
+    modifiedTime: "2026-08-03",
+    url: "https://hostcopyai.com/blog/short-term-rental-tax-basics",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "Short-Term Rental Tax Basics for New Hosts",
     description: "General patterns in how short-term rental income is taxed, what usually needs to be declared, and commonly deductible expenses. Not tax advice.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/icon-512.png" },
+    },
     datePublished: "2026-08-03",
+    dateModified: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/short-term-rental-tax-basics",
     },
   };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+    { "@type": "ListItem", position: 3, name: "Short-Term Rental Tax Basics for New Hosts", item: "https://hostcopyai.com/blog/short-term-rental-tax-basics" },
+  ],
+};
+
   return (
     <main className="min-h-screen bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

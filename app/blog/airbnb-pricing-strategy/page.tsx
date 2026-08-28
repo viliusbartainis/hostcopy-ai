@@ -2,25 +2,48 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How to Price Your Airbnb Listing: A Beginner's Guide to Dynamic Pricing | HostCopy AI",
+  title: "How to Price Your Airbnb Listing | HostCopy AI",
   description: "Seasonality, weekends vs. weekdays, competitor analysis, and minimum stay tricks that actually move your Airbnb revenue. A practical pricing guide.",
   keywords: "airbnb pricing strategy, how to price airbnb, dynamic pricing airbnb",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-pricing-strategy' },
+  openGraph: {
+    type: "article",
+    title: "How to Price Your Airbnb Listing: A Beginner's Guide to Dynamic Pricing",
+    description: "Setting one flat nightly rate and leaving it untouched for the whole year is one of the fastest ways to leave money on the table \u2014 or to price yourself out of bookings during a slow stretch.",
+    publishedTime: "2026-08-03",
+    modifiedTime: "2026-08-03",
+    url: "https://hostcopyai.com/blog/airbnb-pricing-strategy",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "How to Price Your Airbnb Listing: A Beginner's Guide to Dynamic Pricing",
     description: "Seasonality, weekends vs. weekdays, competitor analysis, and minimum stay tricks that actually move your Airbnb revenue. A practical pricing guide.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/icon-512.png" },
+    },
     datePublished: "2026-08-03",
+    dateModified: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-pricing-strategy",
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+      { "@type": "ListItem", position: 3, name: "How to Price Your Airbnb Listing: A Beginner's Guide to Dynamic Pricing", item: "https://hostcopyai.com/blog/airbnb-pricing-strategy" },
+    ],
   };
 
   return (
@@ -28,6 +51,10 @@ export default function BlogPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

@@ -2,25 +2,48 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How Much Does It Cost to Start an Airbnb Business? | HostCopy AI",
+  title: "How Much Does It Cost to Start an Airbnb? | HostCopy AI",
   description: "Initial setup costs, recurring expenses, and realistic profit ranges by city size, so you can budget an Airbnb listing with real numbers, not guesses.",
   keywords: "airbnb startup cost, how much does airbnb host make, airbnb business expenses",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-startup-cost' },
+  openGraph: {
+    type: "article",
+    title: "How Much Does It Cost to Start an Airbnb Business?",
+    description: "\"How much does it cost to start an Airbnb?\" doesn't have one honest answer, but splitting it into initial setup, recurring costs, and realistic profit ranges gives you something far more usable than a single number pulled out of context.",
+    publishedTime: "2026-08-03",
+    modifiedTime: "2026-08-03",
+    url: "https://hostcopyai.com/blog/airbnb-startup-cost",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "How Much Does It Cost to Start an Airbnb Business?",
     description: "Initial setup costs, recurring expenses, and realistic profit ranges by city size, so you can budget an Airbnb listing with real numbers, not guesses.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/icon-512.png" },
+    },
     datePublished: "2026-08-03",
+    dateModified: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-startup-cost",
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+      { "@type": "ListItem", position: 3, name: "How Much Does It Cost to Start an Airbnb Business?", item: "https://hostcopyai.com/blog/airbnb-startup-cost" },
+    ],
   };
 
   return (
@@ -28,6 +51,10 @@ export default function BlogPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

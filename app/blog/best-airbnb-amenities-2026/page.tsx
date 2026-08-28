@@ -2,25 +2,48 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Airbnb Amenities Guests Actually Care About in 2026 | HostCopy AI",
+  title: "Best Airbnb Amenities in 2026 | HostCopy AI",
   description: "A real workspace, tested WiFi speed, self check-in, and the small details that bring guests back. What amenities are actually worth it in 2026.",
   keywords: "best airbnb amenities, what amenities do airbnb guests want, airbnb must-haves",
   alternates: { canonical: 'https://hostcopyai.com/blog/best-airbnb-amenities-2026' },
+  openGraph: {
+    type: "article",
+    title: "Airbnb Amenities Guests Actually Care About in 2026",
+    description: "Most amenity lists online repeat the same generic top ten.",
+    publishedTime: "2026-08-03",
+    modifiedTime: "2026-08-03",
+    url: "https://hostcopyai.com/blog/best-airbnb-amenities-2026",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "Airbnb Amenities Guests Actually Care About in 2026",
     description: "A real workspace, tested WiFi speed, self check-in, and the small details that bring guests back. What amenities are actually worth it in 2026.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/icon-512.png" },
+    },
     datePublished: "2026-08-03",
+    dateModified: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/best-airbnb-amenities-2026",
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+      { "@type": "ListItem", position: 3, name: "Airbnb Amenities Guests Actually Care About in 2026", item: "https://hostcopyai.com/blog/best-airbnb-amenities-2026" },
+    ],
   };
 
   return (
@@ -28,6 +51,10 @@ export default function BlogPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

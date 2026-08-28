@@ -2,25 +2,62 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How to Write a Booking.com Property Description That Converts | HostCopy AI",
+  title: "How to Write a Booking.com Description | HostCopy AI",
   description: "Booking.com guests search and skim differently than Airbnb guests. Here's how to structure a property description that matches how the platform actually works.",
   keywords: "booking.com description, how to write booking.com listing, booking.com property description tips",
   alternates: { canonical: 'https://hostcopyai.com/blog/booking-com-description-guide' },
+  openGraph: {
+    type: "article",
+    title: "How to Write a Booking.com Property Description That Converts",
+    description: "A lot of hosts write one property description and paste it everywhere: Airbnb, Booking.com, sometimes even a printed welcome binder.",
+    publishedTime: "2026-08-06",
+    modifiedTime: "2026-08-06",
+    url: "https://hostcopyai.com/blog/booking-com-description-guide",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "How to Write a Booking.com Property Description That Converts",
     description: "Booking.com guests search and skim differently than Airbnb guests. Here's how to structure a property description that matches how the platform actually works.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/icon-512.png" },
+    },
     datePublished: "2026-08-06",
+    dateModified: "2026-08-06",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/booking-com-description-guide",
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+      { "@type": "ListItem", position: 3, name: "How to Write a Booking.com Property Description That Converts", item: "https://hostcopyai.com/blog/booking-com-description-guide" },
+    ],
+  };
+
+  const howToJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to structure a Booking.com property description",
+    description: "How to lead with facts and logistics so a Booking.com description matches how guests on that platform actually read.",
+    step: [
+      { "@type": "HowToStep", position: 1, name: "Lead with property type, size, and location", text: "Open with what it is and where it is: property type, size in square meters, guest capacity, and distance to the nearest recognizable landmark or transit stop." },
+      { "@type": "HowToStep", position: 2, name: "Save atmosphere for after the facts", text: "Add one or two sentences of atmosphere only after the hard facts, and use Booking.com's dedicated fields (like \"In the neighborhood\" and house rules) instead of cramming everything into the main description." },
+      { "@type": "HowToStep", position: 3, name: "Avoid over-selling with vibe language", text: "Skip Airbnb-style phrases like \"a magical retreat\" — Booking.com guests are comparing several listings and are looking for concrete logistics, not atmosphere." },
+      { "@type": "HowToStep", position: 4, name: "Include the logistics guests expect up front", text: "State the exact check-in window, whether reception is staffed or self-service, parking availability and cost, and cancellation terms." },
+      { "@type": "HowToStep", position: 5, name: "Format for scanning", text: "Use short two-to-three sentence paragraphs that lead with the most useful fact, and keep amenities in a scannable list rather than folded into prose." },
+    ],
   };
 
   return (
@@ -28,6 +65,14 @@ export default function BlogPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

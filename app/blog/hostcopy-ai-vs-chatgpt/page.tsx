@@ -2,27 +2,50 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-title: "HostCopy AI vs. ChatGPT for Airbnb Listings: What's the Real Difference? | HostCopy AI",
+title: "HostCopy AI vs. ChatGPT for Airbnb Listings | HostCopy AI",
 description: "ChatGPT can write a solid Airbnb description too. Here's an honest look at what it takes to get there, and what HostCopy AI automates instead.",
 keywords: "hostcopy ai vs chatgpt, chatgpt airbnb description, ai airbnb description tool",
 alternates: {
 canonical: "https://hostcopyai.com/blog/hostcopy-ai-vs-chatgpt",
 },
+  openGraph: {
+    type: "article",
+    title: "HostCopy AI vs. ChatGPT for Airbnb Listings: What's the Real Difference?",
+    description: "A fair question, since plenty of hosts already use ChatGPT for this exact job: why would you need a dedicated tool when a general-purpose AI can write a listing description too?",
+    publishedTime: "2026-08-04",
+    modifiedTime: "2026-08-04",
+    url: "https://hostcopyai.com/blog/hostcopy-ai-vs-chatgpt",
+  },
 };
 
 export default function BlogPost() {
 const jsonLd = {
 "@context": "https://schema.org",
-"@type": "Article",
+"@type": "BlogPosting",
 headline: "HostCopy AI vs. ChatGPT for Airbnb Listings: What's the Real Difference?",
 description: "ChatGPT can write a solid Airbnb description too. Here's an honest look at what it takes to get there, and what HostCopy AI automates instead.",
 author: { "@type": "Organization", name: "HostCopy AI" },
-publisher: { "@type": "Organization", name: "HostCopy AI" },
+publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/icon-512.png" },
+    },
 datePublished: "2026-08-04",
+    dateModified: "2026-08-04",
 mainEntityOfPage: {
 "@type": "WebPage",
 "@id": "https://hostcopyai.com/blog/hostcopy-ai-vs-chatgpt",
 },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+    { "@type": "ListItem", position: 3, name: "HostCopy AI vs. ChatGPT for Airbnb Listings: What's the Real Difference?", item: "https://hostcopyai.com/blog/hostcopy-ai-vs-chatgpt" },
+  ],
 };
 
 return (
@@ -30,6 +53,10 @@ return (
 <script
 type="application/ld+json"
 dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+/>
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
 />
 <article className="max-w-2xl mx-auto px-6 py-16">
 <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

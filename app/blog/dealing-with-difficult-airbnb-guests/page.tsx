@@ -2,25 +2,48 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How to Handle Difficult Airbnb Guests (Without Losing Your Cool) | HostCopy AI",
+  title: "How to Handle Difficult Airbnb Guests | HostCopy AI",
   description: "Calm communication, when to escalate to Airbnb Support, how to document problems, and boundaries worth setting before a difficult guest ever books.",
   keywords: "dealing with difficult airbnb guests, airbnb guest problems, airbnb host tips",
   alternates: { canonical: 'https://hostcopyai.com/blog/dealing-with-difficult-airbnb-guests' },
+  openGraph: {
+    type: "article",
+    title: "How to Handle Difficult Airbnb Guests (Without Losing Your Cool)",
+    description: "Most guests are easy.",
+    publishedTime: "2026-08-03",
+    modifiedTime: "2026-08-03",
+    url: "https://hostcopyai.com/blog/dealing-with-difficult-airbnb-guests",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "How to Handle Difficult Airbnb Guests (Without Losing Your Cool)",
     description: "Calm communication, when to escalate to Airbnb Support, how to document problems, and boundaries worth setting before a difficult guest ever books.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/icon-512.png" },
+    },
     datePublished: "2026-08-03",
+    dateModified: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/dealing-with-difficult-airbnb-guests",
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+      { "@type": "ListItem", position: 3, name: "How to Handle Difficult Airbnb Guests (Without Losing Your Cool)", item: "https://hostcopyai.com/blog/dealing-with-difficult-airbnb-guests" },
+    ],
   };
 
   return (
@@ -28,6 +51,10 @@ export default function BlogPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
