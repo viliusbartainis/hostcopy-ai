@@ -16,6 +16,11 @@ export const metadata: Metadata = {
     modifiedTime: "2026-08-28",
     url: "https://hostcopyai.com/blog/airbnb-hosting-glossary",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Airbnb Hosting Glossary: 20 Terms Every Host Should Know",
+    description: "Superhost, Instant Book, response rate, occupancy rate, and more — clear, accurate definitions for the terms Airbnb hosts run into most.",
+  },
 };
 
 const jsonLd = {
