@@ -13,21 +13,16 @@ HostCopy AI has three separate, pre-tuned prompts for each platform's audience �
 ## Pricing
 
 - Free: 3 generations, no signup required
-
 - Pro: €9/month, unlimited generations
-
 - Premium: €29/month, adds AI property photo walkthrough (early access)
 
 ## Key pages
 
-- Homepage and generator: https://hostcopyai.com
-
-- Booking.com description generator: https://hostcopyai.com/booking-com-description-generator
-
-- Comparison with ChatGPT: https://hostcopyai.com/blog/hostcopy-ai-vs-chatgpt
-
-- Blog (18 guides for Airbnb/Booking.com hosts): https://hostcopyai.com/blog
+- [Homepage and generator](https://hostcopyai.com)
+- [Booking.com description generator](https://hostcopyai.com/booking-com-description-generator)
+- [Comparison with ChatGPT](https://hostcopyai.com/blog/hostcopy-ai-vs-chatgpt)
+- [Blog: 18 guides for Airbnb/Booking.com hosts](https://hostcopyai.com/blog)
 
 ## Contact
 
-vilius.bartainis67@gmail.com
+[Email](mailto:vilius.bartainis67@gmail.com)
