@@ -289,7 +289,7 @@ export default function Home() {
               ) : (
                 <a
                   href="#pricing"
-                  className="text-sm font-medium text-parchment bg-brass hover:bg-brass-dark rounded-full px-4 py-2 transition-colors"
+                  className="text-sm font-medium text-navy bg-brass hover:bg-brass-dark rounded-full px-4 py-2 transition-colors"
                 >
                   {tHeader('buyPremium')}
                 </a>
@@ -370,7 +370,7 @@ export default function Home() {
                 </p>
               )}
               <button onClick={handleGenerate} disabled={loading || !hydrated || limitReached}
-                className="w-full bg-brass text-white rounded-lg py-3 font-medium hover:bg-brass-dark disabled:opacity-50 transition-colors">
+                className="w-full bg-brass text-navy rounded-lg py-3 font-medium hover:bg-brass-dark disabled:opacity-50 transition-colors">
                 {genLabel}
               </button>
               {hydrated && limitReached && (
@@ -381,7 +381,7 @@ export default function Home() {
                     type="button"
                     disabled={checkoutLoading}
                     onClick={handleCheckout}
-                    className="w-full bg-brass text-white rounded-lg py-3 font-medium hover:bg-brass-dark disabled:opacity-50 transition-colors"
+                    className="w-full bg-brass text-navy rounded-lg py-3 font-medium hover:bg-brass-dark disabled:opacity-50 transition-colors"
                   >
                     {checkoutLoading ? tLimit('redirecting') : tLimit('upgradeButton')}
                   </button>
@@ -477,7 +477,7 @@ export default function Home() {
             </div>
 
             <div className="relative flex flex-col rounded-2xl border-2 border-navy bg-navy p-7 shadow-xl md:-mt-4 md:mb-4">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brass text-white text-xs font-medium px-3 py-1 rounded-full">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brass text-navy text-xs font-medium px-3 py-1 rounded-full">
                 {tPricing('pro.badge')}
               </span>
               <p className="font-display text-lg text-parchment">{tPricing('pro.name')}</p>
