@@ -27,7 +27,7 @@ export default function CookieConsent() {
     <div className="fixed bottom-0 left-0 right-0 bg-stone-900 text-white p-4 z-50 flex flex-col sm:flex-row items-center justify-between gap-3">
       <p className="text-sm">
         We use cookies for basic analytics to improve this site.{" "}
-        <a href="/privacy" className="underline">Learn more</a>
+        <a href="/privacy" className="underline">Read our Privacy Policy</a>
       </p>
       <div className="flex gap-2 shrink-0">
         <button onClick={decline} className="px-4 py-2 text-sm rounded border border-stone-600 hover:bg-stone-800">
