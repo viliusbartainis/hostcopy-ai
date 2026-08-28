@@ -102,6 +102,16 @@ const posts = [
         title: "HostCopy AI vs. Copy.ai for Airbnb Listings: An Honest Comparison",
         description: "Copy.ai can write Airbnb copy with the right template or prompt. Here's what that takes compared to a tool built specifically for Airbnb, Booking.com, and Instagram listings.",
   },
+  {
+        slug: "airbnb-hosting-glossary",
+        title: "Airbnb Hosting Glossary: 20 Terms Every Host Should Know",
+        description: "Superhost, Instant Book, response rate, occupancy rate, and more — clear, accurate definitions for the terms Airbnb hosts run into most.",
+  },
+  {
+        slug: "airbnb-vs-vrbo-vs-booking-2026",
+        title: "Airbnb vs Vrbo vs Booking.com in 2026: What Each Platform Actually Costs Now",
+        description: "Airbnb moved most hosts to a single 15.5% fee in late 2025. Here's how that changes the math against Vrbo and Booking.com in 2026, and which platform fits which property.",
+  },
 ];
 
 export default function BlogIndex() {
