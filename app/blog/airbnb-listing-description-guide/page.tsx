@@ -24,7 +24,7 @@ const jsonLd = {
   publisher: {
     "@type": "Organization",
     name: "HostCopy AI",
-    logo: { "@type": "ImageObject", url: "https://hostcopyai.com/icon-512.png" },
+    logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
   },
   datePublished: "2026-08-03",
   dateModified: "2026-08-03",

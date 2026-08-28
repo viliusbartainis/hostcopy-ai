@@ -97,6 +97,11 @@ const posts = [
         title: "How to Write a Booking.com Property Description That Converts",
         description: "Booking.com guests search and skim differently than Airbnb guests. Here's how to structure a property description that matches how the platform actually works.",
   },
+  {
+        slug: "hostcopy-ai-vs-copyai",
+        title: "HostCopy AI vs. Copy.ai for Airbnb Listings: An Honest Comparison",
+        description: "Copy.ai can write Airbnb copy with the right template or prompt. Here's what that takes compared to a tool built specifically for Airbnb, Booking.com, and Instagram listings.",
+  },
 ];
 
 export default function BlogIndex() {

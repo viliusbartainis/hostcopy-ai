@@ -28,7 +28,7 @@ author: { "@type": "Organization", name: "HostCopy AI" },
 publisher: {
       "@type": "Organization",
       name: "HostCopy AI",
-      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/icon-512.png" },
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
     },
 datePublished: "2026-08-04",
     dateModified: "2026-08-04",

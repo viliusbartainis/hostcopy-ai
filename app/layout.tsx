@@ -8,6 +8,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hostcopyai.com"),
+  manifest: "/manifest.json",
   title: "HostCopy AI — AI Airbnb, Booking.com & Vacation Rental Description Generator",
   description: "Generate high-converting, professional Airbnb, Booking.com listings and Instagram captions in 30 seconds with AI. Trusted by short-term rental hosts and property managers.",
   keywords: [
