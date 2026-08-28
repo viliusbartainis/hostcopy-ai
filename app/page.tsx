@@ -499,7 +499,7 @@ export default function Home() {
                 type="button"
                 disabled={checkoutLoading}
                 onClick={handleCheckout}
-                className="block w-full text-center rounded-lg bg-brass py-2.5 text-sm font-semibold text-white hover:bg-brass-dark disabled:opacity-50 transition-colors"
+                className="block w-full text-center rounded-lg bg-brass py-2.5 text-sm font-semibold text-navy hover:bg-brass-dark disabled:opacity-50 transition-colors"
               >
                 {checkoutLoading ? tPricing('pro.redirecting') : tPricing('pro.cta')}
               </button>
