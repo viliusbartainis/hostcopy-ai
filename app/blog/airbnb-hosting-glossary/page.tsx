@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Airbnb Hosting Glossary: 20 Terms Explained | HostCopy AI",
-  description: "Superhost, Instant Book, response rate, occupancy rate, and 16 more Airbnb hosting terms explained clearly, in plain language.",
+  title: "Airbnb Hosting Glossary: 21 Terms Explained | HostCopy AI",
+  description: "Superhost, Instant Book, response rate, occupancy rate, and 17 more Airbnb hosting terms explained clearly, in plain language.",
   keywords: "airbnb hosting glossary, airbnb terms explained, what is superhost, what is instant book",
   alternates: {
     canonical: "https://hostcopyai.com/blog/airbnb-hosting-glossary",
   },
   openGraph: {
     type: "article",
-    title: "Airbnb Hosting Glossary: 20 Terms Every Host Should Know",
+    title: "Airbnb Hosting Glossary: 21 Terms Every Host Should Know",
     description: "Superhost, Instant Book, response rate, occupancy rate, and more — clear, accurate definitions for the terms Airbnb hosts run into most.",
     publishedTime: "2026-08-28",
     modifiedTime: "2026-08-29",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Airbnb Hosting Glossary: 20 Terms Every Host Should Know",
+    title: "Airbnb Hosting Glossary: 21 Terms Every Host Should Know",
     description: "Superhost, Instant Book, response rate, occupancy rate, and more — clear, accurate definitions for the terms Airbnb hosts run into most.",
   },
 };
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  headline: "Airbnb Hosting Glossary: 20 Terms Every Host Should Know",
+  headline: "Airbnb Hosting Glossary: 21 Terms Every Host Should Know",
   description: "Superhost, Instant Book, response rate, occupancy rate, and more — clear, accurate definitions for the terms Airbnb hosts run into most.",
   author: { "@type": "Organization", name: "HostCopy AI" },
   publisher: {
@@ -48,7 +48,7 @@ const breadcrumbJsonLd = {
   itemListElement: [
     { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
     { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
-    { "@type": "ListItem", position: 3, name: "Airbnb Hosting Glossary: 20 Terms Every Host Should Know", item: "https://hostcopyai.com/blog/airbnb-hosting-glossary" },
+    { "@type": "ListItem", position: 3, name: "Airbnb Hosting Glossary: 21 Terms Every Host Should Know", item: "https://hostcopyai.com/blog/airbnb-hosting-glossary" },
   ],
 };
 
@@ -56,6 +56,10 @@ const terms = [
   {
     term: "Superhost",
     definition: "A status badge Airbnb awards to hosts who meet minimum thresholds for reviews, response rate, cancellations, and overall rating, reviewed quarterly. It gives extra visibility in search and a badge on the listing, but doesn't guarantee bookings on its own.",
+  },
+  {
+    term: "Guest Favorite",
+    definition: "A separate badge introduced by Airbnb for individual listings (not hosts) in roughly the top 9% by rating, reviews, and reliability, recalculated on a rolling basis rather than a fixed quarterly schedule. It's awarded automatically and isn't something a host applies for or configures.",
   },
   {
     term: "Instant Book",
@@ -160,7 +164,7 @@ export default function GlossaryPost() {
           <span>1 min read</span>
         </div>
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
-          Airbnb Hosting Glossary: 20 Terms Every Host Should Know
+          Airbnb Hosting Glossary: 21 Terms Every Host Should Know
         </h1>
         <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts who keep running into hosting jargon that isn't explained clearly anywhere else.</p>
         <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
@@ -182,6 +186,18 @@ export default function GlossaryPost() {
             );
           })}
         </dl>
+        <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5 mt-10">
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Frequently confused terms</h2>
+          <p><strong><Link href="#superhost" className="underline">Superhost</Link> vs. <Link href="#guest-favorite" className="underline">Guest Favorite</Link></strong> — Superhost is a status awarded to a host based on their track record across all their listings, reviewed quarterly. Guest Favorite is awarded to an individual listing based on its own rating and reliability, recalculated on a rolling basis. A host can have one badge without the other, or both.</p>
+          <p><strong><Link href="#response-rate" className="underline">Response rate</Link> vs. <Link href="#response-time" className="underline">Response time</Link></strong> — response rate is the percentage of messages you reply to within 24 hours; response time is how fast those replies actually are. A host can have a perfect response rate while still being slow, or vice versa — they measure different things.</p>
+        </div>
+        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+          <p className="font-medium mb-1">Sources</p>
+          <ul className="space-y-1">
+            <li><a href="https://hospitable.com/airbnb-guest-favorite-badge" target="_blank" rel="noopener noreferrer" className="underline">Hospitable &ndash; Airbnb Guest Favorite Badge: How Does It Work?</a></li>
+            <li><a href="https://www.airbnb.com/help/article/828" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Help Center &ndash; Understand the Superhost program</a></li>
+          </ul>
+        </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}
           <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.

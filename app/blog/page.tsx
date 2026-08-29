@@ -104,7 +104,7 @@ const posts = [
   },
   {
         slug: "airbnb-hosting-glossary",
-        title: "Airbnb Hosting Glossary: 20 Terms Every Host Should Know",
+        title: "Airbnb Hosting Glossary: 21 Terms Every Host Should Know",
         description: "Superhost, Instant Book, response rate, occupancy rate, and more — clear, accurate definitions for the terms Airbnb hosts run into most.",
   },
   {
