@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "How Much Does It Cost to Start an Airbnb? | HostCopy AI",
-  description: "Initial setup costs, recurring expenses, and realistic profit ranges by city size, so you can budget an Airbnb listing with real numbers, not guesses.",
+  description: "The real cost to start an Airbnb: initial setup, recurring expenses, and realistic profit ranges by city size — real numbers, not guesses.",
   keywords: "airbnb startup cost, how much does airbnb host make, airbnb business expenses",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-startup-cost' },
   openGraph: {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "How Much Does It Cost to Start an Airbnb Business?",
     description: "\"How much does it cost to start an Airbnb?\" doesn't have one honest answer, but splitting it into initial setup, recurring costs, and realistic profit ranges gives you something far more usable than a single number pulled out of context.",
     publishedTime: "2026-08-03",
-    modifiedTime: "2026-08-03",
+    modifiedTime: "2026-08-29",
     url: "https://hostcopyai.com/blog/airbnb-startup-cost",
   },
 };
@@ -21,7 +21,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: "How Much Does It Cost to Start an Airbnb Business?",
-    description: "Initial setup costs, recurring expenses, and realistic profit ranges by city size, so you can budget an Airbnb listing with real numbers, not guesses.",
+    description: "The real cost to start an Airbnb: initial setup, recurring expenses, and realistic profit ranges by city size — real numbers, not guesses.",
     author: { "@type": "Organization", name: "HostCopy AI" },
     publisher: {
       "@type": "Organization",
@@ -29,7 +29,7 @@ export default function BlogPost() {
       logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
     },
     datePublished: "2026-08-03",
-    dateModified: "2026-08-03",
+    dateModified: "2026-08-29",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-startup-cost",
@@ -48,6 +48,12 @@ export default function BlogPost() {
 
   return (
     <main className="min-h-screen bg-background">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-stone-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:underline"
+      >
+        Skip to content
+      </a>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -56,11 +62,22 @@ export default function BlogPost() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <article className="max-w-2xl mx-auto px-6 py-16">
+      <article id="main-content" className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
+        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500 mt-4">
+          <span>Last updated: August 29, 2026</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>2 min read</span>
+        </div>
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           How Much Does It Cost to Start an Airbnb Business?
         </h1>
+        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: People weighing whether to start a short-term rental and budgeting the real costs.</p>
+        <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
+          <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
+          <p className="text-stone-800 leading-relaxed text-sm">Starting an Airbnb typically means furnishing and setup costs up front, then recurring costs — cleaning, utilities, platform fees, insurance — that eat into revenue. Realistic profit depends heavily on city size and occupancy, not a single number you can copy from someone else's listing.</p>
+        </div>
+
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>&quot;How much does it cost to start an Airbnb?&quot; doesn&apos;t have one honest answer, but splitting it into initial setup, recurring costs, and realistic profit ranges gives you something far more usable than a single number pulled out of context.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Initial investment: furnishing and setup</h2>
@@ -78,6 +95,14 @@ export default function BlogPost() {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">When the investment actually pays off</h2>
           <p>If you already own or rent the space and are only adding amenities, breakeven often arrives within the first one to three months of solid bookings. If you&apos;re furnishing a property specifically for short-term rental from empty, recouping the setup cost typically takes six to fourteen months, assuming reasonable occupancy from the start. A slow start with no reviews and no track record delays payback, so budgeting a cushion for lower occupancy in the first two or three months is more realistic than assuming full price and full calendar from day one.</p>
           <p>Part of shortening that runway is a listing description that actually converts the visitors browsing at your price point from day one. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> can help you write one in under a minute.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Related questions</h2>
+          <p><strong>Can I start an Airbnb with no upfront money?</strong> Only if you&apos;re renting out a space you already own and have fully furnished — otherwise some upfront cost for basics (linens, a lockbox, cleaning supplies) is essentially unavoidable.</p>
+          <p><strong>How soon can I expect to break even?</strong> It varies widely by market, but hosts starting from an already-furnished space often break even within the first one to three months of steady bookings.</p>
+          <p className="text-sm text-stone-500 pt-2">Dollar figures above are illustrative ranges as of August 2026, not quotes — furnishing costs, nightly rates, and occupancy vary by market and shift with local prices, so treat them as a starting point for your own budget, not a benchmark.</p>
+        </div>
+        <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
+          Written by the HostCopy AI team &mdash; a solo developer project.{" "}
+          <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.
         </div>
                 <div className="mt-10 pt-8 border-t border-stone-200">
           <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>

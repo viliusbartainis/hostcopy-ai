@@ -22,6 +22,7 @@ const blogPosts = [
   'airbnb-title-that-gets-clicks',
   'booking-com-description-guide',
   'airbnb-hosting-glossary',
+  'common-airbnb-description-mistakes',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -55,6 +56,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.5,
+    },
+    {
+      url: 'https://hostcopyai.com/seo-guide',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.6,
     },
     ...blogPosts.map((slug) => ({
       url: `https://hostcopyai.com/blog/${slug}`,

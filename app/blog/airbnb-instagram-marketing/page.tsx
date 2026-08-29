@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "How to Promote Your Airbnb on Instagram | HostCopy AI",
-  description: "What to actually post, a caption formula that works for vacation rentals, and a hashtag approach that doesn't waste your reach.",
+  description: "How to promote your Airbnb on Instagram: what to actually post, a caption formula that works for vacation rentals, and a hashtag approach that doesn't waste your reach.",
   keywords: "airbnb instagram caption, how to promote airbnb on instagram, vacation rental instagram marketing",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-instagram-marketing' },
   openGraph: {
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "How to Promote Your Airbnb on Instagram: Captions, Hashtags, and Story Ideas",
     description: "Airbnb search only shows your listing to guests actively searching your city.",
     publishedTime: "2026-08-06",
-    modifiedTime: "2026-08-06",
+    modifiedTime: "2026-08-29",
     url: "https://hostcopyai.com/blog/airbnb-instagram-marketing",
   },
 };
@@ -21,7 +21,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: "How to Promote Your Airbnb on Instagram: Captions, Hashtags, and Story Ideas",
-    description: "What to actually post, a caption formula that works for vacation rentals, and a hashtag approach that doesn't waste your reach.",
+    description: "How to promote your Airbnb on Instagram: what to actually post, a caption formula that works for vacation rentals, and a hashtag approach that doesn't waste your reach.",
     author: { "@type": "Organization", name: "HostCopy AI" },
     publisher: {
       "@type": "Organization",
@@ -29,7 +29,7 @@ export default function BlogPost() {
       logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
     },
     datePublished: "2026-08-06",
-    dateModified: "2026-08-06",
+    dateModified: "2026-08-29",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-instagram-marketing",
@@ -48,6 +48,12 @@ export default function BlogPost() {
 
   return (
     <main className="min-h-screen bg-background">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-stone-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:underline"
+      >
+        Skip to content
+      </a>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -56,11 +62,22 @@ export default function BlogPost() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <article className="max-w-2xl mx-auto px-6 py-16">
+      <article id="main-content" className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
+        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500 mt-4">
+          <span>Last updated: August 29, 2026</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>3 min read</span>
+        </div>
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           How to Promote Your Airbnb on Instagram: Captions, Hashtags, and Story Ideas
         </h1>
+        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts who want Instagram to bring in direct or repeat bookings.</p>
+        <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
+          <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
+          <p className="text-stone-800 leading-relaxed text-sm">Promote your Airbnb on Instagram with behind-the-scenes content and local recommendations, not just listing photos, using a caption formula that leads with a hook and a mix of broad, local, and niche hashtags. Stories work well for day-to-day content; feed posts suit polished, evergreen shots.</p>
+        </div>
+
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>Airbnb search only shows your listing to guests actively searching your city. Instagram can put it in front of people who weren&apos;t looking yet &mdash; a past guest&apos;s followers, a local hashtag search, someone scrolling who just decided this is the trip they want. It won&apos;t replace your Airbnb ranking, but it&apos;s one of the few free channels where you control the story completely.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Your listing photos aren&apos;t your Instagram content</h2>
@@ -74,6 +91,13 @@ export default function BlogPost() {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Stories vs. feed posts</h2>
           <p>Feed posts are your portfolio &mdash; treat them as evergreen content someone might find months later. Stories are for immediacy: a same-day view of the sunset from the deck, a poll asking followers which room to renovate next, a quick clip of a guest&apos;s dog enjoying the yard (with permission). Stories cost you nothing to experiment with, so use them to test captions and content ideas before committing to a feed post.</p>
           <p>Writing captions for every room, every season, and every platform adds up fast. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> generates an Instagram caption alongside your Airbnb and Booking.com listing copy from the same form, so promotion and the listing itself stay consistent.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Related questions</h2>
+          <p><strong>How often should I post about my Airbnb on Instagram?</strong> A few times a week is enough to stay visible without feeling like an ad account — consistency matters more than volume.</p>
+          <p><strong>Should I use a separate Instagram account for my rental?</strong> Usually yes, once you&apos;re posting regularly — it lets you tailor hashtags and captions to guests specifically, rather than mixing them with a personal account&apos;s audience.</p>
+        </div>
+        <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
+          Written by the HostCopy AI team &mdash; a solo developer project.{" "}
+          <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.
         </div>
         <div className="mt-10 pt-8 border-t border-stone-200">
           <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>

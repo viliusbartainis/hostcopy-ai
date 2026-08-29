@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "How to Write a Booking.com Property Description That Converts",
     description: "A lot of hosts write one property description and paste it everywhere: Airbnb, Booking.com, sometimes even a printed welcome binder.",
     publishedTime: "2026-08-06",
-    modifiedTime: "2026-08-06",
+    modifiedTime: "2026-08-29",
     url: "https://hostcopyai.com/blog/booking-com-description-guide",
   },
 };
@@ -29,7 +29,7 @@ export default function BlogPost() {
       logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
     },
     datePublished: "2026-08-06",
-    dateModified: "2026-08-06",
+    dateModified: "2026-08-29",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/booking-com-description-guide",
@@ -62,6 +62,12 @@ export default function BlogPost() {
 
   return (
     <main className="min-h-screen bg-background">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-stone-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:underline"
+      >
+        Skip to content
+      </a>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -74,15 +80,26 @@ export default function BlogPost() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
       />
-      <article className="max-w-2xl mx-auto px-6 py-16">
+      <article id="main-content" className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
+        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500 mt-4">
+          <span>Last updated: August 29, 2026</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>2 min read</span>
+        </div>
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           How to Write a Booking.com Property Description That Converts
         </h1>
+        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts writing or adapting a description specifically for Booking.com.</p>
+        <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
+          <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
+          <p className="text-stone-800 leading-relaxed text-sm">Booking.com descriptions convert better when they lead with property type, size, and location before atmosphere, since Booking.com guests scan for hard facts the way hotel shoppers do. Reusing an Airbnb-style, vibe-first description here usually underperforms.</p>
+        </div>
+
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>A lot of hosts write one property description and paste it everywhere: Airbnb, Booking.com, sometimes even a printed welcome binder. It works, sort of, but it leaves bookings on the table on Booking.com specifically, because the guests searching there aren&apos;t browsing the same way Airbnb guests browse, and the platform&apos;s layout rewards a different kind of writing.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Why Booking.com guests read differently</h2>
-          <p>Booking.com skews toward guests comparing many properties in a single search session, often filtering hard by star rating, cancellation policy, and exact distance to a landmark or transit hub. Many are business travelers or families booking through a company travel policy or a loyalty program, which means they tend to skim for concrete facts &mdash; square meters, bed configuration, exact walking distance &mdash; before they read anything about vibe or atmosphere. A description that opens with mood-setting language before getting to logistics will lose some of these readers before they reach the part that would convince them.</p>
+          <p>Booking.com skews toward guests comparing many properties in a single search session, often filtering hard by star rating, <Link href="/blog/airbnb-hosting-glossary#cancellation-policy" className="underline">cancellation policy</Link>, and exact distance to a landmark or transit hub. Many are business travelers or families booking through a company travel policy or a loyalty program, which means they tend to skim for concrete facts &mdash; square meters, bed configuration, exact walking distance &mdash; before they read anything about vibe or atmosphere. A description that opens with mood-setting language before getting to logistics will lose some of these readers before they reach the part that would convince them.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Lead with property type, size, and location, in that order</h2>
           <p>Open with what it is and where it is: property type, size in square meters, guest capacity, and distance in meters or minutes to the nearest recognizable landmark or transit stop. Save the one or two sentences of atmosphere for after those facts, not before. Booking.com also separates out fields like &ldquo;In the neighborhood&rdquo; and house rules, so don&apos;t try to cram everything into the main description &mdash; use the fields the platform gives you instead of fighting them.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Common mistakes that hurt conversion</h2>
@@ -92,6 +109,13 @@ export default function BlogPost() {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">One description, two platforms, two structures</h2>
           <p>The practical takeaway isn&apos;t to abandon your Airbnb description &mdash; it&apos;s to stop assuming it will perform the same way somewhere else. Keep the vibe-forward version for Airbnb, and write a fact-forward version, logistics first, for Booking.com. The underlying property is the same; the guest reading it is comparing you against a different set of listings with different expectations.</p>
           <p><Link href="/booking-com-description-generator" className="text-stone-900 underline font-medium">HostCopy AI&apos;s free Booking.com description generator</Link> writes both versions from the same form &mdash; one generation gives you Airbnb, Booking.com, and an Instagram caption, each structured for how that platform&apos;s guests actually read.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Related questions</h2>
+          <p><strong>Can I use bullet points in a Booking.com description?</strong> The main description field is prose, but Booking.com gives you separate structured fields for amenities and neighborhood info — use those instead of trying to format bullet points into free text.</p>
+          <p><strong>Does Booking.com penalize short descriptions?</strong> Not directly, but a description that&apos;s too short to cover the hard facts guests are comparing (size, distance, cancellation terms) underperforms regardless of any ranking penalty.</p>
+        </div>
+        <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
+          Written by the HostCopy AI team &mdash; a solo developer project.{" "}
+          <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.
         </div>
         <div className="mt-10 pt-8 border-t border-stone-200">
           <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>

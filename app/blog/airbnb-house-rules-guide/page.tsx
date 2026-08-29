@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "How to Write House Rules Guests Actually Read",
     description: "Most Airbnb house rules sections are long enough that guests stop reading after the third bullet point.",
     publishedTime: "2026-08-04",
-    modifiedTime: "2026-08-04",
+    modifiedTime: "2026-08-29",
     url: "https://hostcopyai.com/blog/airbnb-house-rules-guide",
   },
 };
@@ -29,7 +29,7 @@ export default function BlogPost() {
       logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
     },
     datePublished: "2026-08-04",
-    dateModified: "2026-08-04",
+    dateModified: "2026-08-29",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-house-rules-guide",
@@ -48,6 +48,12 @@ export default function BlogPost() {
 
   return (
     <main className="min-h-screen bg-background">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-stone-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:underline"
+      >
+        Skip to content
+      </a>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -56,11 +62,22 @@ export default function BlogPost() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <article className="max-w-2xl mx-auto px-6 py-16">
+      <article id="main-content" className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
+        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500 mt-4">
+          <span>Last updated: August 29, 2026</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>2 min read</span>
+        </div>
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           How to Write House Rules Guests Actually Read
         </h1>
+        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Airbnb hosts writing or rewriting their house rules section.</p>
+        <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
+          <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
+          <p className="text-stone-800 leading-relaxed text-sm">Keep your visible house rules to the handful of things that would actually cause a problem — quiet hours, guest caps, smoking, pets, parties, and checkout time — and explain the reason behind each one so guests follow them without feeling scolded. Move logistics like WiFi passwords and parking codes into a check-in guide instead.</p>
+        </div>
+
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>Most Airbnb house rules sections are long enough that guests stop reading after the third bullet point. That defeats the purpose — rules only work if someone actually sees them before they cause a problem, not after.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Why long lists get skipped</h2>
@@ -81,6 +98,13 @@ export default function BlogPost() {
           </ul>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Enforcing rules without damaging the relationship</h2>
           <p>Mention the rule once, politely, as soon as you notice it being pushed — most guests fix the behavior immediately once they realize it matters. Save documentation and a firmer message for repeat issues or anything that affects safety or other guests. Rules exist to prevent problems, not to give you something to police over minor, harmless things.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Related questions</h2>
+          <p><strong>Can I change my house rules after guests have already booked?</strong> Yes, you can update house rules anytime, but changes only apply to future bookings — guests who already booked under the old rules aren&apos;t bound by ones added afterward.</p>
+          <p><strong>Do house rules affect my Superhost status?</strong> Not directly, but rules that are unclear or unreasonable tend to generate disputes and lower ratings, which do affect it indirectly.</p>
+        </div>
+        <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
+          Written by the HostCopy AI team &mdash; a solo developer project.{" "}
+          <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.
         </div>
         <div className="mt-10 pt-8 border-t border-stone-200">
           <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
