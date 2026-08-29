@@ -90,7 +90,7 @@ export default function BlogPost() {
           <div className="overflow-x-auto my-6">
             <table className="w-full text-sm border-collapse">
               <caption className="text-left text-xs font-medium text-stone-500 mb-2">
-                Airbnb, Booking.com, and Vrbo compared at a glance
+                Airbnb, Booking.com, and Vrbo compared at a glance, fee figures as of August 2026
               </caption>
               <thead>
                 <tr className="border-b border-stone-300">
