@@ -80,6 +80,47 @@ export default function BlogPost() {
 
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>Most amenity lists online repeat the same generic top ten. What actually shows up in reviews and drives repeat bookings in 2026 is narrower and far more specific than a checklist of icons.</p>
+          <div className="overflow-x-auto my-6">
+            <table className="w-full text-sm border-collapse">
+              <caption className="text-left text-xs font-medium text-stone-500 mb-2">
+                Amenities worth adding in 2026, compared to ones that often aren&apos;t
+              </caption>
+              <thead>
+                <tr className="border-b border-stone-300">
+                  <th scope="col" className="text-left py-2 pr-4 font-semibold text-stone-900">Amenity</th>
+                  <th scope="col" className="text-left py-2 pr-4 font-semibold text-stone-900">Why it matters</th>
+                  <th scope="col" className="text-left py-2 font-semibold text-stone-900">Worth adding?</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-stone-200">
+                  <td className="py-2 pr-4">Real workspace (desk, comfortable chair, lighting)</td>
+                  <td className="py-2 pr-4">Remote/hybrid workers screen for it specifically</td>
+                  <td className="py-2">Yes, if you have the space and it&apos;s genuine</td>
+                </tr>
+                <tr className="border-b border-stone-200">
+                  <td className="py-2 pr-4">Tested, stated WiFi speed</td>
+                  <td className="py-2 pr-4">Prevents complaints; builds trust over the generic &quot;fast WiFi&quot; claim</td>
+                  <td className="py-2">Yes &mdash; essentially expected now</td>
+                </tr>
+                <tr className="border-b border-stone-200">
+                  <td className="py-2 pr-4">Self check-in</td>
+                  <td className="py-2 pr-4">Cuts pre-arrival messaging; helps response-rate metrics</td>
+                  <td className="py-2">Yes, for most property types</td>
+                </tr>
+                <tr className="border-b border-stone-200">
+                  <td className="py-2 pr-4">Home gym equipment</td>
+                  <td className="py-2 pr-4">Often sits unused relative to upkeep and space cost</td>
+                  <td className="py-2">Situational &mdash; only if it&apos;s a real differentiator locally</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4">Hot tub</td>
+                  <td className="py-2 pr-4">Upkeep cost and liability can outweigh any booking lift</td>
+                  <td className="py-2">Situational &mdash; depends on location and maintenance capacity</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">A real workspace, not just a WiFi checkbox</h2>
           <p>Remote and hybrid work travel is still a major segment of demand. A dedicated desk, a chair that&apos;s still comfortable after two hours, and good lighting near an outlet matter far more than ticking a &quot;workspace&quot; amenity next to a coffee table and a stool. If your listing genuinely doesn&apos;t have a proper desk, it&apos;s better to be honest about that than to tag the amenity anyway &mdash; mismatched expectations show up in reviews more painfully than the missing amenity itself would have.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">WiFi speed, tested and stated, not assumed</h2>

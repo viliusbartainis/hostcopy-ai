@@ -82,6 +82,47 @@ export default function BlogPost() {
           <p>Setting one flat nightly rate and leaving it untouched for the whole year is one of the fastest ways to leave money on the table &mdash; or to price yourself out of bookings during a slow stretch. Listings that consistently perform well treat price as something to adjust around demand, not a number you set once and forget.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Start with seasonality, not a guess</h2>
           <p>If you have twelve months of booking history, look at which weeks actually filled up and which sat empty at your current price. If you&apos;re new, check comparable listings in your area for how their pricing swings across the year. Coastal and beach markets spike in summer; ski towns invert; cities with major conferences or festivals spike around specific dates. Build a simple base calendar with three tiers &mdash; low, shoulder, and high season &mdash; and set explicit percentages, for example 15&ndash;20% below your base rate in low season and 30&ndash;50% above it in high season.</p>
+          <div className="overflow-x-auto my-6">
+            <table className="w-full text-sm border-collapse">
+              <caption className="text-left text-xs font-medium text-stone-500 mb-2">
+                A quick-reference summary of the pricing adjustments covered below
+              </caption>
+              <thead>
+                <tr className="border-b border-stone-300">
+                  <th scope="col" className="text-left py-2 pr-4 font-semibold text-stone-900">Demand period</th>
+                  <th scope="col" className="text-left py-2 pr-4 font-semibold text-stone-900">Price adjustment</th>
+                  <th scope="col" className="text-left py-2 font-semibold text-stone-900">Minimum stay</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-stone-200">
+                  <td className="py-2 pr-4">Low season</td>
+                  <td className="py-2 pr-4">15&ndash;20% below base rate</td>
+                  <td className="py-2">1&ndash;2 nights, to keep the calendar filled</td>
+                </tr>
+                <tr className="border-b border-stone-200">
+                  <td className="py-2 pr-4">Shoulder season</td>
+                  <td className="py-2 pr-4">Base rate</td>
+                  <td className="py-2">Standard</td>
+                </tr>
+                <tr className="border-b border-stone-200">
+                  <td className="py-2 pr-4">High season</td>
+                  <td className="py-2 pr-4">30&ndash;50% above base rate</td>
+                  <td className="py-2">3&ndash;7 nights, to reduce turnover</td>
+                </tr>
+                <tr className="border-b border-stone-200">
+                  <td className="py-2 pr-4">Weekends (leisure markets)</td>
+                  <td className="py-2 pr-4">15&ndash;25% above weekday rate</td>
+                  <td className="py-2">&mdash;</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4">Weekdays (business-travel markets)</td>
+                  <td className="py-2 pr-4">Often the higher-demand period instead</td>
+                  <td className="py-2">&mdash;</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Weekends vs. weekdays</h2>
           <p>In leisure markets, guests travel Friday through Sunday, so raising your weekend rate 15&ndash;25% above your weekday rate is standard practice and rarely costs you bookings. In cities driven by business travel &mdash; near convention centers or financial districts &mdash; this can flip entirely, with Monday through Thursday commanding the higher price because that&apos;s when demand actually shows up. Check which pattern applies to your specific location before copying a generic rule.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Competitor analysis, done properly</h2>

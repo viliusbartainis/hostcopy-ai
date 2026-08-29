@@ -82,6 +82,37 @@ export default function BlogPost() {
 
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>If you last compared these platforms&apos; fees more than a year ago, the numbers you remember for Airbnb are probably out of date. Airbnb spent late 2025 through 2026 rolling most hosts off its old split-fee model onto a single, higher host-side fee, which changes the math against Vrbo and Booking.com more than people realize. Here&apos;s where things actually stand.</p>
+          <div className="overflow-x-auto my-6">
+            <table className="w-full text-sm border-collapse">
+              <caption className="text-left text-xs font-medium text-stone-500 mb-2">
+                What each platform charges hosts, as of August 2026
+              </caption>
+              <thead>
+                <tr className="border-b border-stone-300">
+                  <th scope="col" className="text-left py-2 pr-4 font-semibold text-stone-900">Platform</th>
+                  <th scope="col" className="text-left py-2 pr-4 font-semibold text-stone-900">Host fee (2026)</th>
+                  <th scope="col" className="text-left py-2 font-semibold text-stone-900">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-stone-200">
+                  <td className="py-2 pr-4">Airbnb</td>
+                  <td className="py-2 pr-4">15.5% host-only (16% in Brazil/Mexico)</td>
+                  <td className="py-2">Replaced the ~3% + guest-fee split model; full rollout by Sept/Oct 2026</td>
+                </tr>
+                <tr className="border-b border-stone-200">
+                  <td className="py-2 pr-4">Booking.com</td>
+                  <td className="py-2 pr-4">~10&ndash;25% commission (avg. ~15%)</td>
+                  <td className="py-2">Plus ~1&ndash;3% processing if using Booking.com&apos;s own payments</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4">Vrbo</td>
+                  <td className="py-2 pr-4">~8% (5% service + 3% processing)</td>
+                  <td className="py-2">Or 5% alone if you handle your own payments; subscription option being phased out</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Airbnb: a single 15.5% host fee replaced the old 3% split model</h2>
           <p>Starting December 2025, Airbnb began moving hosts from its old split-fee structure — roughly 3% paid by the host, with a separate 14&ndash;16% service fee paid by the guest — to a single host-only fee of 15.5% of the booking subtotal (nightly rate, cleaning fee, and any extra-guest or pet fees). The migration rolled out in waves: property-management-software-connected hosts were mostly moved by mid-April 2026, with the remaining independent hosts scheduled to migrate by September 15, 2026 outside the EU and October 13, 2026 inside it. Hosts in Brazil and Mexico pay 16% instead of 15.5%, and hosts on a Super Strict cancellation policy can pay somewhat more. If you haven&apos;t been moved yet, your dashboard will show which fee structure currently applies to you — check it directly rather than assuming, since Airbnb&apos;s own help pages are the authoritative source for your specific account.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Booking.com: commission still varies more by market than by platform-wide policy</h2>

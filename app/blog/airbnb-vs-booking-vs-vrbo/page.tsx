@@ -80,6 +80,41 @@ export default function BlogPost() {
 
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>New hosts often assume they have to pick one platform and stick with it, or that all three work the same way with a different logo. In practice, Airbnb, Booking.com, and Vrbo attract different guests, charge different fees, and reward a different writing style &mdash; and the right answer depends more on your property type than on which platform is &quot;best.&quot;</p>
+          <div className="overflow-x-auto my-6">
+            <table className="w-full text-sm border-collapse">
+              <caption className="text-left text-xs font-medium text-stone-500 mb-2">
+                Airbnb, Booking.com, and Vrbo compared at a glance
+              </caption>
+              <thead>
+                <tr className="border-b border-stone-300">
+                  <th scope="col" className="text-left py-2 pr-4 font-semibold text-stone-900">Platform</th>
+                  <th scope="col" className="text-left py-2 pr-4 font-semibold text-stone-900">Best for</th>
+                  <th scope="col" className="text-left py-2 pr-4 font-semibold text-stone-900">Typical guest</th>
+                  <th scope="col" className="text-left py-2 font-semibold text-stone-900">Host fee</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-stone-200">
+                  <td className="py-2 pr-4">Airbnb</td>
+                  <td className="py-2 pr-4">Design-forward, unique stays</td>
+                  <td className="py-2 pr-4">Experience-driven leisure travelers</td>
+                  <td className="py-2"><Link href="/blog/airbnb-vs-vrbo-vs-booking-2026" className="underline">See our 2026 fee update</Link></td>
+                </tr>
+                <tr className="border-b border-stone-200">
+                  <td className="py-2 pr-4">Booking.com</td>
+                  <td className="py-2 pr-4">Professional or multi-unit operations</td>
+                  <td className="py-2 pr-4">Fact-checking, often international travelers</td>
+                  <td className="py-2">~10&ndash;25% commission, varies by market</td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-4">Vrbo</td>
+                  <td className="py-2 pr-4">Larger whole-home rentals</td>
+                  <td className="py-2 pr-4">Families and groups, longer stays</td>
+                  <td className="py-2">~8% (5% service + 3% processing)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Airbnb: the experience-driven audience</h2>
           <p>Airbnb guests tend to be leisure travelers browsing by feel as much as by fact &mdash; they respond to unique spaces, design details, and a description that reads like a story rather than a spec sheet. Airbnb&apos;s fee structure changed significantly starting in late 2025: most hosts have moved (or are moving through 2026) from the old split-fee model &mdash; roughly 3% paid by the host, with guests paying a separate service fee &mdash; to a single 15.5% host-only fee. See our <Link href="/blog/airbnb-vs-vrbo-vs-booking-2026" className="text-stone-900 underline">2026 fee update</Link> for the current numbers before comparing platforms on cost. Fees aside, Airbnb is still a strong fit for design-forward apartments, unique stays, and urban properties where the experience itself is part of the pitch.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Booking.com: the fact-checking, international audience</h2>
