@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Airbnb vs Booking.com vs Vrbo: Where Should You List Your Property?",
     description: "New hosts often assume they have to pick one platform and stick with it, or that all three work the same way with a different logo.",
     publishedTime: "2026-08-03",
-    modifiedTime: "2026-08-28",
+    modifiedTime: "2026-08-29",
     url: "https://hostcopyai.com/blog/airbnb-vs-booking-vs-vrbo",
   },
 };
@@ -29,7 +29,7 @@ export default function BlogPost() {
       logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
     },
     datePublished: "2026-08-03",
-    dateModified: "2026-08-28",
+    dateModified: "2026-08-29",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-vs-booking-vs-vrbo",
@@ -48,6 +48,12 @@ export default function BlogPost() {
 
   return (
     <main className="min-h-screen bg-background">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-stone-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:underline"
+      >
+        Skip to content
+      </a>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -56,11 +62,22 @@ export default function BlogPost() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <article className="max-w-2xl mx-auto px-6 py-16">
+      <article id="main-content" className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
+        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500 mt-4">
+          <span>Last updated: August 29, 2026</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>3 min read</span>
+        </div>
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           Airbnb vs Booking.com vs Vrbo: Where Should You List Your Property?
         </h1>
+        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts deciding which platform, or platforms, to list a property on.</p>
+        <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
+          <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
+          <p className="text-stone-800 leading-relaxed text-sm">Airbnb suits experience-driven, design-forward properties; Booking.com suits hosts targeting fact-checking, often international guests; Vrbo suits larger whole-home rentals for families. The right platform depends more on your property type than which one is “best” overall.</p>
+        </div>
+
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>New hosts often assume they have to pick one platform and stick with it, or that all three work the same way with a different logo. In practice, Airbnb, Booking.com, and Vrbo attract different guests, charge different fees, and reward a different writing style &mdash; and the right answer depends more on your property type than on which platform is &quot;best.&quot;</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Airbnb: the experience-driven audience</h2>
@@ -74,6 +91,10 @@ export default function BlogPost() {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Why the same description shouldn&apos;t go on all three</h2>
           <p>Airbnb rewards warmth and story &mdash; guests want to picture the trip, not just the room. Booking.com guests skim for hard facts, so lead with bed configuration, bathroom count, and distance to landmarks, and keep the flourish minimal. Vrbo guests care about space for the whole group, so square footage, separate bedrooms, kitchen size, and outdoor space deserve top billing. A description written for Airbnb and pasted unchanged into Booking.com or Vrbo usually undersells the property to a shopper who&apos;s looking for something different.</p>
           <p>Writing three genuinely different versions by hand takes real time for every listing you manage. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> generates copy matched to how guests actually read on Airbnb, Booking.com, and Instagram from a single form.</p>
+        </div>
+        <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
+          Written by the HostCopy AI team &mdash; a solo developer project.{" "}
+          <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.
         </div>
         <div className="mt-10 pt-8 border-t border-stone-200">
           <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>

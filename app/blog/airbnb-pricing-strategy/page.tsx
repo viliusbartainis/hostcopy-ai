@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "How to Price Your Airbnb Listing: A Beginner's Guide to Dynamic Pricing",
     description: "Setting one flat nightly rate and leaving it untouched for the whole year is one of the fastest ways to leave money on the table \u2014 or to price yourself out of bookings during a slow stretch.",
     publishedTime: "2026-08-03",
-    modifiedTime: "2026-08-03",
+    modifiedTime: "2026-08-29",
     url: "https://hostcopyai.com/blog/airbnb-pricing-strategy",
   },
 };
@@ -29,7 +29,7 @@ export default function BlogPost() {
       logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
     },
     datePublished: "2026-08-03",
-    dateModified: "2026-08-03",
+    dateModified: "2026-08-29",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-pricing-strategy",
@@ -48,6 +48,12 @@ export default function BlogPost() {
 
   return (
     <main className="min-h-screen bg-background">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-stone-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:underline"
+      >
+        Skip to content
+      </a>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -56,11 +62,22 @@ export default function BlogPost() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <article className="max-w-2xl mx-auto px-6 py-16">
+      <article id="main-content" className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
+        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500 mt-4">
+          <span>Last updated: August 29, 2026</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>3 min read</span>
+        </div>
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           How to Price Your Airbnb Listing: A Beginner&apos;s Guide to Dynamic Pricing
         </h1>
+        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts setting up dynamic pricing for the first time or fixing a flat-rate calendar.</p>
+        <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
+          <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
+          <p className="text-stone-800 leading-relaxed text-sm">Price your Airbnb by starting from seasonality and local demand, not a flat guess — adjust for weekends, run a real competitor analysis, and use minimum-stay length as a pricing lever during high and low demand instead of only changing the nightly rate.</p>
+        </div>
+
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>Setting one flat nightly rate and leaving it untouched for the whole year is one of the fastest ways to leave money on the table &mdash; or to price yourself out of bookings during a slow stretch. Listings that consistently perform well treat price as something to adjust around demand, not a number you set once and forget.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Start with seasonality, not a guess</h2>
@@ -81,6 +98,10 @@ export default function BlogPost() {
             <li>Forgetting to price up for local events, festivals, or conferences that can justify two to three times your normal rate for a handful of nights a year</li>
           </ul>
           <p>Pricing is one lever that gets a guest to consider your listing. The words that make them pick yours over a nearly identical listing at a similar price are the other. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> helps with that second part, turning your listing details into ready-to-paste descriptions in under a minute.</p>
+        </div>
+        <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
+          Written by the HostCopy AI team &mdash; a solo developer project.{" "}
+          <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.
         </div>
                 <div className="mt-10 pt-8 border-t border-stone-200">
           <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>

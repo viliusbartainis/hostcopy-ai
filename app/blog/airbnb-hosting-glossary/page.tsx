@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: "Airbnb Hosting Glossary: 20 Terms Every Host Should Know",
     description: "Superhost, Instant Book, response rate, occupancy rate, and more — clear, accurate definitions for the terms Airbnb hosts run into most.",
     publishedTime: "2026-08-28",
-    modifiedTime: "2026-08-28",
+    modifiedTime: "2026-08-29",
     url: "https://hostcopyai.com/blog/airbnb-hosting-glossary",
   },
   twitter: {
@@ -35,7 +35,7 @@ const jsonLd = {
     logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
   },
   datePublished: "2026-08-28",
-  dateModified: "2026-08-28",
+  dateModified: "2026-08-29",
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://hostcopyai.com/blog/airbnb-hosting-glossary",
@@ -138,6 +138,12 @@ const terms = [
 export default function GlossaryPost() {
   return (
     <main className="min-h-screen bg-background">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-stone-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:underline"
+      >
+        Skip to content
+      </a>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -146,11 +152,22 @@ export default function GlossaryPost() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <article className="max-w-2xl mx-auto px-6 py-16">
+      <article id="main-content" className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
+        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500 mt-4">
+          <span>Last updated: August 29, 2026</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>1 min read</span>
+        </div>
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           Airbnb Hosting Glossary: 20 Terms Every Host Should Know
         </h1>
+        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts who keep running into hosting jargon that isn't explained clearly anywhere else.</p>
+        <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
+          <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
+          <p className="text-stone-800 leading-relaxed text-sm">This glossary defines 20 terms Airbnb hosts run into constantly — Superhost, Instant Book, response rate, occupancy rate, and more — in plain language, without the marketing spin some of these terms get elsewhere.</p>
+        </div>
+
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>Airbnb hosting comes with its own vocabulary, and a lot of it isn&apos;t explained clearly in one place. Here are 20 terms that come up constantly, defined plainly and without jargon.</p>
         </div>
@@ -162,6 +179,10 @@ export default function GlossaryPost() {
             </div>
           ))}
         </dl>
+        <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
+          Written by the HostCopy AI team &mdash; a solo developer project.{" "}
+          <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.
+        </div>
         <div className="mt-10 pt-8 border-t border-stone-200">
           <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
           <div className="space-y-2">

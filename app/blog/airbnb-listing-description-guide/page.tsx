@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "How to Write an Airbnb Listing Description That Actually Books",
     description: "Guests decide whether to click on your listing in about three seconds.",
     publishedTime: "2026-08-03",
-    modifiedTime: "2026-08-03",
+    modifiedTime: "2026-08-29",
     url: "https://hostcopyai.com/blog/airbnb-listing-description-guide",
   },
 };
@@ -27,7 +27,7 @@ const jsonLd = {
     logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
   },
   datePublished: "2026-08-03",
-  dateModified: "2026-08-03",
+  dateModified: "2026-08-29",
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": "https://hostcopyai.com/blog/airbnb-listing-description-guide",
@@ -61,6 +61,12 @@ const howToJsonLd = {
 export default function BlogPost() {
   return (
     <main className="min-h-screen bg-background">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-stone-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:underline"
+      >
+        Skip to content
+      </a>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -73,11 +79,22 @@ export default function BlogPost() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
       />
-      <article className="max-w-2xl mx-auto px-6 py-16">
+      <article id="main-content" className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
+        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500 mt-4">
+          <span>Last updated: August 29, 2026</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>2 min read</span>
+        </div>
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           How to Write an Airbnb Listing Description That Actually Books
         </h1>
+        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts writing or rewriting their Airbnb listing description.</p>
+        <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
+          <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
+          <p className="text-stone-800 leading-relaxed text-sm">A description that books opens with a specific hook instead of “cozy retreat,” moves through the space and neighborhood, then closes with a genuine sentence — and needs a different version for Airbnb, Booking.com, and Instagram rather than one description pasted everywhere.</p>
+        </div>
+
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>Guests decide whether to click on your listing in about three seconds. They&apos;re not reading — they&apos;re scanning. If your first line sounds like every other listing (&quot;Cozy retreat in the heart of the city!&quot;), you&apos;ve already lost them to the next photo grid.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Why most Airbnb descriptions fail</h2>
@@ -99,6 +116,10 @@ export default function BlogPost() {
             <li>No sentence you&apos;d be embarrassed to say out loud to a guest</li>
           </ul>
           <p>Writing three good versions by hand takes 20–30 minutes per listing. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> generates all three — matched to each platform — from one form, in under a minute.</p>
+        </div>
+        <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
+          Written by the HostCopy AI team &mdash; a solo developer project.{" "}
+          <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.
         </div>
               <div className="mt-10 pt-8 border-t border-stone-200">
         <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>

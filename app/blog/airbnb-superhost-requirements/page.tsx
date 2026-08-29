@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "Airbnb Superhost Requirements Explained (2026 Update)",
     description: "Superhost is the badge Airbnb gives to hosts who consistently deliver a great guest experience.",
     publishedTime: "2026-08-04",
-    modifiedTime: "2026-08-04",
+    modifiedTime: "2026-08-29",
     url: "https://hostcopyai.com/blog/airbnb-superhost-requirements",
   },
 };
@@ -29,7 +29,7 @@ export default function BlogPost() {
       logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
     },
     datePublished: "2026-08-04",
-    dateModified: "2026-08-04",
+    dateModified: "2026-08-29",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-superhost-requirements",
@@ -48,6 +48,12 @@ export default function BlogPost() {
 
   return (
     <main className="min-h-screen bg-background">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-stone-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:underline"
+      >
+        Skip to content
+      </a>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -56,11 +62,22 @@ export default function BlogPost() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <article className="max-w-2xl mx-auto px-6 py-16">
+      <article id="main-content" className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
+        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500 mt-4">
+          <span>Last updated: August 29, 2026</span>
+          <span aria-hidden="true">&middot;</span>
+          <span>2 min read</span>
+        </div>
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           Airbnb Superhost Requirements Explained (2026 Update)
         </h1>
+        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts checking their Superhost eligibility or deciding whether it's worth chasing.</p>
+        <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
+          <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
+          <p className="text-stone-800 leading-relaxed text-sm">Superhost status requires meeting four thresholds — reviews, response rate, cancellations, and completed stays — reviewed quarterly, and it mainly buys extra search visibility and a badge rather than guaranteed bookings.</p>
+        </div>
+
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>Superhost is the badge Airbnb gives to hosts who consistently deliver a great guest experience. It shows up on your listing and profile, and Airbnb reviews every host&apos;s eligibility on a quarterly basis using activity from the trailing twelve months.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">The four core requirements</h2>
@@ -74,6 +91,10 @@ export default function BlogPost() {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Is it worth chasing?</h2>
           <p>For most hosts, meeting these thresholds is a natural side effect of running a decent listing, not a separate goal to chase. It&apos;s worth being careful about over-optimizing for the badge itself, like accepting every booking request regardless of fit just to avoid a cancellation — consistently good hosting tends to earn the badge on its own, without needing to bend your own rules for it.</p>
           <p>Because program details can change, this article reflects the general structure of the requirements rather than a guarantee of the exact current numbers — always check Airbnb&apos;s official Superhost page before making decisions based on it.</p>
+        </div>
+        <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
+          Written by the HostCopy AI team &mdash; a solo developer project.{" "}
+          <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.
         </div>
         <div className="mt-10 pt-8 border-t border-stone-200">
           <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
