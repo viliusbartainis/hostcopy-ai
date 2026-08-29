@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import HeroIllustration from '@/components/HeroIllustration';
 import CheckIcon from '@/components/CheckIcon';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 const PROPERTY_TYPES: { value: string; key: string }[] = [
   { value: 'Apartment', key: 'apartment' },
@@ -35,9 +36,32 @@ const TONES: { value: string; key: string }[] = [
   { value: 'Minimalist', key: 'minimalist' },
 ];
 
+const QUICK_TEMPLATES: { key: string; propertyType: string; amenities: string[]; tone: string }[] = [
+  { key: 'beachApartment', propertyType: 'Apartment', amenities: ['Pool', 'WiFi', 'Balcony', 'Air conditioning'], tone: 'Cozy & Homey' },
+  { key: 'cityStudio', propertyType: 'Studio', amenities: ['WiFi', 'Workspace', 'Kitchen'], tone: 'Minimalist' },
+  { key: 'familyHouse', propertyType: 'House', amenities: ['Kitchen', 'Parking', 'Pet-friendly', 'Air conditioning'], tone: 'Family-friendly' },
+  { key: 'businessLoft', propertyType: 'Loft', amenities: ['WiFi', 'Workspace', 'Parking'], tone: 'Business Traveler' },
+];
+
 const FREE_LIMIT = 3;
 const STORAGE_KEY = 'hostcopy_uses_used';
 const PRO_KEY = 'hostcopy_pro';
+const FORM_STORAGE_KEY = 'hostcopy_form_state';
+const HISTORY_KEY = 'hostcopy_history';
+const HISTORY_LIMIT = 5;
+
+type GenerationResult = { airbnb: string; booking: string; instagram: string };
+type HistoryEntry = {
+  id: string;
+  timestamp: number;
+  propertyType: string;
+  location: string;
+  guests: number;
+  bedrooms: number;
+  amenities: string[];
+  tone: string;
+  results: GenerationResult;
+};
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -103,6 +127,38 @@ function readInitialState() {
   };
 }
 
+type SavedFormState = {
+  propertyType?: string;
+  location?: string;
+  guests?: number;
+  bedrooms?: number;
+  amenities?: string[];
+  tone?: string;
+};
+
+function readSavedFormState(): SavedFormState | null {
+  try {
+    const raw = localStorage.getItem(FORM_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : null;
+  } catch {
+    return null;
+  }
+}
+
+function readHistory(): HistoryEntry[] {
+  try {
+    const raw = localStorage.getItem(HISTORY_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch {
+    return [];
+  }
+}
+
+function countWords(text: string): number {
+  const trimmed = text.trim();
+  return trimmed ? trimmed.split(/\s+/).length : 0;
+}
+
 export default function Home() {
   const tHeader = useTranslations('Header');
   const tHero = useTranslations('Hero');
@@ -118,6 +174,8 @@ export default function Home() {
   const tPricing = useTranslations('Pricing');
   const tFaq = useTranslations('Faq');
   const tFooter = useTranslations('Footer');
+  const tTemplates = useTranslations('Templates');
+  const tHistory = useTranslations('History');
 
   const [propertyType, setPropertyType] = useState('Apartment');
   const [location, setLocation] = useState('');
@@ -138,6 +196,9 @@ export default function Home() {
   const [locationTouched, setLocationTouched] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [copiedAll, setCopiedAll] = useState(false);
+  const [feedbackGiven, setFeedbackGiven] = useState<'up' | 'down' | null>(null);
+  const [history, setHistory] = useState<HistoryEntry[]>([]);
 
   useEffect(() => {
     if (!toast) return;
@@ -157,6 +218,17 @@ export default function Home() {
     setIsPro(initial.pro);
     setUsesUsed(initial.used);
     setHydrated(true);
+
+    const saved = readSavedFormState();
+    if (saved) {
+      if (saved.propertyType) setPropertyType(saved.propertyType);
+      if (saved.location) setLocation(saved.location);
+      if (typeof saved.guests === 'number') setGuests(saved.guests);
+      if (typeof saved.bedrooms === 'number') setBedrooms(saved.bedrooms);
+      if (saved.amenities) setAmenities(saved.amenities);
+      if (saved.tone) setTone(saved.tone);
+    }
+    setHistory(readHistory());
 
     const params = new URLSearchParams(window.location.search);
     if (params.get('success') === 'true') {
@@ -180,6 +252,12 @@ export default function Home() {
     }
   }, []);
 
+  useEffect(() => {
+    if (!hydrated) return;
+    const state: SavedFormState = { propertyType, location, guests, bedrooms, amenities, tone };
+    localStorage.setItem(FORM_STORAGE_KEY, JSON.stringify(state));
+  }, [hydrated, propertyType, location, guests, bedrooms, amenities, tone]);
+
   const freeUsesLeft = FREE_LIMIT - usesUsed;
   const limitReached = !isPro && freeUsesLeft <= 0;
 
@@ -187,6 +265,24 @@ export default function Home() {
     setAmenities((prev) =>
       prev.includes(a) ? prev.filter((x) => x !== a) : [...prev, a]
     );
+  };
+
+  const applyTemplate = (template: (typeof QUICK_TEMPLATES)[number]) => {
+    setPropertyType(template.propertyType);
+    setAmenities(template.amenities);
+    setTone(template.tone);
+  };
+
+  const loadHistoryEntry = (entry: HistoryEntry) => {
+    setPropertyType(entry.propertyType);
+    setLocation(entry.location);
+    setGuests(entry.guests);
+    setBedrooms(entry.bedrooms);
+    setAmenities(entry.amenities);
+    setTone(entry.tone);
+    setResults(entry.results);
+    setActiveTab('airbnb');
+    setFeedbackGiven(null);
   };
 
   const handleCheckout = async () => {
@@ -235,8 +331,10 @@ export default function Home() {
         }
         return;
       }
-      setResults({ airbnb: data.airbnb, booking: data.booking, instagram: data.instagram });
+      const newResults = { airbnb: data.airbnb, booking: data.booking, instagram: data.instagram };
+      setResults(newResults);
       setActiveTab('airbnb');
+      setFeedbackGiven(null);
       if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'generate_description', {
           is_pro: isPro,
@@ -248,6 +346,21 @@ export default function Home() {
         const newUsed = usesUsed + 1;
         setUsesUsed(newUsed);
         localStorage.setItem(STORAGE_KEY, String(newUsed));
+      } else {
+        const entry: HistoryEntry = {
+          id: `${Date.now()}-${Math.random().toString(36).slice(2, 8)}`,
+          timestamp: Date.now(),
+          propertyType,
+          location,
+          guests,
+          bedrooms,
+          amenities,
+          tone,
+          results: newResults,
+        };
+        const newHistory = [entry, ...history].slice(0, HISTORY_LIMIT);
+        setHistory(newHistory);
+        localStorage.setItem(HISTORY_KEY, JSON.stringify(newHistory));
       }
     } catch {
       setError(tErrors('generic'));
@@ -272,6 +385,7 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
+      <ErrorBoundary>
       <main className="min-h-screen bg-background">
         <header
           className={`sticky top-0 z-40 transition-shadow duration-200 ${
@@ -340,11 +454,22 @@ export default function Home() {
         </div>
 
         <section className="max-w-2xl mx-auto px-6 -mt-8 pb-16 relative">
+          <div className="mb-4">
+            <p className="text-xs font-medium text-navy/60 mb-2">{tTemplates('title')}</p>
+            <div className="flex flex-wrap gap-2">
+              {QUICK_TEMPLATES.map((template) => (
+                <button key={template.key} type="button" onClick={() => applyTemplate(template)}
+                  className="px-3.5 py-2 rounded-full text-sm border border-navy/20 bg-white text-navy/70 hover:border-navy/40 hover:text-navy transition-colors">
+                  {tTemplates(template.key)}
+                </button>
+              ))}
+            </div>
+          </div>
           <div id="generator-form" className="bg-parchment rounded-2xl shadow-card-lg border border-brass/20 p-8 scroll-mt-24">
-            <div className="grid gap-5">
+            <form className="grid gap-5" onSubmit={(e) => { e.preventDefault(); handleGenerate(); }}>
               <div>
                 <label htmlFor="propertyType" className="block text-sm font-medium text-navy/80 mb-1">{tForm('propertyTypeLabel')}</label>
-                <select id="propertyType" value={propertyType} onChange={(e) => setPropertyType(e.target.value)}
+                <select id="propertyType" autoFocus value={propertyType} onChange={(e) => setPropertyType(e.target.value)}
                   className="w-full border border-navy/20 bg-white rounded-lg px-3 py-2 text-ink focus:outline-none focus:ring-2 focus:ring-brass/50 focus:border-brass">
                   {PROPERTY_TYPES.map((pt) => (
                     <option key={pt.value} value={pt.value}>{tPropertyTypes(pt.key)}</option>
@@ -416,7 +541,7 @@ export default function Home() {
                   </button>
                 </div>
               )}
-              <button onClick={handleGenerate} disabled={loading || !hydrated || limitReached}
+              <button type="submit" disabled={loading || !hydrated || limitReached}
                 className="w-full bg-brass text-navy rounded-lg py-3 font-medium hover:bg-brass-dark disabled:opacity-50 transition-colors">
                 {genLabel}
               </button>
@@ -440,7 +565,7 @@ export default function Home() {
                   )}
                 </div>
               )}
-            </div>
+            </form>
 
             {loading && (
               <div className="mt-6 animate-pulse" aria-hidden="true">
@@ -478,22 +603,99 @@ export default function Home() {
                 </div>
                 <div className="ticket-perforation p-5 bg-parchment border border-navy/15 border-t-0 rounded-b-xl rounded-tr-xl">
                   <p className="text-ink whitespace-pre-wrap leading-relaxed">{results[activeTab]}</p>
-                  <button
-                    onClick={() => {
-                      navigator.clipboard.writeText(results[activeTab]);
-                      setCopied(true);
-                      setToast(tResults('copied'));
-                      setTimeout(() => setCopied(false), 2000);
-                    }}
-                    className="mt-4 text-sm font-medium text-teal underline inline-flex items-center gap-1.5">
-                    {copied && (
-                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-                        <path d="M4 10.5l3.5 3.5L16 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
+                  <p className="text-xs text-navy/40 mt-2">{tResults('wordCount', { count: countWords(results[activeTab]) })}</p>
+                  <div className="mt-4 flex flex-wrap items-center gap-4">
+                    <button
+                      onClick={() => {
+                        navigator.clipboard.writeText(results[activeTab]);
+                        setCopied(true);
+                        setToast(tResults('copied'));
+                        setTimeout(() => setCopied(false), 2000);
+                      }}
+                      className="text-sm font-medium text-teal underline inline-flex items-center gap-1.5">
+                      {copied && (
+                        <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                          <path d="M4 10.5l3.5 3.5L16 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      )}
+                      {copied ? tResults('copied') : tResults('copy')}
+                    </button>
+                    <button
+                      onClick={() => {
+                        const formatted = `AIRBNB:\n${results.airbnb}\n\nBOOKING.COM:\n${results.booking}\n\nINSTAGRAM:\n${results.instagram}`;
+                        navigator.clipboard.writeText(formatted);
+                        setCopiedAll(true);
+                        setToast(tResults('copiedAll'));
+                        setTimeout(() => setCopiedAll(false), 2000);
+                      }}
+                      className="text-sm font-medium text-teal underline inline-flex items-center gap-1.5">
+                      {copiedAll ? tResults('copiedAll') : tResults('copyAll')}
+                    </button>
+                    <button
+                      onClick={handleGenerate}
+                      disabled={loading}
+                      className="text-sm font-medium text-teal underline disabled:opacity-50">
+                      {loading ? tResults('regenerating') : tResults('regenerate')}
+                    </button>
+                  </div>
+                  <div className="mt-5 pt-4 border-t border-navy/10 flex items-center gap-3">
+                    {feedbackGiven ? (
+                      <p className="text-sm text-navy/60">{tResults('feedbackThanks')}</p>
+                    ) : (
+                      <>
+                        <p className="text-sm text-navy/60">{tResults('feedbackQuestion')}</p>
+                        <button
+                          type="button"
+                          aria-label="Helpful"
+                          onClick={() => {
+                            setFeedbackGiven('up');
+                            if (typeof window !== 'undefined' && window.gtag) {
+                              window.gtag('event', 'feedback', { helpful: true });
+                            }
+                          }}
+                          className="text-lg hover:scale-110 transition-transform">
+                          👍
+                        </button>
+                        <button
+                          type="button"
+                          aria-label="Not helpful"
+                          onClick={() => {
+                            setFeedbackGiven('down');
+                            if (typeof window !== 'undefined' && window.gtag) {
+                              window.gtag('event', 'feedback', { helpful: false });
+                            }
+                          }}
+                          className="text-lg hover:scale-110 transition-transform">
+                          👎
+                        </button>
+                      </>
                     )}
-                    {copied ? tResults('copied') : tResults('copy')}
-                  </button>
+                  </div>
                 </div>
+              </div>
+            )}
+            {hydrated && isPro && (
+              <div className="mt-8 pt-6 border-t border-navy/10">
+                <p className="text-sm font-medium text-navy/80 mb-3">{tHistory('title')}</p>
+                {history.length === 0 ? (
+                  <p className="text-sm text-navy/50">{tHistory('empty', { limit: HISTORY_LIMIT })}</p>
+                ) : (
+                  <ul className="space-y-2">
+                    {history.map((entry) => (
+                      <li key={entry.id} className="flex items-center justify-between gap-3 bg-white border border-navy/10 rounded-lg px-4 py-2.5">
+                        <span className="text-sm text-navy/70 truncate">
+                          {entry.propertyType} &middot; {entry.location || '—'}
+                        </span>
+                        <button
+                          type="button"
+                          onClick={() => loadHistoryEntry(entry)}
+                          className="text-sm font-medium text-teal underline shrink-0">
+                          {tHistory('load')}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
             )}
           </div>
@@ -698,6 +900,7 @@ export default function Home() {
           )}
         </div>
       </main>
+      </ErrorBoundary>
     </>
   );
 }

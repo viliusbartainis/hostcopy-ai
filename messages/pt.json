@@ -72,7 +72,14 @@
     "booking": "Booking.com",
     "instagram": "Instagram",
     "copy": "Copiar",
-    "copied": "Copiado!"
+    "copied": "Copiado!",
+    "regenerate": "Regenerar",
+    "regenerating": "A regenerar...",
+    "copyAll": "Copiar os 3",
+    "copiedAll": "Copiados os 3!",
+    "wordCount": "{count, plural, one {# palavra} other {# palavras}}",
+    "feedbackQuestion": "Isto foi útil?",
+    "feedbackThanks": "Obrigado pelo feedback!"
   },
   "Showcase": {
     "eyebrow": "Veja em ação",
@@ -151,5 +158,17 @@
   },
   "LanguageSwitcher": {
     "label": "Idioma"
+  },
+  "Templates": {
+    "title": "Início rápido",
+    "beachApartment": "Apartamento de praia",
+    "cityStudio": "Estúdio na cidade",
+    "familyHouse": "Casa de família",
+    "businessLoft": "Loft empresarial"
+  },
+  "History": {
+    "title": "Gerações recentes",
+    "load": "Carregar",
+    "empty": "As suas últimas {limit} gerações aparecerão aqui."
   }
 }
