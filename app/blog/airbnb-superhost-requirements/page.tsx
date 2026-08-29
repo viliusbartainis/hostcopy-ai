@@ -95,7 +95,7 @@ export default function BlogPost() {
           <p><strong>Can I lose Superhost status after just one bad review?</strong> Usually not from a single review alone, unless your review pool is small enough that one low score meaningfully drags your average below 4.8.</p>
           <p><strong>Does Superhost status affect my search ranking?</strong> It&apos;s associated with a modest visibility boost, but the same underlying metrics &mdash; response rate, reviews, cancellations &mdash; matter for ranking whether or not you&apos;ve earned the badge.</p>
         </div>
-        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+        <div className="mt-6 pl-4 border-l-2 border-brass/50 text-xs text-stone-500">
           <p className="font-medium mb-1">Sources</p>
           <ul className="space-y-1">
             <li><a href="https://www.airbnb.com/help/article/828" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Help Center &ndash; Understand the Superhost program</a></li>

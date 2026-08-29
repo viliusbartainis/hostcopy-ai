@@ -95,7 +95,7 @@ export default function BlogPost() {
           <p><strong>Can I cancel a reservation because a guest seems difficult before check-in?</strong> Only for reasons that fit Airbnb&apos;s cancellation policy — canceling because a guest merely seems difficult, without a policy violation, risks a penalty on your own account.</p>
           <p><strong>Should I respond to a bad review from a difficult guest?</strong> Yes — a calm, factual public response often matters more to future guests reading it than the review itself.</p>
         </div>
-        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+        <div className="mt-6 pl-4 border-l-2 border-brass/50 text-xs text-stone-500">
           <p className="font-medium mb-1">Further reading</p>
           <ul className="space-y-1">
             <li><a href="https://www.airbnb.com/help/article/3590" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Help Center &ndash; Find your Resolution Center requests</a></li>

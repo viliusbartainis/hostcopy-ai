@@ -110,7 +110,7 @@ const breadcrumbJsonLd = {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Related questions</h2>
           <p><strong>Do I need a business license to host on Airbnb?</strong> It depends entirely on your local jurisdiction — some cities require a short-term rental permit or license, others don&apos;t, so check your specific city and state or province rules before publishing.</p>
           <p><strong>Is short-term rental insurance necessary if Airbnb offers AirCover?</strong> AirCover has real limits and exclusions, so most experienced hosts still carry a dedicated short-term rental insurance policy or an endorsement on their existing policy rather than relying on it alone.</p>
-        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+        <div className="mt-6 pl-4 border-l-2 border-brass/50 text-xs text-stone-500">
           <p className="font-medium mb-1">Further reading</p>
           <ul className="space-y-1">
             <li><a href="https://www.airbnb.com/help/article/3116" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Help Center &ndash; Essential resources for new hosts</a></li>

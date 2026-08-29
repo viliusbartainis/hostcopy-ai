@@ -17,7 +17,9 @@
     "guestsLabel": "Gäste",
     "bedroomsLabel": "Schlafzimmer",
     "amenitiesLabel": "Ausstattung",
-    "toneLabel": "Tonalität"
+    "toneLabel": "Tonalität",
+    "timeEstimate": "Dauert etwa 30 Sekunden",
+    "privacyReassurance": "Ihre Daten werden nicht gespeichert oder weitergegeben."
   },
   "PropertyTypes": {
     "apartment": "Wohnung",
@@ -51,7 +53,8 @@
     "generic": "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
     "checkoutUnknown": "Unbekannter Fehler — keine URL erhalten",
     "checkoutNetwork": "Netzwerkfehler",
-    "errorPrefix": "Fehler: {message}"
+    "errorPrefix": "Fehler: {message}",
+    "retry": "Erneut versuchen"
   },
   "Generate": {
     "loading": "Ihre Anzeigen werden erstellt...",

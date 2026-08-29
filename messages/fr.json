@@ -17,7 +17,9 @@
     "guestsLabel": "Voyageurs",
     "bedroomsLabel": "Chambres",
     "amenitiesLabel": "Équipements",
-    "toneLabel": "Ton"
+    "toneLabel": "Ton",
+    "timeEstimate": "Prend environ 30 secondes",
+    "privacyReassurance": "Vos données ne sont ni stockées ni partagées."
   },
   "PropertyTypes": {
     "apartment": "Appartement",
@@ -51,7 +53,8 @@
     "generic": "Une erreur s'est produite. Veuillez réessayer.",
     "checkoutUnknown": "Erreur inconnue — aucune URL retournée",
     "checkoutNetwork": "Erreur réseau",
-    "errorPrefix": "Erreur : {message}"
+    "errorPrefix": "Erreur : {message}",
+    "retry": "Réessayer"
   },
   "Generate": {
     "loading": "Rédaction de vos annonces...",

@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import HeroIllustration from '@/components/HeroIllustration';
+import CheckIcon from '@/components/CheckIcon';
 
 const PROPERTY_TYPES: { value: string; key: string }[] = [
   { value: 'Apartment', key: 'apartment' },
@@ -133,6 +135,22 @@ export default function Home() {
   const [checkoutError, setCheckoutError] = useState('');
   const [copied, setCopied] = useState(false);
   const [isPro, setIsPro] = useState(false);
+  const [locationTouched, setLocationTouched] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    if (!toast) return;
+    const t = setTimeout(() => setToast(null), 2200);
+    return () => clearTimeout(t);
+  }, [toast]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     const initial = readInitialState();
@@ -195,7 +213,7 @@ export default function Home() {
       return;
     }
     if (!location.trim()) {
-      setError(tErrors('locationRequired'));
+      setLocationTouched(true);
       return;
     }
     if (guests < 1 || bedrooms < 0) {
@@ -255,8 +273,12 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
       <main className="min-h-screen bg-background">
-        <div className="hero-gradient">
-          <header className="max-w-5xl mx-auto px-6 pt-6 flex items-center justify-between">
+        <header
+          className={`sticky top-0 z-40 transition-shadow duration-200 ${
+            scrolled ? 'bg-background/95 backdrop-blur-sm shadow-card' : 'bg-transparent'
+          }`}
+        >
+          <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                 <rect width="32" height="32" rx="10" fill="#3B2F26" />
@@ -295,21 +317,30 @@ export default function Home() {
                 </a>
               )}
             </div>
-          </header>
+          </div>
+        </header>
 
-          <section className="max-w-3xl mx-auto px-6 pt-14 pb-16 text-center">
-            <h1 className="font-display text-4xl md:text-5xl font-semibold text-navy mb-4 leading-tight">
-              {tHero('title')}
-            </h1>
-            <p className="text-lg text-navy/70 mb-8 max-w-xl mx-auto">
-              {tHero('subtitle')}
-            </p>
-            <p className="font-mono text-xs tracking-wide uppercase text-navy/50">{tHero('builtBy')}</p>
+        <div className="hero-gradient">
+          <section className="max-w-5xl mx-auto px-6 pt-14 pb-16">
+            <div className="grid md:grid-cols-[1.3fr_1fr] gap-10 items-center">
+              <div className="text-center md:text-left">
+                <h1 className="font-display text-4xl md:text-5xl font-semibold text-navy mb-4 leading-tight tracking-tight">
+                  {tHero('title')}
+                </h1>
+                <p className="text-lg text-navy/70 mb-8 max-w-xl mx-auto md:mx-0">
+                  {tHero('subtitle')}
+                </p>
+                <p className="font-mono text-xs tracking-wide uppercase text-navy/50">{tHero('builtBy')}</p>
+              </div>
+              <div className="hidden md:block" aria-hidden="true">
+                <HeroIllustration />
+              </div>
+            </div>
           </section>
         </div>
 
         <section className="max-w-2xl mx-auto px-6 -mt-8 pb-16 relative">
-          <div className="bg-parchment rounded-2xl shadow-lg shadow-navy/10 border border-brass/20 p-8">
+          <div id="generator-form" className="bg-parchment rounded-2xl shadow-card-lg border border-brass/20 p-8 scroll-mt-24">
             <div className="grid gap-5">
               <div>
                 <label htmlFor="propertyType" className="block text-sm font-medium text-navy/80 mb-1">{tForm('propertyTypeLabel')}</label>
@@ -321,10 +352,19 @@ export default function Home() {
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-navy/80 mb-1">{tForm('locationLabel')}</label>
-                <input value={location} onChange={(e) => setLocation(e.target.value)}
+                <label htmlFor="location" className="block text-sm font-medium text-navy/80 mb-1">{tForm('locationLabel')}</label>
+                <input id="location" value={location} onChange={(e) => setLocation(e.target.value)}
+                  onBlur={() => setLocationTouched(true)}
+                  aria-invalid={locationTouched && !location.trim()}
                   placeholder={tForm('locationPlaceholder')}
-                  className="w-full border border-navy/20 bg-white rounded-lg px-3 py-2 text-ink focus:outline-none focus:ring-2 focus:ring-brass/50 focus:border-brass" />
+                  className={`w-full border rounded-lg px-3 py-2 text-ink bg-white focus:outline-none focus:ring-2 focus:ring-brass/50 ${
+                    locationTouched && !location.trim()
+                      ? 'border-red-300 focus:border-red-400'
+                      : 'border-navy/20 focus:border-brass'
+                  }`} />
+                {locationTouched && !location.trim() && (
+                  <p className="text-xs text-red-600 mt-1">{tErrors('locationRequired')}</p>
+                )}
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
@@ -345,7 +385,7 @@ export default function Home() {
                 <div className="flex flex-wrap gap-2">
                   {AMENITIES.map((a) => (
                     <button key={a.value} type="button" onClick={() => toggleAmenity(a.value)}
-                      className={`px-3 py-1.5 rounded-full text-sm border transition-colors ${
+                      className={`px-3.5 py-2 rounded-full text-sm border transition-colors ${
                         amenities.includes(a.value)
                           ? 'bg-navy text-parchment border-navy'
                           : 'bg-white text-navy/70 border-navy/20 hover:border-navy/40'
@@ -365,14 +405,24 @@ export default function Home() {
                 </select>
               </div>
               {error && (
-                <p className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-3 py-2">
-                  {error}
-                </p>
+                <div className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-3 py-2 flex items-center justify-between gap-3">
+                  <span>{error}</span>
+                  <button
+                    type="button"
+                    onClick={handleGenerate}
+                    className="link-underline text-red-700 font-medium shrink-0"
+                  >
+                    {tErrors('retry')}
+                  </button>
+                </div>
               )}
               <button onClick={handleGenerate} disabled={loading || !hydrated || limitReached}
                 className="w-full bg-brass text-navy rounded-lg py-3 font-medium hover:bg-brass-dark disabled:opacity-50 transition-colors">
                 {genLabel}
               </button>
+              <p className="text-xs text-navy/50 text-center -mt-2">
+                {tForm('timeEstimate')} &middot; {tForm('privacyReassurance')}
+              </p>
               {hydrated && limitReached && (
                 <div className="p-5 bg-lavender/50 border-2 border-brass/30 rounded-xl text-center">
                   <p className="font-display font-semibold text-navy mb-1">{tLimit('title', { limit: FREE_LIMIT })}</p>
@@ -392,7 +442,23 @@ export default function Home() {
               )}
             </div>
 
-            {results && (
+            {loading && (
+              <div className="mt-6 animate-pulse" aria-hidden="true">
+                <div className="flex gap-1">
+                  <div className="h-9 w-24 bg-navy/10 rounded-t-lg" />
+                  <div className="h-9 w-24 bg-navy/5 rounded-t-lg" />
+                  <div className="h-9 w-24 bg-navy/5 rounded-t-lg" />
+                </div>
+                <div className="p-5 bg-parchment border border-navy/15 border-t-0 rounded-b-xl rounded-tr-xl space-y-3">
+                  <div className="h-4 bg-navy/10 rounded w-full" />
+                  <div className="h-4 bg-navy/10 rounded w-11/12" />
+                  <div className="h-4 bg-navy/10 rounded w-full" />
+                  <div className="h-4 bg-navy/10 rounded w-4/5" />
+                  <div className="h-4 bg-navy/10 rounded w-2/3" />
+                </div>
+              </div>
+            )}
+            {!loading && results && (
               <div className="mt-6">
                 <div className="flex gap-1">
                   {([
@@ -416,9 +482,15 @@ export default function Home() {
                     onClick={() => {
                       navigator.clipboard.writeText(results[activeTab]);
                       setCopied(true);
+                      setToast(tResults('copied'));
                       setTimeout(() => setCopied(false), 2000);
                     }}
-                    className="mt-4 text-sm font-medium text-teal underline">
+                    className="mt-4 text-sm font-medium text-teal underline inline-flex items-center gap-1.5">
+                    {copied && (
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        <path d="M4 10.5l3.5 3.5L16 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
                     {copied ? tResults('copied') : tResults('copy')}
                   </button>
                 </div>
@@ -437,7 +509,7 @@ export default function Home() {
               {tShowcase('subtitle')}
             </p>
           </div>
-          <div className="bg-parchment rounded-2xl border border-navy/15 p-8">
+          <div className="bg-parchment rounded-2xl border border-navy/15 shadow-card p-8">
             <div className="flex items-center justify-between mb-4">
               <span className="font-mono text-xs uppercase tracking-wide text-navy/50">{tShowcase('label')}</span>
               <span className="font-mono text-xs uppercase tracking-wide text-navy/50">{tShowcase('propertyLabel')}</span>
@@ -446,7 +518,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="pricing" className="max-w-5xl mx-auto px-6 pb-20 scroll-mt-8">
+        <div className="bg-parchment-dim">
+          <svg viewBox="0 0 1200 40" preserveAspectRatio="none" className="w-full h-8 block text-background" aria-hidden="true">
+            <path d="M0,0 L1200,0 L1200,24 C1000,44 800,44 600,24 C400,4 200,4 0,24 Z" fill="currentColor" />
+          </svg>
+        <section id="pricing" className="max-w-5xl mx-auto px-6 pb-16 pt-4 scroll-mt-8">
           <div className="text-center mb-3">
             <p className="font-mono text-xs tracking-[0.2em] uppercase text-teal mb-3">{tPricing('eyebrow')}</p>
             <h2 className="font-display text-3xl md:text-4xl font-semibold text-navy mb-3">
@@ -458,42 +534,42 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-5 mt-10 items-stretch">
-            <div className="flex flex-col rounded-2xl border border-navy/15 bg-parchment p-7">
+            <div className="flex flex-col rounded-2xl border border-navy/15 bg-parchment p-7 card-hover">
               <p className="font-display text-lg text-navy">{tPricing('free.name')}</p>
               <p className="text-sm text-navy/50 mb-5">{tPricing('free.tagline')}</p>
               <p className="mb-6">
-                <span className="font-display text-4xl font-semibold text-navy">{tPricing('free.price')}</span>
+                <span className="font-display number-display text-4xl font-semibold text-navy">{tPricing('free.price')}</span>
               </p>
               <ul className="space-y-3 text-sm text-navy/80 mb-7 flex-1">
-                <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('free.feature1', { limit: FREE_LIMIT })}</li>
-                <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('free.feature2')}</li>
-                <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('free.feature3')}</li>
-                <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('free.feature4')}</li>
-                <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('free.feature5')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-teal" /> {tPricing('free.feature1', { limit: FREE_LIMIT })}</li>
+                <li className="flex gap-2"><CheckIcon className="text-teal" /> {tPricing('free.feature2')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-teal" /> {tPricing('free.feature3')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-teal" /> {tPricing('free.feature4')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-teal" /> {tPricing('free.feature5')}</li>
               </ul>
               <a href="#" className="block text-center rounded-lg border border-navy/25 py-2.5 text-sm font-medium text-navy hover:border-navy/50 transition-colors">
                 {tPricing('free.cta')}
               </a>
             </div>
 
-            <div className="relative flex flex-col rounded-2xl border-2 border-navy bg-navy p-7 shadow-xl md:-mt-4 md:mb-4">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brass text-navy text-xs font-medium px-3 py-1 rounded-full">
+            <div className="relative flex flex-col rounded-2xl border-2 border-navy bg-navy p-7 shadow-card-lg md:-mt-4 md:mb-4 card-hover">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brass text-navy text-xs font-semibold px-3 py-1 rounded-full shadow-card tracking-wide">
                 {tPricing('pro.badge')}
               </span>
               <p className="font-display text-lg text-parchment">{tPricing('pro.name')}</p>
               <p className="text-sm text-parchment/60 mb-5">{tPricing('pro.tagline')}</p>
               <p className="mb-6">
-                <span className="font-display text-4xl font-semibold text-parchment">{tPricing('pro.price')}</span>
+                <span className="font-display number-display text-4xl font-semibold text-parchment">{tPricing('pro.price')}</span>
                 <span className="text-parchment/60 text-sm">{tPricing('pro.period')}</span>
               </p>
               <ul className="space-y-3 text-sm text-parchment/90 mb-7 flex-1">
-                <li className="flex gap-2"><span className="text-brass">✓</span> {tPricing('pro.feature1')}</li>
-                <li className="flex gap-2"><span className="text-brass">✓</span> {tPricing('pro.feature2')}</li>
-                <li className="flex gap-2"><span className="text-brass">✓</span> {tPricing('pro.feature3')}</li>
-                <li className="flex gap-2"><span className="text-brass">✓</span> {tPricing('pro.feature4')}</li>
-                <li className="flex gap-2"><span className="text-brass">✓</span> {tPricing('pro.feature5')}</li>
-                <li className="flex gap-2"><span className="text-brass">✓</span> {tPricing('pro.feature6')}</li>
-                <li className="flex gap-2"><span className="text-brass">✓</span> {tPricing('pro.feature7')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-brass" /> {tPricing('pro.feature1')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-brass" /> {tPricing('pro.feature2')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-brass" /> {tPricing('pro.feature3')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-brass" /> {tPricing('pro.feature4')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-brass" /> {tPricing('pro.feature5')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-brass" /> {tPricing('pro.feature6')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-brass" /> {tPricing('pro.feature7')}</li>
               </ul>
               <button
                 type="button"
@@ -506,21 +582,27 @@ export default function Home() {
               {checkoutError && (
                 <p className="text-xs text-red-300 mt-2 text-center">{tErrors('errorPrefix', { message: checkoutError })}</p>
               )}
+              <p className="flex items-center justify-center gap-1.5 text-xs text-parchment/50 mt-3">
+                <svg width="12" height="12" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 2l6 2.5v5c0 4.2-2.6 7.4-6 8.5-3.4-1.1-6-4.3-6-8.5v-5L10 2z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                </svg>
+                Secure checkout via Stripe
+              </p>
             </div>
 
-            <div className="flex flex-col rounded-2xl border border-navy/15 bg-parchment p-7">
+            <div className="flex flex-col rounded-2xl border border-navy/15 bg-parchment p-7 card-hover">
               <p className="font-display text-lg text-navy">{tPricing('premium.name')}</p>
               <p className="text-sm text-navy/50 mb-5">{tPricing('premium.tagline')}</p>
               <p className="mb-6">
-                <span className="font-display text-4xl font-semibold text-navy">{tPricing('premium.price')}</span>
+                <span className="font-display number-display text-4xl font-semibold text-navy">{tPricing('premium.price')}</span>
                 <span className="text-navy/50 text-sm">{tPricing('premium.period')}</span>
               </p>
               <ul className="space-y-3 text-sm text-navy/80 mb-7 flex-1">
-                <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('premium.feature1')}</li>
-                <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('premium.feature2')}</li>
-                <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('premium.feature3')}</li>
-                <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('premium.feature4')}</li>
-                <li className="flex gap-2"><span className="text-teal">✓</span> {tPricing('premium.feature5')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-teal" /> {tPricing('premium.feature1')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-teal" /> {tPricing('premium.feature2')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-teal" /> {tPricing('premium.feature3')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-teal" /> {tPricing('premium.feature4')}</li>
+                <li className="flex gap-2"><CheckIcon className="text-teal" /> {tPricing('premium.feature5')}</li>
               </ul>
               <a href="mailto:vilius.bartainis67@gmail.com?subject=HostCopy%20AI%20Premium"
                 className="block text-center rounded-lg border border-navy/25 py-2.5 text-sm font-medium text-navy hover:border-navy/50 transition-colors">
@@ -533,8 +615,12 @@ export default function Home() {
             {tPricing('footnote')}
           </p>
         </section>
+          <svg viewBox="0 0 1200 40" preserveAspectRatio="none" className="w-full h-8 block text-background rotate-180" aria-hidden="true">
+            <path d="M0,0 L1200,0 L1200,24 C1000,44 800,44 600,24 C400,4 200,4 0,24 Z" fill="currentColor" />
+          </svg>
+        </div>
 
-        <section className="max-w-2xl mx-auto px-6 pb-16">
+        <section className="max-w-2xl mx-auto px-6 pt-16 pb-16">
           <h2 className="font-display text-2xl font-semibold text-navy mb-6 text-center">
             {tFaq('title')}
           </h2>
@@ -586,6 +672,31 @@ export default function Home() {
             </a>
           </p>
         </footer>
+
+        {scrolled && !results && (
+          <div className="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-background/95 backdrop-blur-sm border-t border-navy/10 shadow-card print:hidden">
+            <a
+              href="#generator-form"
+              className="block w-full text-center bg-brass text-navy rounded-lg py-3 font-medium hover:bg-brass-dark transition-colors"
+            >
+              {genLabel}
+            </a>
+          </div>
+        )}
+
+        <div
+          role="status"
+          aria-live="polite"
+          className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+            toast ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'
+          }`}
+        >
+          {toast && (
+            <div className="bg-navy text-parchment text-sm font-medium px-4 py-2.5 rounded-full shadow-card-lg">
+              {toast}
+            </div>
+          )}
+        </div>
       </main>
     </>
   );

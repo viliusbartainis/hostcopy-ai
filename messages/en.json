@@ -17,7 +17,9 @@
     "guestsLabel": "Guests",
     "bedroomsLabel": "Bedrooms",
     "amenitiesLabel": "Amenities",
-    "toneLabel": "Tone"
+    "toneLabel": "Tone",
+    "timeEstimate": "Takes about 30 seconds",
+    "privacyReassurance": "Your details aren't stored or shared."
   },
   "PropertyTypes": {
     "apartment": "Apartment",
@@ -51,7 +53,8 @@
     "generic": "Something went wrong. Please try again.",
     "checkoutUnknown": "Unknown error — no URL returned",
     "checkoutNetwork": "Network error",
-    "errorPrefix": "Error: {message}"
+    "errorPrefix": "Error: {message}",
+    "retry": "Try again"
   },
   "Generate": {
     "loading": "Writing your listings...",

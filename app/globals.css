@@ -36,6 +36,170 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
+  position: relative;
+}
+
+/* Subtle paper grain — a fixed, ultra-low-opacity noise overlay so the cream
+   background reads as textured paper rather than a flat CSS color. Purely
+   decorative: aria-hidden'd where used, ignores pointer events. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Keep real page content above the fixed grain overlay. Every page on this
+   site wraps its content in a single top-level <main>. */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Selection */
+::selection {
+  background: var(--color-brass);
+  color: var(--background);
+}
+
+/* Scrollbar (WebKit) */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-parchment-dim);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-navy);
+  border-radius: 9999px;
+  border: 3px solid var(--color-parchment-dim);
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-brass);
+}
+/* Scrollbar (Firefox) */
+html {
+  scrollbar-color: var(--color-navy) var(--color-parchment-dim);
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
+/* Focus visible — elegant navy/brass ring instead of the browser default blue */
+:focus-visible {
+  outline: 2px solid var(--color-brass);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Underline-on-hover link treatment. Usage: className="link-underline" on an
+   inline text link. The underline grows from the left on hover/focus rather
+   than the browser's static text-decoration. */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+  background-image: linear-gradient(var(--color-brass), var(--color-brass));
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 0% 1.5px;
+  transition: background-size 0.25s ease;
+}
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 100% 1.5px;
+}
+
+/* Layered, colored card shadows — replaces flat gray Tailwind shadow-* on
+   the site's primary cards with a soft navy-tinted depth. */
+.shadow-card {
+  box-shadow:
+    0 1px 2px rgba(59, 47, 38, 0.06),
+    0 8px 20px -4px rgba(59, 47, 38, 0.12),
+    0 2px 6px -2px rgba(181, 101, 46, 0.08);
+}
+.shadow-card-lg {
+  box-shadow:
+    0 2px 4px rgba(59, 47, 38, 0.08),
+    0 20px 40px -8px rgba(59, 47, 38, 0.18),
+    0 6px 16px -4px rgba(181, 101, 46, 0.12);
+}
+
+/* FAQ / <details> polish: custom rotating chevron instead of the browser's
+   default disclosure triangle, plus a smooth open transition on the marker. */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details > summary {
+  position: relative;
+  padding-right: 1.75rem;
+}
+details > summary::after {
+  content: "";
+  position: absolute;
+  right: 0.1rem;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--color-navy);
+  border-bottom: 2px solid var(--color-navy);
+  opacity: 0.6;
+  transform: translateY(-65%) rotate(45deg);
+  transition: transform 0.25s ease;
+}
+details[open] > summary::after {
+  transform: translateY(-35%) rotate(-135deg);
+}
+
+/* Tactile press feedback for buttons sitewide */
+button:not(:disabled):active {
+  transform: scale(0.98);
+}
+
+/* Subtle lift on hover for interactive cards (pricing tiers, etc.) */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+
+/* Distinctive number display for prices/stats — tabular figures and tight
+   tracking, without forcing a font-family so it composes with whichever
+   display/mono utility is already on the element. */
+.number-display {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Print polish for every blog post (not just the 3 with a dedicated
+   PrintButton): hide the back-link, written-by footer, and related-guides
+   nav when printing, since none of those are useful on paper. Targets the
+   exact class combinations shared by all 22 posts rather than editing each
+   file individually. */
+@media print {
+  a.text-sm.text-stone-500.hover\:text-stone-800,
+  div.mt-8.pt-6.border-t.border-stone-200.text-sm.text-stone-500,
+  div.mt-10.pt-8.border-t.border-stone-200 {
+    display: none !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 .hero-gradient {

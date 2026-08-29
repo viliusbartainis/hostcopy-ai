@@ -191,7 +191,7 @@ export default function GlossaryPost() {
           <p><strong><Link href="#superhost" className="underline">Superhost</Link> vs. <Link href="#guest-favorite" className="underline">Guest Favorite</Link></strong> — Superhost is a status awarded to a host based on their track record across all their listings, reviewed quarterly. Guest Favorite is awarded to an individual listing based on its own rating and reliability, recalculated on a rolling basis. A host can have one badge without the other, or both.</p>
           <p><strong><Link href="#response-rate" className="underline">Response rate</Link> vs. <Link href="#response-time" className="underline">Response time</Link></strong> — response rate is the percentage of messages you reply to within 24 hours; response time is how fast those replies actually are. A host can have a perfect response rate while still being slow, or vice versa — they measure different things.</p>
         </div>
-        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+        <div className="mt-6 pl-4 border-l-2 border-brass/50 text-xs text-stone-500">
           <p className="font-medium mb-1">Sources</p>
           <ul className="space-y-1">
             <li><a href="https://hospitable.com/airbnb-guest-favorite-badge" target="_blank" rel="noopener noreferrer" className="underline">Hospitable &ndash; Airbnb Guest Favorite Badge: How Does It Work?</a></li>

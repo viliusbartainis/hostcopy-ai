@@ -17,7 +17,9 @@
     "guestsLabel": "Huéspedes",
     "bedroomsLabel": "Dormitorios",
     "amenitiesLabel": "Comodidades",
-    "toneLabel": "Tono"
+    "toneLabel": "Tono",
+    "timeEstimate": "Tarda unos 30 segundos",
+    "privacyReassurance": "Sus datos no se almacenan ni se comparten."
   },
   "PropertyTypes": {
     "apartment": "Apartamento",
@@ -51,7 +53,8 @@
     "generic": "Algo salió mal. Inténtelo de nuevo.",
     "checkoutUnknown": "Error desconocido: no se devolvió ninguna URL",
     "checkoutNetwork": "Error de red",
-    "errorPrefix": "Error: {message}"
+    "errorPrefix": "Error: {message}",
+    "retry": "Intentar de nuevo"
   },
   "Generate": {
     "loading": "Redactando sus anuncios...",

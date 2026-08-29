@@ -97,7 +97,7 @@ export default function BlogPost() {
           <p>Airbnb caps titles at 50 characters, and mobile search results cut them off well before that — so the property type, differentiator, and location cue need to come in roughly that order, front-loaded, since anything after the cutoff won&apos;t be read at all.</p>
           <p>Writing a strong title is half the work. If the description underneath still needs writing for Airbnb, Booking.com, and an Instagram caption to promote it, <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> generates all three from one form in under a minute.</p>
         </div>
-        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+        <div className="mt-6 pl-4 border-l-2 border-brass/50 text-xs text-stone-500">
           <p className="font-medium mb-1">Sources</p>
           <ul className="space-y-1">
             <li><a href="https://www.airbnb.com/resources/hosting-homes/a/guidelines-for-writing-your-listing-title-533" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Resource Center &ndash; Guidelines for writing your listing title</a></li>
