@@ -128,6 +128,43 @@ html {
     0 6px 16px -4px rgba(181, 101, 46, 0.12);
 }
 
+/* FAQ / <details> polish: custom rotating chevron instead of the browser's
+   default disclosure triangle, plus a smooth open transition on the marker. */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details > summary {
+  position: relative;
+  padding-right: 1.75rem;
+}
+details > summary::after {
+  content: "";
+  position: absolute;
+  right: 0.1rem;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid var(--color-navy);
+  border-bottom: 2px solid var(--color-navy);
+  opacity: 0.6;
+  transform: translateY(-65%) rotate(45deg);
+  transition: transform 0.25s ease;
+}
+details[open] > summary::after {
+  transform: translateY(-35%) rotate(-135deg);
+}
+
+/* Subtle lift on hover for interactive cards (pricing tiers, etc.) */
+.card-hover {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+}
+
 /* Distinctive number display for prices/stats — tabular figures and tight
    tracking, without forcing a font-family so it composes with whichever
    display/mono utility is already on the element. */

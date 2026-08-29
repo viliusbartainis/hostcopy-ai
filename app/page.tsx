@@ -534,7 +534,7 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-5 mt-10 items-stretch">
-            <div className="flex flex-col rounded-2xl border border-navy/15 bg-parchment p-7">
+            <div className="flex flex-col rounded-2xl border border-navy/15 bg-parchment p-7 card-hover">
               <p className="font-display text-lg text-navy">{tPricing('free.name')}</p>
               <p className="text-sm text-navy/50 mb-5">{tPricing('free.tagline')}</p>
               <p className="mb-6">
@@ -552,7 +552,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="relative flex flex-col rounded-2xl border-2 border-navy bg-navy p-7 shadow-card-lg md:-mt-4 md:mb-4">
+            <div className="relative flex flex-col rounded-2xl border-2 border-navy bg-navy p-7 shadow-card-lg md:-mt-4 md:mb-4 card-hover">
               <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brass text-navy text-xs font-medium px-3 py-1 rounded-full">
                 {tPricing('pro.badge')}
               </span>
@@ -584,7 +584,7 @@ export default function Home() {
               )}
             </div>
 
-            <div className="flex flex-col rounded-2xl border border-navy/15 bg-parchment p-7">
+            <div className="flex flex-col rounded-2xl border border-navy/15 bg-parchment p-7 card-hover">
               <p className="font-display text-lg text-navy">{tPricing('premium.name')}</p>
               <p className="text-sm text-navy/50 mb-5">{tPricing('premium.tagline')}</p>
               <p className="mb-6">
