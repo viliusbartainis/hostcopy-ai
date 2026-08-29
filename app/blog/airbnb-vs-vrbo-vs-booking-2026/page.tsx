@@ -3,7 +3,7 @@ import Link from "next/link";
 import PrintButton from "@/components/PrintButton";
 
 export const metadata: Metadata = {
-  title: "Airbnb vs Vrbo vs Booking.com: 2026 Fees Compared | HostCopy AI",
+  title: "Airbnb vs Vrbo vs Booking.com: 2026 Fees | HostCopy AI",
   description: "Airbnb's fee structure changed significantly in 2025-2026. An updated look at what Airbnb, Vrbo, and Booking.com actually charge hosts and who each platform suits.",
   keywords: "airbnb vs vrbo vs booking.com 2026, airbnb host fee 2026, booking.com commission 2026, vrbo fees 2026",
   alternates: {
