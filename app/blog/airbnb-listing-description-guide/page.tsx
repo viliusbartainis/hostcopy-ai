@@ -100,11 +100,13 @@ export default function BlogPost() {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Why most Airbnb descriptions fail</h2>
           <p>Three problems show up again and again: they open with the same five overused phrases every guest has read a hundred times; they list amenities instead of describing an experience; and they&apos;re written once and pasted everywhere — Airbnb, Booking.com, Instagram — even though guests on each platform are looking for different things.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">The structure that actually works</h2>
-          <p><strong>1. Hook (first sentence)</strong> — Answer &quot;what makes staying here different?&quot; Not &quot;cozy apartment,&quot; but something specific: the view, the walk to the old town, the exact feeling of the space.</p>
-          <p><strong>2. The space, room by room</strong> — Guests picture themselves there. Be concrete: &quot;a reading nook by the window&quot; beats &quot;comfortable living room.&quot;</p>
-          <p><strong>3. The neighborhood</strong> — What&apos;s a 5-minute walk away? This often tips a booking, especially for first-time visitors.</p>
-          <p><strong>4. Amenities that matter to your guest type</strong> — Business travelers care about desks and WiFi speed. Families care about a washing machine and a second bathroom. Lead with what your ideal guest actually searches for.</p>
-          <p><strong>5. A closing line with personality</strong> — One sentence that sounds like a person wrote it, not a template.</p>
+          <ol className="list-decimal pl-6 space-y-2">
+            <li><strong>Hook (first sentence)</strong> — Answer &quot;what makes staying here different?&quot; Not &quot;cozy apartment,&quot; but something specific: the view, the walk to the old town, the exact feeling of the space.</li>
+            <li><strong>The space, room by room</strong> — Guests picture themselves there. Be concrete: &quot;a reading nook by the window&quot; beats &quot;comfortable living room.&quot;</li>
+            <li><strong>The neighborhood</strong> — What&apos;s a 5-minute walk away? This often tips a booking, especially for first-time visitors.</li>
+            <li><strong>Amenities that matter to your guest type</strong> — Business travelers care about desks and WiFi speed. Families care about a washing machine and a second bathroom. Lead with what your ideal guest actually searches for.</li>
+            <li><strong>A closing line with personality</strong> — One sentence that sounds like a person wrote it, not a template.</li>
+          </ol>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Why one description doesn&apos;t work for three platforms</h2>
           <p><strong>Airbnb</strong> guests scroll slowly and read stories — warmth and detail convert. <strong>Booking.com</strong> guests scan for facts — bed count, bathroom, distance to center. <strong>Instagram</strong> isn&apos;t a listing at all — it&apos;s a caption: casual, short, ends with hashtags people actually search.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Quick checklist before you publish</h2>
