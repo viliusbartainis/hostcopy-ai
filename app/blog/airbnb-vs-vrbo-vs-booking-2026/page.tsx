@@ -79,6 +79,13 @@ export default function BlogPost() {
           <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
           <p className="text-stone-800 leading-relaxed text-sm">Airbnb moved most hosts from a roughly 3% host fee to a single 15.5% host-only fee starting December 2025, which puts it closer to Booking.com's typical commission and above Vrbo's roughly 8%. The “Airbnb is cheaper” assumption from a few years ago needs a second look.</p>
         </div>
+        <p className="text-xs text-stone-500 italic mb-6">
+          This is the dated 2026 fee update. For the broader &quot;which platform fits my
+          property&quot; comparison &mdash; audience, property type, when to multi-list &mdash; see{" "}
+          <Link href="/blog/airbnb-vs-booking-vs-vrbo" className="underline">
+            Airbnb vs Booking.com vs Vrbo: Where Should You List Your Property?
+          </Link>.
+        </p>
 
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>If you last compared these platforms&apos; fees more than a year ago, the numbers you remember for Airbnb are probably out of date. Airbnb spent late 2025 through 2026 rolling most hosts off its old split-fee model onto a single, higher host-side fee, which changes the math against Vrbo and Booking.com more than people realize. Here&apos;s where things actually stand.</p>

@@ -77,6 +77,13 @@ export default function BlogPost() {
           <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
           <p className="text-stone-800 leading-relaxed text-sm">Airbnb suits experience-driven, design-forward properties; Booking.com suits hosts targeting fact-checking, often international guests; Vrbo suits larger whole-home rentals for families. The right platform depends more on your property type than which one is “best” overall.</p>
         </div>
+        <p className="text-xs text-stone-500 italic mb-6">
+          This is the general &quot;which platform fits my property&quot; guide. For current, dated fee
+          numbers specifically, see{" "}
+          <Link href="/blog/airbnb-vs-vrbo-vs-booking-2026" className="underline">
+            Airbnb vs Vrbo vs Booking.com in 2026: What Each Platform Actually Costs Now
+          </Link>.
+        </p>
 
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>New hosts often assume they have to pick one platform and stick with it, or that all three work the same way with a different logo. In practice, Airbnb, Booking.com, and Vrbo attract different guests, charge different fees, and reward a different writing style &mdash; and the right answer depends more on your property type than on which platform is &quot;best.&quot;</p>
