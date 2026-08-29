@@ -72,7 +72,14 @@
     "booking": "Booking.com",
     "instagram": "Instagram",
     "copy": "Kopijuoti",
-    "copied": "Nukopijuota!"
+    "copied": "Nukopijuota!",
+    "regenerate": "Generuoti iš naujo",
+    "regenerating": "Generuojama iš naujo...",
+    "copyAll": "Kopijuoti visus 3",
+    "copiedAll": "Nukopijuoti visi 3!",
+    "wordCount": "{count, plural, one {# žodis} few {# žodžiai} other {# žodžių}}",
+    "feedbackQuestion": "Ar tai buvo naudinga?",
+    "feedbackThanks": "Ačiū už atsiliepimą!"
   },
   "Showcase": {
     "eyebrow": "Pamatykite tai veikiant",
@@ -151,5 +158,17 @@
   },
   "LanguageSwitcher": {
     "label": "Kalba"
+  },
+  "Templates": {
+    "title": "Greitas startas",
+    "beachApartment": "Butas prie jūros",
+    "cityStudio": "Studija mieste",
+    "familyHouse": "Namas šeimai",
+    "businessLoft": "Loftas verslui"
+  },
+  "History": {
+    "title": "Paskutinės generacijos",
+    "load": "Įkelti",
+    "empty": "Čia atsiras jūsų paskutinės {limit} generacijos."
   }
 }

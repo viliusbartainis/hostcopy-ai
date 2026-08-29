@@ -1,40 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createClient } from 'redis';
 import { verifyProToken, COOKIE_NAME } from '@/app/lib/proToken';
+import { isRateLimited } from '@/app/lib/rateLimit';
 
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 const GROQ_MODEL = 'openai/gpt-oss-120b';
 const RATE_LIMIT = 8;
 const WINDOW_SECONDS = 60 * 60;
+const MAX_BODY_BYTES = 10 * 1024;
+const GROQ_TIMEOUT_MS = 15_000;
+const MAX_GUESTS = 50;
+const MAX_BEDROOMS = 20;
 
-let redisClient: ReturnType<typeof createClient> | null = null;
+// Basic prompt-injection guard for the free-text "location" field. This is
+// NOT a complete defense — just a first filter against the most obvious
+// "ignore your instructions" style phrases before the value is interpolated
+// into the Groq prompt.
+const INJECTION_PATTERNS = [
+  /ignore\s+(all\s+)?(previous|prior|above)\s+instructions/gi,
+  /disregard\s+(all\s+)?(previous|prior|above)\s+instructions/gi,
+  /system\s*:/gi,
+  /assistant\s*:/gi,
+];
 
-async function getRedis() {
-  if (!process.env.KV_REDIS_URL) return null;
-  if (!redisClient) {
-    redisClient = createClient({ url: process.env.KV_REDIS_URL });
-    redisClient.on('error', (err) => console.error('Redis client error:', err));
+function sanitizeLocation(value: string): string {
+  let cleaned = value;
+  for (const pattern of INJECTION_PATTERNS) {
+    cleaned = cleaned.replace(pattern, '');
   }
-  if (!redisClient.isOpen) {
-    await redisClient.connect();
-  }
-  return redisClient;
-}
-
-async function isRateLimited(ip: string): Promise<boolean> {
-  try {
-    const redis = await getRedis();
-    if (!redis) return false;
-    const key = `ratelimit:${ip}`;
-    const count = await redis.incr(key);
-    if (count === 1) {
-      await redis.expire(key, WINDOW_SECONDS);
-    }
-    return count > RATE_LIMIT;
-  } catch (err) {
-    console.error('Rate limit check failed, allowing request:', err);
-    return false;
-  }
+  return cleaned.trim();
 }
 
 export async function POST(req: NextRequest) {
@@ -42,8 +35,16 @@ export async function POST(req: NextRequest) {
     const ip = req.headers.get('x-forwarded-for') || 'unknown';
     const isPro = verifyProToken(req.cookies.get(COOKIE_NAME)?.value);
 
-    if (!isPro && (await isRateLimited(ip))) {
-      return NextResponse.json({ error: 'Too many requests. Please try again later.' }, { status: 429 });
+    if (!isPro && (await isRateLimited('ratelimit', ip, RATE_LIMIT, WINDOW_SECONDS))) {
+      return NextResponse.json(
+        { error: 'Too many requests. Please try again later.' },
+        { status: 429, headers: { 'Retry-After': String(WINDOW_SECONDS) } }
+      );
+    }
+
+    const contentLength = Number(req.headers.get('content-length') || '0');
+    if (contentLength > MAX_BODY_BYTES) {
+      return NextResponse.json({ error: 'Request body is too large.' }, { status: 413 });
     }
 
     const body = await req.json();
@@ -51,6 +52,18 @@ export async function POST(req: NextRequest) {
 
     if (!location || typeof location !== 'string') {
       return NextResponse.json({ error: 'Location is required.' }, { status: 400 });
+    }
+
+    const sanitizedLocation = sanitizeLocation(location);
+    if (!sanitizedLocation) {
+      return NextResponse.json({ error: 'Location is required.' }, { status: 400 });
+    }
+
+    if (
+      typeof guests !== 'number' || !Number.isFinite(guests) || guests < 1 || guests > MAX_GUESTS ||
+      typeof bedrooms !== 'number' || !Number.isFinite(bedrooms) || bedrooms < 0 || bedrooms > MAX_BEDROOMS
+    ) {
+      return NextResponse.json({ error: 'Guests or bedrooms value is out of range.' }, { status: 400 });
     }
 
     if (!process.env.GROQ_API_KEY) {
@@ -64,35 +77,52 @@ export async function POST(req: NextRequest) {
 
     const userPrompt = `Write listing copy for:
 - Property type: ${propertyType}
-- Location: ${location}
+- Location: ${sanitizedLocation}
 - Guests: ${guests}, Bedrooms: ${bedrooms}
 - Amenities: ${Array.isArray(amenities) ? amenities.join(', ') : ''}
 - Tone: ${tone}
 
 Respond with ONLY the JSON object, nothing else.`;
 
-    const groqRes = await fetch(GROQ_API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
-      },
-      body: JSON.stringify({
-        model: GROQ_MODEL,
-        messages: [
-          { role: 'system', content: systemPrompt },
-          { role: 'user', content: userPrompt },
-        ],
-        max_tokens: 2000,
-        temperature: 0.8,
-        reasoning_effort: 'low',
-        response_format: { type: 'json_object' },
-      }),
-    });
+    const abortController = new AbortController();
+    const timeoutId = setTimeout(() => abortController.abort(), GROQ_TIMEOUT_MS);
+
+    let groqRes: Response;
+    try {
+      groqRes = await fetch(GROQ_API_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${process.env.GROQ_API_KEY}`,
+        },
+        body: JSON.stringify({
+          model: GROQ_MODEL,
+          messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt },
+          ],
+          max_tokens: 2000,
+          temperature: 0.8,
+          reasoning_effort: 'low',
+          response_format: { type: 'json_object' },
+        }),
+        signal: abortController.signal,
+      });
+    } catch (err) {
+      if (err instanceof Error && err.name === 'AbortError') {
+        console.error('Groq API request timed out');
+        return NextResponse.json({ error: 'Generation timed out. Please try again.' }, { status: 504 });
+      }
+      throw err;
+    } finally {
+      clearTimeout(timeoutId);
+    }
 
     if (!groqRes.ok) {
-      const errText = await groqRes.text();
-      console.error(`Groq API error (${groqRes.status}):`, errText);
+      // Don't log the raw response body: some providers echo request
+      // details (occasionally including a masked form of the API key) back
+      // in error payloads. Status code is enough to diagnose from here.
+      console.error(`Groq API error: status ${groqRes.status}`);
       return NextResponse.json({ error: 'Generation failed. Please try again in a moment.' }, { status: 500 });
     }
 
@@ -106,16 +136,19 @@ Respond with ONLY the JSON object, nothing else.`;
       parsed = { airbnb: raw, booking: '', instagram: '' };
     }
 
-    return NextResponse.json({
-      airbnb: parsed.airbnb || '',
-      booking: parsed.booking || '',
-      instagram: parsed.instagram || '',
-    });
+    return NextResponse.json(
+      {
+        airbnb: parsed.airbnb || '',
+        booking: parsed.booking || '',
+        instagram: parsed.instagram || '',
+      },
+      { headers: { 'Cache-Control': 'no-store' } }
+    );
   } catch (error) {
-    console.error('Generation error:', error);
+    console.error('Generation error:', error instanceof Error ? error.message : 'unknown error');
     return NextResponse.json(
       { error: 'Generation failed. Please try again in a moment.' },
-      { status: 500 }
+      { status: 500, headers: { 'Cache-Control': 'no-store' } }
     );
   }
 }
