@@ -77,6 +77,15 @@ export default function BlogPost() {
           <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
           <p className="text-stone-800 leading-relaxed text-sm">Airbnb photos that get booked use natural light over flash, angles that show how a room is actually used, and enough images — typically 20 to 30 — to cover every space without padding. A phone shot in good light often beats a rushed professional session.</p>
         </div>
+        <div className="mb-6">
+          <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-2">Key takeaways</p>
+          <ul className="list-disc pl-6 space-y-1 text-sm text-stone-700">
+            <li>Natural light beats flash for almost every room</li>
+            <li>Shoot angles that show how the space is actually used, not just empty rooms</li>
+            <li>20&ndash;30 photos is the sweet spot &mdash; enough coverage without padding</li>
+            <li>A well-lit phone photo often beats a rushed professional shoot</li>
+          </ul>
+        </div>
 
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>On Airbnb, guests decide whether to open your listing before they&apos;ve read a single word. The cover photo and the next three or four images in the gallery are doing all the selling &mdash; your description only gets a chance if the photos already convinced someone to tap in. A dark, cluttered photo taken in a hurry can lose you a booking even if the apartment itself is excellent.</p>

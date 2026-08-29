@@ -77,6 +77,15 @@ export default function BlogPost() {
           <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
           <p className="text-stone-800 leading-relaxed text-sm">Price your Airbnb by starting from seasonality and local demand, not a flat guess — adjust for weekends, run a real competitor analysis, and use minimum-stay length as a pricing lever during high and low demand instead of only changing the nightly rate.</p>
         </div>
+        <div className="mb-6">
+          <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-2">Key takeaways</p>
+          <ul className="list-disc pl-6 space-y-1 text-sm text-stone-700">
+            <li>Build a base calendar with low/shoulder/high season tiers instead of one flat rate</li>
+            <li>Weekend rates typically run 15&ndash;25% above weekday rates in leisure markets (often reversed in business-travel markets)</li>
+            <li>Use minimum-stay length as a pricing lever, not just an availability setting</li>
+            <li>Small, frequent adjustments (5&ndash;10%) tend to outperform one big seasonal jump</li>
+          </ul>
+        </div>
 
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
           <p>Setting one flat nightly rate and leaving it untouched for the whole year is one of the fastest ways to leave money on the table &mdash; or to price yourself out of bookings during a slow stretch. Listings that consistently perform well treat price as something to adjust around demand, not a number you set once and forget.</p>
