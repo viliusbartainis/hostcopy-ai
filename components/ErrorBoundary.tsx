@@ -24,7 +24,7 @@ export default class ErrorBoundary extends Component<Props, State> {
             <p className="font-display text-2xl font-semibold text-navy mb-3">
               Something went wrong, please refresh
             </p>
-            <p className="text-navy/60 mb-6">
+            <p className="text-navy/70 mb-6">
               We hit an unexpected error. Refreshing the page usually fixes it.
             </p>
             <button

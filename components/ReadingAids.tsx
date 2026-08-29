@@ -37,7 +37,7 @@ export default function ReadingAids() {
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           aria-label="Back to top"
-          className="fixed bottom-6 right-6 z-40 w-11 h-11 rounded-full bg-navy text-parchment shadow-card-lg flex items-center justify-center hover:bg-navy/90 transition-colors print:hidden"
+          className="fixed bottom-20 right-6 md:bottom-6 z-40 w-11 h-11 rounded-full bg-navy text-parchment shadow-card-lg flex items-center justify-center hover:bg-navy/90 transition-colors print:hidden"
         >
           <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true">
             <path d="M10 15V5M10 5L5 10M10 5l5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

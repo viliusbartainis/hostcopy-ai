@@ -19,7 +19,10 @@
     "amenitiesLabel": "Udogodnienia",
     "toneLabel": "Ton",
     "timeEstimate": "Zajmuje około 30 sekund",
-    "privacyReassurance": "Twoje dane nie są przechowywane ani udostępniane."
+    "privacyReassurance": "Twoje dane nie są przechowywane ani udostępniane.",
+    "toneTooltip": "Luksusowy: wyrafinowany, elegancki język. Przytulny: ciepły i zapraszający. Przyjazny rodzinie: podkreśla bezpieczeństwo i przestrzeń. Podróżujący służbowo: praktyczny i efektywny. Minimalistyczny: jasny i zwięzły.",
+    "requiredIndicator": "(wymagane)",
+    "amenitiesSelected": "Wybrano: {count}"
   },
   "PropertyTypes": {
     "apartment": "Mieszkanie",
@@ -54,7 +57,8 @@
     "checkoutUnknown": "Nieznany błąd — nie zwrócono adresu URL",
     "checkoutNetwork": "Błąd sieci",
     "errorPrefix": "Błąd: {message}",
-    "retry": "Spróbuj ponownie"
+    "retry": "Spróbuj ponownie",
+    "network": "Błąd sieci — sprawdź połączenie i spróbuj ponownie."
   },
   "Generate": {
     "loading": "Piszemy Twoje oferty...",
@@ -170,5 +174,9 @@
     "title": "Ostatnie generacje",
     "load": "Wczytaj",
     "empty": "Twoje ostatnie {limit} generacje pojawią się tutaj."
+  },
+  "Onboarding": {
+    "intro": "Każde generowanie daje trzy gotowe do wklejenia wersje — dla Airbnb, Booking.com i Instagrama — wszystko z tego samego formularza.",
+    "dismiss": "Rozumiem"
   }
 }

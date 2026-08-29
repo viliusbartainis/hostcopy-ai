@@ -19,7 +19,10 @@
     "amenitiesLabel": "Patogumai",
     "toneLabel": "Tonas",
     "timeEstimate": "Užtrunka apie 30 sekundžių",
-    "privacyReassurance": "Jūsų duomenys nesaugomi ir niekam neperduodami."
+    "privacyReassurance": "Jūsų duomenys nesaugomi ir niekam neperduodami.",
+    "toneTooltip": "Prabangus: rafinuota, aukšto lygio kalba. Jaukus: šiltas ir mielas. Šeimai draugiškas: pabrėžia saugumą ir erdvę. Verslo keliautojui: praktiškas ir efektyvus. Minimalistinis: aiškus ir tiesus.",
+    "requiredIndicator": "(privaloma)",
+    "amenitiesSelected": "Pažymėta: {count}"
   },
   "PropertyTypes": {
     "apartment": "Butas",
@@ -54,7 +57,8 @@
     "checkoutUnknown": "Nežinoma klaida — nuoroda negrąžinta",
     "checkoutNetwork": "Tinklo klaida",
     "errorPrefix": "Klaida: {message}",
-    "retry": "Bandyti dar kartą"
+    "retry": "Bandyti dar kartą",
+    "network": "Tinklo klaida — patikrinkite ryšį ir bandykite dar kartą."
   },
   "Generate": {
     "loading": "Rašome jūsų skelbimus...",
@@ -170,5 +174,9 @@
     "title": "Paskutinės generacijos",
     "load": "Įkelti",
     "empty": "Čia atsiras jūsų paskutinės {limit} generacijos."
+  },
+  "Onboarding": {
+    "intro": "Kiekvienas generavimas duoda tris paruoštas kopijuoti versijas — Airbnb, Booking.com ir Instagram — visas iš vienos formos.",
+    "dismiss": "Supratau"
   }
 }

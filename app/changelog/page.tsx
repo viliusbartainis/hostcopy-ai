@@ -59,19 +59,19 @@ export default function ChangelogPage() {
   return (
     <main className="min-h-screen bg-background">
       <div className="max-w-2xl mx-auto px-6 py-16">
-        <Link href="/" className="text-sm text-navy/60 hover:text-navy transition-colors">
+        <Link href="/" className="text-sm text-navy/70 hover:text-navy transition-colors">
           &larr; Back to HostCopy AI
         </Link>
         <h1 className="font-display text-3xl font-semibold text-navy mt-8 mb-2">
           Changelog
         </h1>
-        <p className="text-navy/60 mb-10">
+        <p className="text-navy/70 mb-10">
           The major updates and features we&apos;ve shipped, newest first.
         </p>
         <div className="space-y-8">
           {ENTRIES.map((entry) => (
             <div key={entry.date} className="border-l-2 border-brass/30 pl-5">
-              <p className="font-mono text-xs uppercase tracking-wide text-navy/50 mb-2">
+              <p className="font-mono text-xs uppercase tracking-wide text-navy/70 mb-2">
                 {entry.date}
               </p>
               <ul className="space-y-1.5">
