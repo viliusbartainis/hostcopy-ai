@@ -6,21 +6,44 @@ export const metadata: Metadata = {
   description: "When new listings should go live to build reviews and search ranking before peak season hits, and how to adjust if you can't pick your own timing.",
   keywords: "best time to list airbnb, airbnb seasonality, when to start airbnb hosting",
   alternates: { canonical: 'https://hostcopyai.com/blog/best-time-to-list-airbnb' },
+  openGraph: {
+    type: "article",
+    title: "Best Time to List Your Airbnb Property",
+    description: "A lot of new hosts wait until the busy season is already underway before they publish their listing, thinking that's when guests are searching.",
+    publishedTime: "2026-08-04",
+    modifiedTime: "2026-08-04",
+    url: "https://hostcopyai.com/blog/best-time-to-list-airbnb",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "Best Time to List Your Airbnb Property",
     description: "When new listings should go live to build reviews and search ranking before peak season hits, and how to adjust if you can't pick your own timing.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
+    },
     datePublished: "2026-08-04",
+    dateModified: "2026-08-04",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/best-time-to-list-airbnb",
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+      { "@type": "ListItem", position: 3, name: "Best Time to List Your Airbnb Property", item: "https://hostcopyai.com/blog/best-time-to-list-airbnb" },
+    ],
   };
 
   return (
@@ -28,6 +51,10 @@ export default function BlogPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

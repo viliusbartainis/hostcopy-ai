@@ -1,0 +1,23 @@
+{
+  "name": "HostCopy AI",
+  "short_name": "HostCopy",
+  "description": "AI-generated Airbnb, Booking.com, and Instagram listing descriptions in seconds.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf6ee",
+  "theme_color": "#3b2f26",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/logo-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

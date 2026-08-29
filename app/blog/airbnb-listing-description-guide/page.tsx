@@ -2,14 +2,77 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "How to Write an Airbnb Listing Description That Books | HostCopy AI",
+  title: "How to Write an Airbnb Listing Description | HostCopy AI",
   description: "Most Airbnb descriptions sound the same. Here's the exact structure that gets guests to click Book — plus real examples for Airbnb, Booking.com, and Instagram.",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-listing-description-guide' },
+  openGraph: {
+    type: "article",
+    title: "How to Write an Airbnb Listing Description That Actually Books",
+    description: "Guests decide whether to click on your listing in about three seconds.",
+    publishedTime: "2026-08-03",
+    modifiedTime: "2026-08-03",
+    url: "https://hostcopyai.com/blog/airbnb-listing-description-guide",
+  },
+};
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  headline: "How to Write an Airbnb Listing Description That Actually Books",
+  description: "Most Airbnb descriptions sound the same. Here's the exact structure that gets guests to click Book — plus real examples for Airbnb, Booking.com, and Instagram.",
+  author: { "@type": "Organization", name: "HostCopy AI" },
+  publisher: {
+    "@type": "Organization",
+    name: "HostCopy AI",
+    logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
+  },
+  datePublished: "2026-08-03",
+  dateModified: "2026-08-03",
+  mainEntityOfPage: {
+    "@type": "WebPage",
+    "@id": "https://hostcopyai.com/blog/airbnb-listing-description-guide",
+  },
+};
+
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+    { "@type": "ListItem", position: 3, name: "How to Write an Airbnb Listing Description That Actually Books", item: "https://hostcopyai.com/blog/airbnb-listing-description-guide" },
+  ],
+};
+
+const howToJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "How to structure an Airbnb listing description",
+  description: "The five-part structure for an Airbnb description that gets guests to click Book.",
+  step: [
+    { "@type": "HowToStep", position: 1, name: "Hook", text: "Answer \"what makes staying here different?\" with something specific — the view, the walk to the old town, the exact feeling of the space — instead of a generic opener." },
+    { "@type": "HowToStep", position: 2, name: "The space, room by room", text: "Describe the space concretely so guests can picture themselves there, e.g. \"a reading nook by the window\" instead of \"comfortable living room.\"" },
+    { "@type": "HowToStep", position: 3, name: "The neighborhood", text: "Mention what's a 5-minute walk away — this often tips a booking, especially for first-time visitors." },
+    { "@type": "HowToStep", position: 4, name: "Amenities that matter to your guest type", text: "Lead with the amenities your ideal guest actually searches for, whether that's a desk and WiFi speed or a washing machine and second bathroom." },
+    { "@type": "HowToStep", position: 5, name: "A closing line with personality", text: "End with one sentence that sounds like a person wrote it, not a template." },
+  ],
 };
 
 export default function BlogPost() {
   return (
     <main className="min-h-screen bg-background">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToJsonLd) }}
+      />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">

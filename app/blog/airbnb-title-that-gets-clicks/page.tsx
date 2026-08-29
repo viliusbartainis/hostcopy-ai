@@ -6,21 +6,44 @@ export const metadata: Metadata = {
   description: "The formula top Airbnb titles follow, real before/after examples, and the words quietly costing you clicks in search results.",
   keywords: "airbnb title generator, how to write airbnb title, airbnb listing title examples",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-title-that-gets-clicks' },
+  openGraph: {
+    type: "article",
+    title: "How to Write an Airbnb Title That Gets Clicks",
+    description: "Guests scanning Airbnb search results see three things before they decide to tap into your listing: the cover photo, the price, and the title.",
+    publishedTime: "2026-08-06",
+    modifiedTime: "2026-08-06",
+    url: "https://hostcopyai.com/blog/airbnb-title-that-gets-clicks",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "How to Write an Airbnb Title That Gets Clicks",
     description: "The formula top Airbnb titles follow, real before/after examples, and the words quietly costing you clicks in search results.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
+    },
     datePublished: "2026-08-06",
+    dateModified: "2026-08-06",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-title-that-gets-clicks",
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+      { "@type": "ListItem", position: 3, name: "How to Write an Airbnb Title That Gets Clicks", item: "https://hostcopyai.com/blog/airbnb-title-that-gets-clicks" },
+    ],
   };
 
   return (
@@ -28,6 +51,10 @@ export default function BlogPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

@@ -1,0 +1,3 @@
+Contact: mailto:vilius.bartainis67@gmail.com
+Preferred-Languages: en, lt
+Canonical: https://hostcopyai.com/.well-known/security.txt

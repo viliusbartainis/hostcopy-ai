@@ -2,32 +2,59 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "5-Star Reviews: How to Get Airbnb Guests to Leave Glowing Feedback | HostCopy AI",
+  title: "How to Get 5-Star Airbnb Reviews | HostCopy AI",
   description: "Check-in experience, communication timing, small surprises that get mentioned in reviews, and how to handle a negative one. A practical review guide.",
   keywords: "how to get airbnb reviews, airbnb 5-star review tips, improve airbnb rating",
   alternates: { canonical: 'https://hostcopyai.com/blog/how-to-get-airbnb-5-star-reviews' },
+  openGraph: {
+    type: "article",
+    title: "5-Star Reviews: How to Get Airbnb Guests to Leave Glowing Feedback",
+    description: "Past a certain point, reviews drive more bookings than photos or price.",
+    publishedTime: "2026-08-03",
+    modifiedTime: "2026-08-03",
+    url: "https://hostcopyai.com/blog/how-to-get-airbnb-5-star-reviews",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "5-Star Reviews: How to Get Airbnb Guests to Leave Glowing Feedback",
     description: "Check-in experience, communication timing, small surprises that get mentioned in reviews, and how to handle a negative one. A practical review guide.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
+    },
     datePublished: "2026-08-03",
+    dateModified: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/how-to-get-airbnb-5-star-reviews",
     },
   };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+    { "@type": "ListItem", position: 3, name: "5-Star Reviews: How to Get Airbnb Guests to Leave Glowing Feedback", item: "https://hostcopyai.com/blog/how-to-get-airbnb-5-star-reviews" },
+  ],
+};
+
   return (
     <main className="min-h-screen bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

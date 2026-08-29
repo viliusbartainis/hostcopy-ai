@@ -2,25 +2,48 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "SEO for Airbnb: How to Rank Higher in Airbnb Search Results | HostCopy AI",
+  title: "SEO for Airbnb: How to Rank Higher in Search | HostCopy AI",
   description: "How Airbnb's search ranking actually works: response rate, Instant Book, occupancy, and how photos, reviews, and amenities feed into your position.",
   keywords: "airbnb seo, rank higher on airbnb, airbnb search algorithm tips",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-seo-search-ranking' },
+  openGraph: {
+    type: "article",
+    title: "SEO for Airbnb: How to Rank Higher in Airbnb Search Results",
+    description: "Airbnb SEO isn't like ranking a page on Google, but the ranking factors are real, mostly documented by Airbnb itself over the years, and largely under a host's control.",
+    publishedTime: "2026-08-03",
+    modifiedTime: "2026-08-03",
+    url: "https://hostcopyai.com/blog/airbnb-seo-search-ranking",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "SEO for Airbnb: How to Rank Higher in Airbnb Search Results",
     description: "How Airbnb's search ranking actually works: response rate, Instant Book, occupancy, and how photos, reviews, and amenities feed into your position.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
+    },
     datePublished: "2026-08-03",
+    dateModified: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-seo-search-ranking",
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+      { "@type": "ListItem", position: 3, name: "SEO for Airbnb: How to Rank Higher in Airbnb Search Results", item: "https://hostcopyai.com/blog/airbnb-seo-search-ranking" },
+    ],
   };
 
   return (
@@ -28,6 +51,10 @@ export default function BlogPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

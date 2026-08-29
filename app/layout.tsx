@@ -8,6 +8,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://hostcopyai.com"),
+  manifest: "/manifest.json",
   title: "HostCopy AI — AI Airbnb, Booking.com & Vacation Rental Description Generator",
   description: "Generate high-converting, professional Airbnb, Booking.com listings and Instagram captions in 30 seconds with AI. Trusted by short-term rental hosts and property managers.",
   keywords: [
@@ -69,9 +70,43 @@ export default async function RootLayout({
               "applicationCategory": "BusinessApplication",
               "operatingSystem": "All",
               "offers": {
-                "@type": "Offer",
-                "price": "0",
+                "@type": "AggregateOffer",
                 "priceCurrency": "EUR",
+                "lowPrice": "0",
+                "highPrice": "29",
+                "offerCount": "3",
+                "offers": [
+                  {
+                    "@type": "Offer",
+                    "name": "Free",
+                    "price": "0",
+                    "priceCurrency": "EUR",
+                  },
+                  {
+                    "@type": "Offer",
+                    "name": "Pro",
+                    "price": "9",
+                    "priceCurrency": "EUR",
+                    "priceSpecification": {
+                      "@type": "UnitPriceSpecification",
+                      "price": "9",
+                      "priceCurrency": "EUR",
+                      "unitCode": "MON",
+                    },
+                  },
+                  {
+                    "@type": "Offer",
+                    "name": "Premium",
+                    "price": "29",
+                    "priceCurrency": "EUR",
+                    "priceSpecification": {
+                      "@type": "UnitPriceSpecification",
+                      "price": "29",
+                      "priceCurrency": "EUR",
+                      "unitCode": "MON",
+                    },
+                  },
+                ],
               },
             }),
           }}

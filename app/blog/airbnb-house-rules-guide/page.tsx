@@ -6,21 +6,44 @@ export const metadata: Metadata = {
   description: "Why long house rules lists get skimmed past, what actually belongs in them, and how to phrase them so guests follow them without feeling scolded.",
   keywords: "airbnb house rules examples, how to write house rules, airbnb guest rules",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-house-rules-guide' },
+  openGraph: {
+    type: "article",
+    title: "How to Write House Rules Guests Actually Read",
+    description: "Most Airbnb house rules sections are long enough that guests stop reading after the third bullet point.",
+    publishedTime: "2026-08-04",
+    modifiedTime: "2026-08-04",
+    url: "https://hostcopyai.com/blog/airbnb-house-rules-guide",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "How to Write House Rules Guests Actually Read",
     description: "Why long house rules lists get skimmed past, what actually belongs in them, and how to phrase them so guests follow them without feeling scolded.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
+    },
     datePublished: "2026-08-04",
+    dateModified: "2026-08-04",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/airbnb-house-rules-guide",
     },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+      { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+      { "@type": "ListItem", position: 3, name: "How to Write House Rules Guests Actually Read", item: "https://hostcopyai.com/blog/airbnb-house-rules-guide" },
+    ],
   };
 
   return (
@@ -28,6 +51,10 @@ export default function BlogPost() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>

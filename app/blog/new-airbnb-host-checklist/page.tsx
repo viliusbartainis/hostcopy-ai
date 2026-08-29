@@ -2,32 +2,59 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "The Ultimate Airbnb Host Checklist for New Listings | HostCopy AI",
+  title: "Airbnb Host Checklist for New Listings | HostCopy AI",
   description: "Safety, keys, cleaning, listing settings, insurance basics, and the first-week mistakes new Airbnb hosts make. A practical checklist before you publish.",
   keywords: "airbnb host checklist, new airbnb listing checklist, starting airbnb business",
   alternates: { canonical: 'https://hostcopyai.com/blog/new-airbnb-host-checklist' },
+  openGraph: {
+    type: "article",
+    title: "The Ultimate Airbnb Host Checklist for New Listings",
+    description: "Publishing your first listing is the exciting part.",
+    publishedTime: "2026-08-03",
+    modifiedTime: "2026-08-03",
+    url: "https://hostcopyai.com/blog/new-airbnb-host-checklist",
+  },
 };
 
 export default function BlogPost() {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: "The Ultimate Airbnb Host Checklist for New Listings",
     description: "Safety, keys, cleaning, listing settings, insurance basics, and the first-week mistakes new Airbnb hosts make. A practical checklist before you publish.",
     author: { "@type": "Organization", name: "HostCopy AI" },
-    publisher: { "@type": "Organization", name: "HostCopy AI" },
+    publisher: {
+      "@type": "Organization",
+      name: "HostCopy AI",
+      logo: { "@type": "ImageObject", url: "https://hostcopyai.com/logo-512.png" },
+    },
     datePublished: "2026-08-03",
+    dateModified: "2026-08-03",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": "https://hostcopyai.com/blog/new-airbnb-host-checklist",
     },
   };
 
+const breadcrumbJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: "https://hostcopyai.com" },
+    { "@type": "ListItem", position: 2, name: "Blog", item: "https://hostcopyai.com/blog" },
+    { "@type": "ListItem", position: 3, name: "The Ultimate Airbnb Host Checklist for New Listings", item: "https://hostcopyai.com/blog/new-airbnb-host-checklist" },
+  ],
+};
+
   return (
     <main className="min-h-screen bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article className="max-w-2xl mx-auto px-6 py-16">
         <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
