@@ -191,6 +191,29 @@ button:not(:disabled):active {
   }
 }
 
+/* One-time "you can click this" affordance on the Generate button, shown
+   only until the form is valid for the first time ever (see
+   GENERATE_SEEN_KEY in app/page.tsx). Respects prefers-reduced-motion via
+   the global override below. */
+@keyframes generate-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(181, 101, 46, 0.45); }
+  50% { box-shadow: 0 0 0 8px rgba(181, 101, 46, 0); }
+}
+.animate-generate-pulse {
+  animation: generate-pulse 1.8s ease-in-out infinite;
+}
+
+/* Brief highlight on the results panel right after a new generation lands,
+   so the change reads as a distinct "done" moment rather than text simply
+   appearing. */
+@keyframes result-flash {
+  0% { box-shadow: 0 0 0 0 rgba(27, 122, 114, 0.35); }
+  100% { box-shadow: 0 0 0 0 rgba(27, 122, 114, 0); }
+}
+.animate-result-flash {
+  animation: result-flash 1.2s ease-out;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

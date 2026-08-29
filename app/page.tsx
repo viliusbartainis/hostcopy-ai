@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import HeroIllustration from '@/components/HeroIllustration';
@@ -49,6 +49,10 @@ const PRO_KEY = 'hostcopy_pro';
 const FORM_STORAGE_KEY = 'hostcopy_form_state';
 const HISTORY_KEY = 'hostcopy_history';
 const HISTORY_LIMIT = 5;
+const ONBOARDING_SEEN_KEY = 'hostcopy_onboarding_seen';
+const GENERATE_SEEN_KEY = 'hostcopy_generate_pulse_seen';
+const MAX_GUESTS = 50;
+const MAX_BEDROOMS = 20;
 
 type GenerationResult = { airbnb: string; booking: string; instagram: string };
 type HistoryEntry = {
@@ -176,6 +180,7 @@ export default function Home() {
   const tFooter = useTranslations('Footer');
   const tTemplates = useTranslations('Templates');
   const tHistory = useTranslations('History');
+  const tOnboarding = useTranslations('Onboarding');
 
   const [propertyType, setPropertyType] = useState('Apartment');
   const [location, setLocation] = useState('');
@@ -199,6 +204,12 @@ export default function Home() {
   const [copiedAll, setCopiedAll] = useState(false);
   const [feedbackGiven, setFeedbackGiven] = useState<'up' | 'down' | null>(null);
   const [history, setHistory] = useState<HistoryEntry[]>([]);
+  const [errorKind, setErrorKind] = useState<'validation' | 'network' | 'server' | 'ratelimit' | null>(null);
+  const [showIntro, setShowIntro] = useState(false);
+  const [showToneTip, setShowToneTip] = useState(false);
+  const [justGenerated, setJustGenerated] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
+  const resultsRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!toast) return;
@@ -229,6 +240,8 @@ export default function Home() {
       if (saved.tone) setTone(saved.tone);
     }
     setHistory(readHistory());
+    setShowIntro(localStorage.getItem(ONBOARDING_SEEN_KEY) !== 'true');
+    setHasInteracted(localStorage.getItem(GENERATE_SEEN_KEY) === 'true');
 
     const params = new URLSearchParams(window.location.search);
     if (params.get('success') === 'true') {
@@ -258,13 +271,44 @@ export default function Home() {
     localStorage.setItem(FORM_STORAGE_KEY, JSON.stringify(state));
   }, [hydrated, propertyType, location, guests, bedrooms, amenities, tone]);
 
+  useEffect(() => {
+    if (!loading) return;
+    const originalTitle = document.title;
+    document.title = tGenerate('loading');
+    return () => {
+      document.title = originalTitle;
+    };
+  }, [loading, tGenerate]);
+
+  useEffect(() => {
+    if (!justGenerated) return;
+    const t = setTimeout(() => setJustGenerated(false), 1600);
+    return () => clearTimeout(t);
+  }, [justGenerated]);
+
   const freeUsesLeft = FREE_LIMIT - usesUsed;
   const limitReached = !isPro && freeUsesLeft <= 0;
+  const formValid = location.trim() !== '' && guests >= 1 && bedrooms >= 0;
+  const showGeneratePulse = hydrated && !hasInteracted && !limitReached && formValid;
+  const selectedAmenitiesCount = amenities.length;
 
   const toggleAmenity = (a: string) => {
     setAmenities((prev) =>
       prev.includes(a) ? prev.filter((x) => x !== a) : [...prev, a]
     );
+  };
+
+  const dismissIntro = () => {
+    setShowIntro(false);
+    localStorage.setItem(ONBOARDING_SEEN_KEY, 'true');
+  };
+
+  const adjustGuests = (delta: number) => {
+    setGuests((prev) => Math.min(MAX_GUESTS, Math.max(1, prev + delta)));
+  };
+
+  const adjustBedrooms = (delta: number) => {
+    setBedrooms((prev) => Math.min(MAX_BEDROOMS, Math.max(0, prev + delta)));
   };
 
   const applyTemplate = (template: (typeof QUICK_TEMPLATES)[number]) => {
@@ -305,6 +349,9 @@ export default function Home() {
 
   const handleGenerate = async () => {
     setError('');
+    setErrorKind(null);
+    setHasInteracted(true);
+    localStorage.setItem(GENERATE_SEEN_KEY, 'true');
     if (limitReached) {
       return;
     }
@@ -314,6 +361,7 @@ export default function Home() {
     }
     if (guests < 1 || bedrooms < 0) {
       setError(tErrors('invalidNumbers'));
+      setErrorKind('validation');
       return;
     }
     setLoading(true);
@@ -326,6 +374,7 @@ export default function Home() {
       const data = await res.json();
       if (!res.ok) {
         setError(data.error || tErrors('generic'));
+        setErrorKind(res.status === 429 ? 'ratelimit' : 'server');
         if (typeof window !== 'undefined' && window.gtag) {
           window.gtag('event', 'generate_failed', { reason: data.error || 'unknown' });
         }
@@ -335,6 +384,7 @@ export default function Home() {
       setResults(newResults);
       setActiveTab('airbnb');
       setFeedbackGiven(null);
+      setJustGenerated(true);
       if (typeof window !== 'undefined' && window.gtag) {
         window.gtag('event', 'generate_description', {
           is_pro: isPro,
@@ -362,8 +412,13 @@ export default function Home() {
         setHistory(newHistory);
         localStorage.setItem(HISTORY_KEY, JSON.stringify(newHistory));
       }
-    } catch {
-      setError(tErrors('generic'));
+      requestAnimationFrame(() => {
+        resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        resultsRef.current?.focus();
+      });
+    } catch (err) {
+      setError(err instanceof TypeError ? tErrors('network') : tErrors('generic'));
+      setErrorKind(err instanceof TypeError ? 'network' : 'server');
     } finally {
       setLoading(false);
     }
@@ -454,8 +509,20 @@ export default function Home() {
         </div>
 
         <section className="max-w-2xl mx-auto px-6 -mt-8 pb-16 relative">
+          {showIntro && (
+            <div className="mb-4 flex items-start gap-3 bg-teal/10 border border-teal/25 rounded-xl px-4 py-3">
+              <p className="text-sm text-navy/80 flex-1">{tOnboarding('intro')}</p>
+              <button
+                type="button"
+                onClick={dismissIntro}
+                className="text-sm font-medium text-teal underline shrink-0"
+              >
+                {tOnboarding('dismiss')}
+              </button>
+            </div>
+          )}
           <div className="mb-4">
-            <p className="text-xs font-medium text-navy/60 mb-2">{tTemplates('title')}</p>
+            <p className="text-xs font-medium text-navy/70 mb-2">{tTemplates('title')}</p>
             <div className="flex flex-wrap gap-2">
               {QUICK_TEMPLATES.map((template) => (
                 <button key={template.key} type="button" onClick={() => applyTemplate(template)}
@@ -477,7 +544,10 @@ export default function Home() {
                 </select>
               </div>
               <div>
-                <label htmlFor="location" className="block text-sm font-medium text-navy/80 mb-1">{tForm('locationLabel')}</label>
+                <label htmlFor="location" className="block text-sm font-medium text-navy/80 mb-1">
+                  {tForm('locationLabel')} <span className="text-brass-dark" aria-hidden="true">*</span>
+                  <span className="sr-only"> {tForm('requiredIndicator')}</span>
+                </label>
                 <input id="location" value={location} onChange={(e) => setLocation(e.target.value)}
                   onBlur={() => setLocationTouched(true)}
                   aria-invalid={locationTouched && !location.trim()}
@@ -494,23 +564,48 @@ export default function Home() {
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="guests" className="block text-sm font-medium text-navy/80 mb-1">{tForm('guestsLabel')}</label>
-                  <input id="guests" type="number" value={guests} min={1}
-                    onChange={(e) => setGuests(Number(e.target.value))}
-                    className="w-full border border-navy/20 bg-white rounded-lg px-3 py-2 text-ink font-mono focus:outline-none focus:ring-2 focus:ring-brass/50 focus:border-brass" />
+                  <div className="flex items-stretch border border-navy/20 bg-white rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-brass/50 focus-within:border-brass">
+                    <button type="button" onClick={() => adjustGuests(-1)} disabled={guests <= 1} aria-label="Decrease guests"
+                      className="px-3 text-navy/60 hover:text-navy hover:bg-parchment transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed">
+                      −
+                    </button>
+                    <input id="guests" type="number" value={guests} min={1} max={MAX_GUESTS}
+                      onChange={(e) => setGuests(Number(e.target.value))}
+                      className="w-full min-w-0 text-center px-2 py-2 text-ink font-mono focus:outline-none" />
+                    <button type="button" onClick={() => adjustGuests(1)} disabled={guests >= MAX_GUESTS} aria-label="Increase guests"
+                      className="px-3 text-navy/60 hover:text-navy hover:bg-parchment transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed">
+                      +
+                    </button>
+                  </div>
                 </div>
                 <div>
                   <label htmlFor="bedrooms" className="block text-sm font-medium text-navy/80 mb-1">{tForm('bedroomsLabel')}</label>
-                  <input id="bedrooms" type="number" value={bedrooms} min={0}
-                    onChange={(e) => setBedrooms(Number(e.target.value))}
-                    className="w-full border border-navy/20 bg-white rounded-lg px-3 py-2 text-ink font-mono focus:outline-none focus:ring-2 focus:ring-brass/50 focus:border-brass" />
+                  <div className="flex items-stretch border border-navy/20 bg-white rounded-lg overflow-hidden focus-within:ring-2 focus-within:ring-brass/50 focus-within:border-brass">
+                    <button type="button" onClick={() => adjustBedrooms(-1)} disabled={bedrooms <= 0} aria-label="Decrease bedrooms"
+                      className="px-3 text-navy/60 hover:text-navy hover:bg-parchment transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed">
+                      −
+                    </button>
+                    <input id="bedrooms" type="number" value={bedrooms} min={0} max={MAX_BEDROOMS}
+                      onChange={(e) => setBedrooms(Number(e.target.value))}
+                      className="w-full min-w-0 text-center px-2 py-2 text-ink font-mono focus:outline-none" />
+                    <button type="button" onClick={() => adjustBedrooms(1)} disabled={bedrooms >= MAX_BEDROOMS} aria-label="Increase bedrooms"
+                      className="px-3 text-navy/60 hover:text-navy hover:bg-parchment transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:cursor-not-allowed">
+                      +
+                    </button>
+                  </div>
                 </div>
               </div>
               <div>
-                <label className="block text-sm font-medium text-navy/80 mb-2">{tForm('amenitiesLabel')}</label>
+                <label className="block text-sm font-medium text-navy/80 mb-2">
+                  {tForm('amenitiesLabel')}
+                  {selectedAmenitiesCount > 0 && (
+                    <span className="ml-1.5 font-normal text-navy/70">{tForm('amenitiesSelected', { count: selectedAmenitiesCount })}</span>
+                  )}
+                </label>
                 <div className="flex flex-wrap gap-2">
                   {AMENITIES.map((a) => (
                     <button key={a.value} type="button" onClick={() => toggleAmenity(a.value)}
-                      className={`px-3.5 py-2 rounded-full text-sm border transition-colors ${
+                      className={`px-3.5 py-2.5 rounded-full text-sm border transition-colors ${
                         amenities.includes(a.value)
                           ? 'bg-navy text-parchment border-navy'
                           : 'bg-white text-navy/70 border-navy/20 hover:border-navy/40'
@@ -520,8 +615,26 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <div>
-                <label className="block text-sm font-medium text-navy/80 mb-1">{tForm('toneLabel')}</label>
+              <div className="relative">
+                <label className="flex items-center gap-1.5 text-sm font-medium text-navy/80 mb-1">
+                  {tForm('toneLabel')}
+                  <button
+                    type="button"
+                    aria-label="What do the tones mean?"
+                    aria-expanded={showToneTip}
+                    onClick={() => setShowToneTip((v) => !v)}
+                    onMouseEnter={() => setShowToneTip(true)}
+                    onMouseLeave={() => setShowToneTip(false)}
+                    className="w-4 h-4 rounded-full border border-navy/40 text-navy/60 text-[10px] leading-none flex items-center justify-center hover:border-navy/70 hover:text-navy/80"
+                  >
+                    ?
+                  </button>
+                </label>
+                {showToneTip && (
+                  <div role="tooltip" className="absolute z-10 -top-1 left-0 translate-y-[-100%] w-64 max-w-[80vw] text-xs text-parchment bg-navy rounded-lg px-3 py-2 shadow-card-lg">
+                    {tForm('toneTooltip')}
+                  </div>
+                )}
                 <select value={tone} onChange={(e) => setTone(e.target.value)}
                   className="w-full border border-navy/20 bg-white rounded-lg px-3 py-2 text-ink focus:outline-none focus:ring-2 focus:ring-brass/50 focus:border-brass">
                   {TONES.map((tn) => (
@@ -530,22 +643,30 @@ export default function Home() {
                 </select>
               </div>
               {error && (
-                <div className="text-sm text-red-700 bg-red-50 border border-red-200 rounded-lg px-3 py-2 flex items-center justify-between gap-3">
+                <div className={`text-sm rounded-lg px-3 py-2 flex items-center justify-between gap-3 border ${
+                  errorKind === 'validation' || errorKind === 'ratelimit'
+                    ? 'text-amber-800 bg-amber-50 border-amber-200'
+                    : 'text-red-700 bg-red-50 border-red-200'
+                }`}>
                   <span>{error}</span>
-                  <button
-                    type="button"
-                    onClick={handleGenerate}
-                    className="link-underline text-red-700 font-medium shrink-0"
-                  >
-                    {tErrors('retry')}
-                  </button>
+                  {(errorKind === 'network' || errorKind === 'server') && (
+                    <button
+                      type="button"
+                      onClick={handleGenerate}
+                      className="link-underline font-medium shrink-0"
+                    >
+                      {tErrors('retry')}
+                    </button>
+                  )}
                 </div>
               )}
               <button type="submit" disabled={loading || !hydrated || limitReached}
-                className="w-full bg-brass text-navy rounded-lg py-3 font-medium hover:bg-brass-dark disabled:opacity-50 transition-colors">
+                className={`w-full bg-brass text-navy rounded-lg py-3 font-medium hover:bg-brass-dark disabled:opacity-50 transition-colors ${
+                  showGeneratePulse ? 'animate-generate-pulse' : ''
+                }`}>
                 {genLabel}
               </button>
-              <p className="text-xs text-navy/50 text-center -mt-2">
+              <p className="text-xs text-navy/70 text-center -mt-2">
                 {tForm('timeEstimate')} &middot; {tForm('privacyReassurance')}
               </p>
               {hydrated && limitReached && (
@@ -584,26 +705,41 @@ export default function Home() {
               </div>
             )}
             {!loading && results && (
-              <div className="mt-6">
-                <div className="flex gap-1">
+              <div
+                ref={resultsRef}
+                tabIndex={-1}
+                role="region"
+                aria-live="polite"
+                aria-label="Generated listing descriptions"
+                className="mt-6 outline-none"
+              >
+                <div className="flex gap-1" role="tablist" aria-label="Platform">
                   {([
                     { key: 'airbnb', label: tResults('airbnb') },
                     { key: 'booking', label: tResults('booking') },
                     { key: 'instagram', label: tResults('instagram') },
                   ] as const).map((rt) => (
                     <button key={rt.key} onClick={() => setActiveTab(rt.key)}
-                      className={`px-4 py-2 text-sm font-mono uppercase tracking-wide rounded-t-lg transition-colors ${
+                      role="tab"
+                      aria-selected={activeTab === rt.key}
+                      aria-label={`View ${rt.label} description`}
+                      className={`px-4 py-2 text-sm font-mono uppercase tracking-wide rounded-t-lg border-b-2 transition-colors ${
                         activeTab === rt.key
-                          ? 'bg-parchment text-navy border border-navy/15 border-b-0'
-                          : 'text-navy/40 hover:text-navy/70'
+                          ? 'bg-parchment text-navy font-semibold border-x border-t border-navy/15 border-b-brass'
+                          : 'text-navy/70 hover:text-navy border-transparent'
                       }`}>
                       {rt.label}
                     </button>
                   ))}
                 </div>
-                <div className="ticket-perforation p-5 bg-parchment border border-navy/15 border-t-0 rounded-b-xl rounded-tr-xl">
+                <div
+                  role="tabpanel"
+                  className={`ticket-perforation p-5 bg-parchment border border-navy/15 border-t-0 rounded-b-xl rounded-tr-xl ${
+                    justGenerated ? 'animate-result-flash' : ''
+                  }`}
+                >
                   <p className="text-ink whitespace-pre-wrap leading-relaxed">{results[activeTab]}</p>
-                  <p className="text-xs text-navy/40 mt-2">{tResults('wordCount', { count: countWords(results[activeTab]) })}</p>
+                  <p className="text-xs text-navy/70 mt-2">{tResults('wordCount', { count: countWords(results[activeTab]) })}</p>
                   <div className="mt-4 flex flex-wrap items-center gap-4">
                     <button
                       onClick={() => {
@@ -640,10 +776,10 @@ export default function Home() {
                   </div>
                   <div className="mt-5 pt-4 border-t border-navy/10 flex items-center gap-3">
                     {feedbackGiven ? (
-                      <p className="text-sm text-navy/60">{tResults('feedbackThanks')}</p>
+                      <p className="text-sm text-navy/70">{tResults('feedbackThanks')}</p>
                     ) : (
                       <>
-                        <p className="text-sm text-navy/60">{tResults('feedbackQuestion')}</p>
+                        <p className="text-sm text-navy/70">{tResults('feedbackQuestion')}</p>
                         <button
                           type="button"
                           aria-label="Helpful"
@@ -678,7 +814,7 @@ export default function Home() {
               <div className="mt-8 pt-6 border-t border-navy/10">
                 <p className="text-sm font-medium text-navy/80 mb-3">{tHistory('title')}</p>
                 {history.length === 0 ? (
-                  <p className="text-sm text-navy/50">{tHistory('empty', { limit: HISTORY_LIMIT })}</p>
+                  <p className="text-sm text-navy/70">{tHistory('empty', { limit: HISTORY_LIMIT })}</p>
                 ) : (
                   <ul className="space-y-2">
                     {history.map((entry) => (

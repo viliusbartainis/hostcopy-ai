@@ -19,7 +19,10 @@
     "amenitiesLabel": "Ausstattung",
     "toneLabel": "Tonalität",
     "timeEstimate": "Dauert etwa 30 Sekunden",
-    "privacyReassurance": "Ihre Daten werden nicht gespeichert oder weitergegeben."
+    "privacyReassurance": "Ihre Daten werden nicht gespeichert oder weitergegeben.",
+    "toneTooltip": "Luxuriös: gehobene, elegante Sprache. Gemütlich: warm und einladend. Familienfreundlich: betont Sicherheit und Platz. Geschäftsreisender: praktisch und effizient. Minimalistisch: klar und auf den Punkt.",
+    "requiredIndicator": "(erforderlich)",
+    "amenitiesSelected": "{count} ausgewählt"
   },
   "PropertyTypes": {
     "apartment": "Wohnung",
@@ -54,7 +57,8 @@
     "checkoutUnknown": "Unbekannter Fehler — keine URL erhalten",
     "checkoutNetwork": "Netzwerkfehler",
     "errorPrefix": "Fehler: {message}",
-    "retry": "Erneut versuchen"
+    "retry": "Erneut versuchen",
+    "network": "Netzwerkfehler — überprüfe deine Verbindung und versuche es erneut."
   },
   "Generate": {
     "loading": "Ihre Anzeigen werden erstellt...",
@@ -170,5 +174,9 @@
     "title": "Letzte Generierungen",
     "load": "Laden",
     "empty": "Deine letzten {limit} Generierungen erscheinen hier."
+  },
+  "Onboarding": {
+    "intro": "Jede Generierung liefert dir drei fertige Versionen zum Einfügen — für Airbnb, Booking.com und Instagram — alles aus diesem einen Formular.",
+    "dismiss": "Verstanden"
   }
 }

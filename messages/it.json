@@ -19,7 +19,10 @@
     "amenitiesLabel": "Servizi",
     "toneLabel": "Tono",
     "timeEstimate": "Richiede circa 30 secondi",
-    "privacyReassurance": "I tuoi dati non vengono salvati né condivisi."
+    "privacyReassurance": "I tuoi dati non vengono salvati né condivisi.",
+    "toneTooltip": "Lusso: linguaggio raffinato ed elegante. Accogliente: caldo e invitante. A misura di famiglia: valorizza sicurezza e spazio. Viaggiatore d'affari: pratico ed efficiente. Minimalista: chiaro ed essenziale.",
+    "requiredIndicator": "(obbligatorio)",
+    "amenitiesSelected": "{count} selezionati"
   },
   "PropertyTypes": {
     "apartment": "Appartamento",
@@ -54,7 +57,8 @@
     "checkoutUnknown": "Errore sconosciuto — nessun URL restituito",
     "checkoutNetwork": "Errore di rete",
     "errorPrefix": "Errore: {message}",
-    "retry": "Riprova"
+    "retry": "Riprova",
+    "network": "Errore di rete — controlla la connessione e riprova."
   },
   "Generate": {
     "loading": "Scrittura dei tuoi annunci...",
@@ -170,5 +174,9 @@
     "title": "Generazioni recenti",
     "load": "Carica",
     "empty": "Le tue ultime {limit} generazioni appariranno qui."
+  },
+  "Onboarding": {
+    "intro": "Ogni generazione ti dà tre versioni pronte da incollare — per Airbnb, Booking.com e Instagram — tutte da questo stesso modulo.",
+    "dismiss": "Capito"
   }
 }
