@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import PrintButton from "@/components/PrintButton";
 
 export const metadata: Metadata = {
   title: "Airbnb vs Booking.com vs Vrbo | HostCopy AI",
@@ -50,7 +51,7 @@ export default function BlogPost() {
     <main className="min-h-screen bg-background">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-stone-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:underline"
+        className="print:hidden sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-white focus:text-stone-900 focus:px-4 focus:py-2 focus:rounded-lg focus:shadow-lg focus:underline"
       >
         Skip to content
       </a>
@@ -63,11 +64,12 @@ export default function BlogPost() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <article id="main-content" className="max-w-2xl mx-auto px-6 py-16">
-        <Link href="/" className="text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
-        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500 mt-4">
+        <Link href="/" className="print:hidden text-sm text-stone-500 hover:text-stone-800">&larr; Back to HostCopy AI</Link>
+        <div className="flex flex-wrap items-center gap-2 text-xs text-stone-500 mt-4 print:hidden">
           <span>Last updated: August 29, 2026</span>
           <span aria-hidden="true">&middot;</span>
           <span>3 min read</span>
+          <PrintButton />
         </div>
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           Airbnb vs Booking.com vs Vrbo: Where Should You List Your Property?
@@ -150,11 +152,11 @@ export default function BlogPost() {
             <li><Link href="/blog/airbnb-vs-vrbo-vs-booking-2026" className="underline">Full source list in our 2026 fee update</Link></li>
           </ul>
         </div>
-        <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
+        <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500 print:hidden">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}
           <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.
         </div>
-        <div className="mt-10 pt-8 border-t border-stone-200">
+        <div className="mt-10 pt-8 border-t border-stone-200 print:hidden">
           <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
           <div className="space-y-2">
            <Link href="/booking-com-description-generator" className="block text-stone-900 underline">Try the free Booking.com description generator</Link>
