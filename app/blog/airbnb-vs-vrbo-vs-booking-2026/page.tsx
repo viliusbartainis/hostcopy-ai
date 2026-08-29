@@ -144,7 +144,7 @@ export default function BlogPost() {
           <p><Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> generates a separate Airbnb, Booking.com, and Instagram version from one form, so switching platforms — or listing on more than one — doesn&apos;t mean rewriting your listing from scratch each time.</p>
           <p className="text-sm text-stone-500 pt-2">Fee figures above reflect publicly reported rates as of August 2026 and are general ranges, not quotes for your specific account — platform fees change and vary by market, property type, and cancellation policy, so confirm your exact rate in your Airbnb, Booking.com, or Vrbo dashboard before making a decision based on it.</p>
         </div>
-        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+        <div className="mt-6 pl-4 border-l-2 border-brass/50 text-xs text-stone-500">
           <p className="font-medium mb-1">Sources</p>
           <ul className="space-y-1">
             <li><a href="https://www.airbnb.com/help/article/1857" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Help Center &ndash; Airbnb service fees</a></li>

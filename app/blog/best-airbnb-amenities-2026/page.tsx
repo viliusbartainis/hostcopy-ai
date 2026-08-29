@@ -141,7 +141,7 @@ export default function BlogPost() {
           <p><strong>Do I need a hot tub to compete in 2026?</strong> No — it depends heavily on your market and audience. In many locations, a hot tub&apos;s upkeep cost and liability outweigh the booking lift it provides.</p>
           <p><strong>Is a coffee machine enough, or do I need more?</strong> A machine alone isn&apos;t enough if there&apos;s no coffee or tea actually stocked with it — guests specifically mention having usable options, not just equipment.</p>
         </div>
-        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+        <div className="mt-6 pl-4 border-l-2 border-brass/50 text-xs text-stone-500">
           <p className="font-medium mb-1">Sources</p>
           <ul className="space-y-1">
             <li><a href="https://www.airbnb.com/resources/hosting-homes/a/attract-guests-with-fast-reliable-wifi-433" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Resource Center &ndash; Attract guests with fast, reliable WiFi</a></li>
