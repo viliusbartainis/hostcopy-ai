@@ -157,6 +157,11 @@ details[open] > summary::after {
   transform: translateY(-35%) rotate(-135deg);
 }
 
+/* Tactile press feedback for buttons sitewide */
+button:not(:disabled):active {
+  transform: scale(0.98);
+}
+
 /* Subtle lift on hover for interactive cards (pricing tiers, etc.) */
 .card-hover {
   transition: transform 0.2s ease, box-shadow 0.2s ease;

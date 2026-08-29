@@ -385,7 +385,7 @@ export default function Home() {
                 <div className="flex flex-wrap gap-2">
                   {AMENITIES.map((a) => (
                     <button key={a.value} type="button" onClick={() => toggleAmenity(a.value)}
-                      className={`px-3 py-1.5 rounded-full text-sm border transition-colors ${
+                      className={`px-3.5 py-2 rounded-full text-sm border transition-colors ${
                         amenities.includes(a.value)
                           ? 'bg-navy text-parchment border-navy'
                           : 'bg-white text-navy/70 border-navy/20 hover:border-navy/40'
