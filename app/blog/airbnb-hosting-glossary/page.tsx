@@ -172,12 +172,15 @@ export default function GlossaryPost() {
           <p>Airbnb hosting comes with its own vocabulary, and a lot of it isn&apos;t explained clearly in one place. Here are 20 terms that come up constantly, defined plainly and without jargon.</p>
         </div>
         <dl className="mt-8 space-y-6">
-          {terms.map((t) => (
-            <div key={t.term} className="border-b border-stone-200 pb-6">
-              <dt className="text-lg font-display font-semibold text-stone-900 mb-1">{t.term}</dt>
-              <dd className="text-stone-700 leading-relaxed">{t.definition}</dd>
-            </div>
-          ))}
+          {terms.map((t) => {
+            const id = t.term.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
+            return (
+              <div key={t.term} id={id} className="border-b border-stone-200 pb-6 scroll-mt-8">
+                <dt className="text-lg font-display font-semibold text-stone-900 mb-1">{t.term}</dt>
+                <dd className="text-stone-700 leading-relaxed">{t.definition}</dd>
+              </div>
+            );
+          })}
         </dl>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}

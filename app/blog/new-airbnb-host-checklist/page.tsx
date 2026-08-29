@@ -94,7 +94,7 @@ const breadcrumbJsonLd = {
             <li>House rules stated specifically &mdash; quiet hours, guest limits, smoking, pets, parties &mdash; rather than left blank and dealt with later</li>
             <li>A minimum stay length that actually matches your cleaning capacity and local demand pattern</li>
             <li>A cancellation policy chosen deliberately instead of left on the strictest default setting</li>
-            <li>A conscious decision on Instant Book &mdash; most new hosts benefit from turning it on to build momentum and reviews faster</li>
+            <li>A conscious decision on <Link href="/blog/airbnb-hosting-glossary#instant-book" className="underline">Instant Book</Link> &mdash; most new hosts benefit from turning it on to build momentum and reviews faster</li>
           </ul>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Legal and insurance basics</h2>
           <p>Short-term rental rules vary enormously by city, region, and country &mdash; some places require registration, permits, or caps on the number of nights per year, and enforcement has been tightening in many markets. Confirm whether your existing homeowner&apos;s or renter&apos;s insurance actually covers short-term rental use, since many standard policies exclude it, and look into a dedicated host or short-term rental insurance add-on if it doesn&apos;t. Keep receipts and records from day one; tax obligations exist in every market, even if the specifics differ.</p>
