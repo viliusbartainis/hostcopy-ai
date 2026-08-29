@@ -94,6 +94,10 @@ export default function BlogPost() {
             <li>Fill in every amenity, house rule, and detail field Airbnb offers, not just the obvious ones</li>
             <li>Update your calendar and pricing regularly &mdash; a listing that hasn&apos;t been touched in months reads as a lower-signal listing to the algorithm</li>
           </ul>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Does the wording in my Airbnb title affect search ranking?</h2>
+          <p>Indirectly. Airbnb search isn&apos;t keyword-matching your title the way a Google search engine crawls a webpage, but a title that clearly states property type and a real differentiator improves click-through from search results — and click-through and booking rate are signals the ranking system does weigh.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Does the wording of my Airbnb description text matter for SEO?</h2>
+          <p>Less than people assume. Your description text isn&apos;t indexed for ranking the way a webpage is, but a specific, accurate description that matches what your photos and amenities actually show reduces mismatched expectations — and mismatched expectations show up as lower ratings, which does feed ranking.</p>
           <p>A title and description that are specific and accurate help with more than just guest impressions &mdash; they reinforce the same completeness that Airbnb&apos;s ranking rewards. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> can help you write both in under a minute.</p>
         </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">

@@ -93,6 +93,8 @@ export default function BlogPost() {
           <p>A title aimed at business travelers (&ldquo;Quiet 1BR, Dedicated Desk, 10 min to Convention Center&rdquo;) will out-convert a vibe-first title for that audience, while a title aimed at couples or families benefits more from an emotional or scenic hook. Look at your last ten bookings: if most were business travelers, your title should say so. If most were families, lead with space and safety features instead.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Revisit it every season</h2>
           <p>A title that works during summer travel season may undersell you in a slow winter month when your differentiator shifts &mdash; a fireplace or hot tub suddenly matters more than a rooftop view. Treat your title as a living piece of copy, not something you set once at signup and forget.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">How long should an Airbnb title be?</h2>
+          <p>Airbnb caps titles at 50 characters, and mobile search results cut them off well before that — so the property type, differentiator, and location cue need to come in roughly that order, front-loaded, since anything after the cutoff won&apos;t be read at all.</p>
           <p>Writing a strong title is half the work. If the description underneath still needs writing for Airbnb, Booking.com, and an Instagram caption to promote it, <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> generates all three from one form in under a minute.</p>
         </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">

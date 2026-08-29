@@ -138,6 +138,10 @@ export default function BlogPost() {
             <li>Ignoring how the cleaning fee affects total trip cost &mdash; guests compare the full price, not just the nightly rate</li>
             <li>Forgetting to price up for local events, festivals, or conferences that can justify two to three times your normal rate for a handful of nights a year</li>
           </ul>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">What is Airbnb dynamic pricing?</h2>
+          <p>Airbnb dynamic pricing means adjusting your nightly rate based on demand signals — season, day of week, local events, and how far out a date is from today — instead of charging one flat rate all year. You can do it manually using the approach in this guide, or automate it with Airbnb&apos;s own Smart Pricing tool or a third-party pricing tool.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Does Airbnb dynamic pricing actually work?</h2>
+          <p>It works when it&apos;s based on your actual booking history and local demand patterns, not a generic algorithm applied blindly. Many hosts get better results adjusting manually within guardrails — a price floor and ceiling they set themselves — than handing full control to an automated tool with no minimum.</p>
           <p>Pricing is one lever that gets a guest to consider your listing. The words that make them pick yours over a nearly identical listing at a similar price are the other. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> helps with that second part, turning your listing details into ready-to-paste descriptions in under a minute.</p>
         </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">

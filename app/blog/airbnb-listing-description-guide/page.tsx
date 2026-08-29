@@ -115,6 +115,8 @@ export default function BlogPost() {
             <li>Different length/tone for Airbnb vs Booking.com vs Instagram</li>
             <li>No sentence you&apos;d be embarrassed to say out loud to a guest</li>
           </ul>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">How long should Airbnb description text be?</h2>
+          <p>Airbnb caps the main listing summary at 500 characters, and the app only shows roughly the first 295 of those before a guest has to tap &quot;Show more&quot; &mdash; with a separate Detailed Description section available for anything beyond that. Front-load your specific hook in that first stretch, since that&apos;s what most guests actually read before deciding whether to expand it.</p>
           <p>Writing three good versions by hand takes 20–30 minutes per listing. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> generates all three — matched to each platform — from one form, in under a minute.</p>
         </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
