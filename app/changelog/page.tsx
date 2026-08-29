@@ -9,6 +9,19 @@ export const metadata: Metadata = {
 
 const ENTRIES: { date: string; items: string[] }[] = [
   {
+    date: "August 29, 2026",
+    items: [
+      "Added a Regenerate button, a \"copy all 3\" button, word counts, quick-start templates, and a thumbs-up/down feedback gesture after generating",
+      "Added generation history for Pro users, and this changelog page",
+      "Added a Stripe webhook to log subscription cancellations and failed payments, rate limiting on checkout, and stricter input validation on the generator",
+      "Added a Content-Security-Policy in monitoring mode as a step toward tighter security",
+      "Added custom illustrations for the hero section and the 404 page, a loading skeleton, toast notifications, and a sticky header and \"Generate\" button while scrolling",
+      "Added SEO structured data, comparison tables, TL;DR summaries, and cited sources across blog articles, plus a hosting glossary and several new guides",
+      "Added a first-time explainer for new visitors, clearer error messages, and accessibility improvements for screen reader users",
+      "Fixed a bug where the back-to-top button overlapped the mobile \"Generate\" bar",
+    ],
+  },
+  {
     date: "August 28, 2026",
     items: [
       "Added Booking.com description generator link across the blog and footer",
