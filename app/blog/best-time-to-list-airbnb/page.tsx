@@ -97,6 +97,9 @@ export default function BlogPost() {
             <li>Respond to every inquiry within a few hours while you&apos;re building your track record</li>
           </ul>
           <p>Once your listing is live, the description you launch with matters too, since it&apos;s doing a lot of the early convincing before you have reviews to back it up. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> can help you get that first version right across Airbnb, Booking.com, and Instagram from one form.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Related questions</h2>
+          <p><strong>Is it ever too late to list before peak season?</strong> No — a late listing still benefits from getting live as soon as possible, since every week without reviews or booking history is a week of lost ranking momentum.</p>
+          <p><strong>Does the day of the week I publish matter?</strong> Not meaningfully — the season and lead time before peak demand matter far more than which specific day you hit publish.</p>
         </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}

@@ -91,6 +91,9 @@ export default function BlogPost() {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Stories vs. feed posts</h2>
           <p>Feed posts are your portfolio &mdash; treat them as evergreen content someone might find months later. Stories are for immediacy: a same-day view of the sunset from the deck, a poll asking followers which room to renovate next, a quick clip of a guest&apos;s dog enjoying the yard (with permission). Stories cost you nothing to experiment with, so use them to test captions and content ideas before committing to a feed post.</p>
           <p>Writing captions for every room, every season, and every platform adds up fast. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> generates an Instagram caption alongside your Airbnb and Booking.com listing copy from the same form, so promotion and the listing itself stay consistent.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Related questions</h2>
+          <p><strong>How often should I post about my Airbnb on Instagram?</strong> A few times a week is enough to stay visible without feeling like an ad account — consistency matters more than volume.</p>
+          <p><strong>Should I use a separate Instagram account for my rental?</strong> Usually yes, once you&apos;re posting regularly — it lets you tailor hashtags and captions to guests specifically, rather than mixing them with a personal account&apos;s audience.</p>
         </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}

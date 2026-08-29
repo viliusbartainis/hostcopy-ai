@@ -91,6 +91,9 @@ export default function BlogPost() {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">When to cancel or refuse a guest</h2>
           <p>A reservation request that doesn&apos;t match the stated purpose &mdash; a large group booking a small listing while claiming only two people will stay &mdash; is worth a direct clarifying message before you confirm. A guest&apos;s past reviews showing a pattern of property damage or rule violations are worth weighing carefully even under Instant Book. Airbnb does allow host-initiated cancellations for genuine safety concerns without the usual penalty when properly documented, but repeated cancellations still hurt your Superhost status, so this is a tool to use sparingly and only when it&apos;s genuinely warranted.</p>
           <p>A lot of difficult-guest situations start with mismatched expectations set by the listing itself. A description that&apos;s accurate as well as appealing heads off some of these problems before they start, and <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> can help you write one in under a minute.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Related questions</h2>
+          <p><strong>Can I cancel a reservation because a guest seems difficult before check-in?</strong> Only for reasons that fit Airbnb&apos;s cancellation policy — canceling because a guest merely seems difficult, without a policy violation, risks a penalty on your own account.</p>
+          <p><strong>Should I respond to a bad review from a difficult guest?</strong> Yes — a calm, factual public response often matters more to future guests reading it than the review itself.</p>
         </div>
         <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
           <p className="font-medium mb-1">Further reading</p>

@@ -109,6 +109,9 @@ export default function BlogPost() {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">One description, two platforms, two structures</h2>
           <p>The practical takeaway isn&apos;t to abandon your Airbnb description &mdash; it&apos;s to stop assuming it will perform the same way somewhere else. Keep the vibe-forward version for Airbnb, and write a fact-forward version, logistics first, for Booking.com. The underlying property is the same; the guest reading it is comparing you against a different set of listings with different expectations.</p>
           <p><Link href="/booking-com-description-generator" className="text-stone-900 underline font-medium">HostCopy AI&apos;s free Booking.com description generator</Link> writes both versions from the same form &mdash; one generation gives you Airbnb, Booking.com, and an Instagram caption, each structured for how that platform&apos;s guests actually read.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Related questions</h2>
+          <p><strong>Can I use bullet points in a Booking.com description?</strong> The main description field is prose, but Booking.com gives you separate structured fields for amenities and neighborhood info — use those instead of trying to format bullet points into free text.</p>
+          <p><strong>Does Booking.com penalize short descriptions?</strong> Not directly, but a description that&apos;s too short to cover the hard facts guests are comparing (size, distance, cancellation terms) underperforms regardless of any ranking penalty.</p>
         </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}

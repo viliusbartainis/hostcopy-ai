@@ -91,6 +91,9 @@ export default function BlogPost() {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Is it worth chasing?</h2>
           <p>For most hosts, meeting these thresholds is a natural side effect of running a decent listing, not a separate goal to chase. It&apos;s worth being careful about over-optimizing for the badge itself, like accepting every booking request regardless of fit just to avoid a cancellation — consistently good hosting tends to earn the badge on its own, without needing to bend your own rules for it.</p>
           <p>Because program details can change, this article reflects the general structure of the requirements rather than a guarantee of the exact current numbers — always check Airbnb&apos;s official Superhost page before making decisions based on it.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Related questions</h2>
+          <p><strong>Can I lose Superhost status after just one bad review?</strong> Usually not from a single review alone, unless your review pool is small enough that one low score meaningfully drags your average below 4.8.</p>
+          <p><strong>Does Superhost status affect my search ranking?</strong> It&apos;s associated with a modest visibility boost, but the same underlying metrics &mdash; response rate, reviews, cancellations &mdash; matter for ranking whether or not you&apos;ve earned the badge.</p>
         </div>
         <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
           <p className="font-medium mb-1">Sources</p>

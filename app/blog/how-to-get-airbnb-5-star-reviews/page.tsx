@@ -97,6 +97,9 @@ const breadcrumbJsonLd = {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">What to do with a negative review</h2>
           <p>Reply publicly, calmly, and factually &mdash; future guests read your response as much as the review itself, and a measured reply often does more for your credibility than the negative review does damage. If the review violates Airbnb&apos;s content policy &mdash; it&apos;s unrelated to the actual stay, an extortion attempt, or discriminatory &mdash; report it to Airbnb support with documentation rather than arguing in the comment thread. If the criticism is legitimate, fix the actual issue; it&apos;s the fastest way to stop it from showing up in the next review too.</p>
           <p>A lot of negative reviews trace back to a listing description that oversold the space. Setting accurate expectations from the start is one of the simplest ways to avoid disappointment later, and <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> can help you write a description that&apos;s appealing without overpromising.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Related questions</h2>
+          <p><strong>Is it okay to ask a guest directly for a 5-star review?</strong> Asking for an honest review is fine; asking specifically for 5 stars can violate Airbnb&apos;s review policy and reads as pressure to guests.</p>
+          <p><strong>Does responding to guest messages faster actually improve reviews?</strong> Indirectly yes — fast, clear communication reduces the friction that turns into complaints, which is one of the more common reasons for a review below 5 stars.</p>
         </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}

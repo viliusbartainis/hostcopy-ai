@@ -137,6 +137,9 @@ export default function BlogPost() {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">What to skip: amenities that cost more than they return</h2>
           <p>Expensive gym equipment often sits unused relative to its upkeep and the space it takes up, unless a home gym is a genuine differentiator in your specific market. A hot tub&apos;s upkeep cost and liability can outweigh any booking lift depending on your location, and it can backfire hard in reviews the moment maintenance lapses. Heavily themed or novelty decor is fine as a style choice, but it should never replace comfortable basics &mdash; a great-looking room with a bad mattress still gets a mediocre review.</p>
           <p>Listing your amenities accurately, and describing them the way they actually are, matters more than the number of boxes you check. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> helps you turn your real amenities into a description guests can trust.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Related questions</h2>
+          <p><strong>Do I need a hot tub to compete in 2026?</strong> No — it depends heavily on your market and audience. In many locations, a hot tub&apos;s upkeep cost and liability outweigh the booking lift it provides.</p>
+          <p><strong>Is a coffee machine enough, or do I need more?</strong> A machine alone isn&apos;t enough if there&apos;s no coffee or tea actually stocked with it — guests specifically mention having usable options, not just equipment.</p>
         </div>
         <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
           <p className="font-medium mb-1">Sources</p>

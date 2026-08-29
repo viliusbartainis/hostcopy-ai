@@ -98,6 +98,9 @@ export default function BlogPost() {
           </ul>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Enforcing rules without damaging the relationship</h2>
           <p>Mention the rule once, politely, as soon as you notice it being pushed — most guests fix the behavior immediately once they realize it matters. Save documentation and a firmer message for repeat issues or anything that affects safety or other guests. Rules exist to prevent problems, not to give you something to police over minor, harmless things.</p>
+          <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Related questions</h2>
+          <p><strong>Can I change my house rules after guests have already booked?</strong> Yes, you can update house rules anytime, but changes only apply to future bookings — guests who already booked under the old rules aren&apos;t bound by ones added afterward.</p>
+          <p><strong>Do house rules affect my Superhost status?</strong> Not directly, but rules that are unclear or unreasonable tend to generate disputes and lower ratings, which do affect it indirectly.</p>
         </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}
