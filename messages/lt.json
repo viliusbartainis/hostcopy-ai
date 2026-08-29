@@ -17,7 +17,9 @@
     "guestsLabel": "Svečiai",
     "bedroomsLabel": "Miegamieji",
     "amenitiesLabel": "Patogumai",
-    "toneLabel": "Tonas"
+    "toneLabel": "Tonas",
+    "timeEstimate": "Užtrunka apie 30 sekundžių",
+    "privacyReassurance": "Jūsų duomenys nesaugomi ir niekam neperduodami."
   },
   "PropertyTypes": {
     "apartment": "Butas",
@@ -51,7 +53,8 @@
     "generic": "Kažkas nutiko ne taip. Bandykite dar kartą.",
     "checkoutUnknown": "Nežinoma klaida — nuoroda negrąžinta",
     "checkoutNetwork": "Tinklo klaida",
-    "errorPrefix": "Klaida: {message}"
+    "errorPrefix": "Klaida: {message}",
+    "retry": "Bandyti dar kartą"
   },
   "Generate": {
     "loading": "Rašome jūsų skelbimus...",

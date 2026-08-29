@@ -17,7 +17,9 @@
     "guestsLabel": "Goście",
     "bedroomsLabel": "Sypialnie",
     "amenitiesLabel": "Udogodnienia",
-    "toneLabel": "Ton"
+    "toneLabel": "Ton",
+    "timeEstimate": "Zajmuje około 30 sekund",
+    "privacyReassurance": "Twoje dane nie są przechowywane ani udostępniane."
   },
   "PropertyTypes": {
     "apartment": "Mieszkanie",
@@ -51,7 +53,8 @@
     "generic": "Coś poszło nie tak. Spróbuj ponownie.",
     "checkoutUnknown": "Nieznany błąd — nie zwrócono adresu URL",
     "checkoutNetwork": "Błąd sieci",
-    "errorPrefix": "Błąd: {message}"
+    "errorPrefix": "Błąd: {message}",
+    "retry": "Spróbuj ponownie"
   },
   "Generate": {
     "loading": "Piszemy Twoje oferty...",

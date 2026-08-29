@@ -17,7 +17,9 @@
     "guestsLabel": "Hóspedes",
     "bedroomsLabel": "Quartos",
     "amenitiesLabel": "Comodidades",
-    "toneLabel": "Tom"
+    "toneLabel": "Tom",
+    "timeEstimate": "Demora cerca de 30 segundos",
+    "privacyReassurance": "Os seus dados não são armazenados nem partilhados."
   },
   "PropertyTypes": {
     "apartment": "Apartamento",
@@ -51,7 +53,8 @@
     "generic": "Ocorreu um erro. Tente novamente.",
     "checkoutUnknown": "Erro desconhecido — nenhum URL foi devolvido",
     "checkoutNetwork": "Erro de rede",
-    "errorPrefix": "Erro: {message}"
+    "errorPrefix": "Erro: {message}",
+    "retry": "Tentar novamente"
   },
   "Generate": {
     "loading": "A escrever os seus anúncios...",

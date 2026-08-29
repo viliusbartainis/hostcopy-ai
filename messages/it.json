@@ -17,7 +17,9 @@
     "guestsLabel": "Ospiti",
     "bedroomsLabel": "Camere da letto",
     "amenitiesLabel": "Servizi",
-    "toneLabel": "Tono"
+    "toneLabel": "Tono",
+    "timeEstimate": "Richiede circa 30 secondi",
+    "privacyReassurance": "I tuoi dati non vengono salvati né condivisi."
   },
   "PropertyTypes": {
     "apartment": "Appartamento",
@@ -51,7 +53,8 @@
     "generic": "Qualcosa è andato storto. Riprova.",
     "checkoutUnknown": "Errore sconosciuto — nessun URL restituito",
     "checkoutNetwork": "Errore di rete",
-    "errorPrefix": "Errore: {message}"
+    "errorPrefix": "Errore: {message}",
+    "retry": "Riprova"
   },
   "Generate": {
     "loading": "Scrittura dei tuoi annunci...",

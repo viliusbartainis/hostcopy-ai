@@ -86,6 +86,7 @@ main {
 html {
   scrollbar-color: var(--color-navy) var(--color-parchment-dim);
   scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 
 /* Focus visible — elegant navy/brass ring instead of the browser default blue */
@@ -127,9 +128,10 @@ html {
     0 6px 16px -4px rgba(181, 101, 46, 0.12);
 }
 
-/* Distinctive number display for prices/stats */
+/* Distinctive number display for prices/stats — tabular figures and tight
+   tracking, without forcing a font-family so it composes with whichever
+   display/mono utility is already on the element. */
 .number-display {
-  font-family: var(--font-mono);
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.02em;
 }
