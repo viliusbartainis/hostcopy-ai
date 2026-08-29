@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "How to Promote Your Airbnb on Instagram | HostCopy AI",
-  description: "What to actually post, a caption formula that works for vacation rentals, and a hashtag approach that doesn't waste your reach.",
+  description: "How to promote your Airbnb on Instagram: what to actually post, a caption formula that works for vacation rentals, and a hashtag approach that doesn't waste your reach.",
   keywords: "airbnb instagram caption, how to promote airbnb on instagram, vacation rental instagram marketing",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-instagram-marketing' },
   openGraph: {
@@ -21,7 +21,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: "How to Promote Your Airbnb on Instagram: Captions, Hashtags, and Story Ideas",
-    description: "What to actually post, a caption formula that works for vacation rentals, and a hashtag approach that doesn't waste your reach.",
+    description: "How to promote your Airbnb on Instagram: what to actually post, a caption formula that works for vacation rentals, and a hashtag approach that doesn't waste your reach.",
     author: { "@type": "Organization", name: "HostCopy AI" },
     publisher: {
       "@type": "Organization",

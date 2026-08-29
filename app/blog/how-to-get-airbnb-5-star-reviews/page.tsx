@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "How to Get 5-Star Airbnb Reviews | HostCopy AI",
-  description: "Check-in experience, communication timing, small surprises that get mentioned in reviews, and how to handle a negative one. A practical review guide.",
+  description: "How to get 5-star Airbnb reviews: check-in experience, communication timing, small surprises guests mention, and how to handle a negative one.",
   keywords: "how to get airbnb reviews, airbnb 5-star review tips, improve airbnb rating",
   alternates: { canonical: 'https://hostcopyai.com/blog/how-to-get-airbnb-5-star-reviews' },
   openGraph: {
@@ -21,7 +21,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: "5-Star Reviews: How to Get Airbnb Guests to Leave Glowing Feedback",
-    description: "Check-in experience, communication timing, small surprises that get mentioned in reviews, and how to handle a negative one. A practical review guide.",
+    description: "How to get 5-star Airbnb reviews: check-in experience, communication timing, small surprises guests mention, and how to handle a negative one.",
     author: { "@type": "Organization", name: "HostCopy AI" },
     publisher: {
       "@type": "Organization",

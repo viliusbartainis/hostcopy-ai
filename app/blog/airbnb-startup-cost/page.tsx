@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "How Much Does It Cost to Start an Airbnb? | HostCopy AI",
-  description: "Initial setup costs, recurring expenses, and realistic profit ranges by city size, so you can budget an Airbnb listing with real numbers, not guesses.",
+  description: "The real cost to start an Airbnb: initial setup, recurring expenses, and realistic profit ranges by city size — real numbers, not guesses.",
   keywords: "airbnb startup cost, how much does airbnb host make, airbnb business expenses",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-startup-cost' },
   openGraph: {
@@ -21,7 +21,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: "How Much Does It Cost to Start an Airbnb Business?",
-    description: "Initial setup costs, recurring expenses, and realistic profit ranges by city size, so you can budget an Airbnb listing with real numbers, not guesses.",
+    description: "The real cost to start an Airbnb: initial setup, recurring expenses, and realistic profit ranges by city size — real numbers, not guesses.",
     author: { "@type": "Organization", name: "HostCopy AI" },
     publisher: {
       "@type": "Organization",

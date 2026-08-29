@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Best Airbnb Amenities in 2026 | HostCopy AI",
-  description: "A real workspace, tested WiFi speed, self check-in, and the small details that bring guests back. What amenities are actually worth it in 2026.",
+  description: "The Airbnb amenities guests actually care about in 2026: a real workspace, tested WiFi speed, self check-in, and the small details that bring guests back.",
   keywords: "best airbnb amenities, what amenities do airbnb guests want, airbnb must-haves",
   alternates: { canonical: 'https://hostcopyai.com/blog/best-airbnb-amenities-2026' },
   openGraph: {
@@ -21,7 +21,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: "Airbnb Amenities Guests Actually Care About in 2026",
-    description: "A real workspace, tested WiFi speed, self check-in, and the small details that bring guests back. What amenities are actually worth it in 2026.",
+    description: "The Airbnb amenities guests actually care about in 2026: a real workspace, tested WiFi speed, self check-in, and the small details that bring guests back.",
     author: { "@type": "Organization", name: "HostCopy AI" },
     publisher: {
       "@type": "Organization",

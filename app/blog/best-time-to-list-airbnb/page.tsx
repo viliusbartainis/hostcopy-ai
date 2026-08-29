@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Best Time to List Your Airbnb Property | HostCopy AI",
-  description: "When new listings should go live to build reviews and search ranking before peak season hits, and how to adjust if you can't pick your own timing.",
+  description: "The best time to list your Airbnb: when new listings should go live to build reviews and search ranking before peak season hits.",
   keywords: "best time to list airbnb, airbnb seasonality, when to start airbnb hosting",
   alternates: { canonical: 'https://hostcopyai.com/blog/best-time-to-list-airbnb' },
   openGraph: {
@@ -21,7 +21,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: "Best Time to List Your Airbnb Property",
-    description: "When new listings should go live to build reviews and search ranking before peak season hits, and how to adjust if you can't pick your own timing.",
+    description: "The best time to list your Airbnb: when new listings should go live to build reviews and search ranking before peak season hits.",
     author: { "@type": "Organization", name: "HostCopy AI" },
     publisher: {
       "@type": "Organization",

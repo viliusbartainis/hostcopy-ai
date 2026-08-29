@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Airbnb Photos That Get You Booked | HostCopy AI",
-  description: "Natural light vs. flash, angles that sell space, and how many photos you actually need. A practical guide to Airbnb photography that gets clicks.",
+  description: "Airbnb photography tips that get clicks: natural light vs. flash, angles that sell space, and how many photos you actually need.",
   keywords: "airbnb photography tips, best airbnb photos, how to photograph airbnb listing",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-photography-tips' },
   openGraph: {
@@ -21,7 +21,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: "Airbnb Photos That Get You Booked: A Host's Guide",
-    description: "Natural light vs. flash, angles that sell space, and how many photos you actually need. A practical guide to Airbnb photography that gets clicks.",
+    description: "Airbnb photography tips that get clicks: natural light vs. flash, angles that sell space, and how many photos you actually need.",
     author: { "@type": "Organization", name: "HostCopy AI" },
     publisher: {
       "@type": "Organization",

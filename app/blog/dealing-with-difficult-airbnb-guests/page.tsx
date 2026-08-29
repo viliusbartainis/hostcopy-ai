@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "How to Handle Difficult Airbnb Guests | HostCopy AI",
-  description: "Calm communication, when to escalate to Airbnb Support, how to document problems, and boundaries worth setting before a difficult guest ever books.",
+  description: "How to handle difficult Airbnb guests: calm communication, when to escalate to Airbnb Support, how to document problems, and boundaries worth setting early.",
   keywords: "dealing with difficult airbnb guests, airbnb guest problems, airbnb host tips",
   alternates: { canonical: 'https://hostcopyai.com/blog/dealing-with-difficult-airbnb-guests' },
   openGraph: {
@@ -21,7 +21,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: "How to Handle Difficult Airbnb Guests (Without Losing Your Cool)",
-    description: "Calm communication, when to escalate to Airbnb Support, how to document problems, and boundaries worth setting before a difficult guest ever books.",
+    description: "How to handle difficult Airbnb guests: calm communication, when to escalate to Airbnb Support, how to document problems, and boundaries worth setting early.",
     author: { "@type": "Organization", name: "HostCopy AI" },
     publisher: {
       "@type": "Organization",

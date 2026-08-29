@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "How to Price Your Airbnb Listing | HostCopy AI",
-  description: "Seasonality, weekends vs. weekdays, competitor analysis, and minimum stay tricks that actually move your Airbnb revenue. A practical pricing guide.",
+  description: "Airbnb pricing strategy and dynamic pricing basics: seasonality, weekends vs. weekdays, competitor analysis, and minimum-stay tricks that move revenue.",
   keywords: "airbnb pricing strategy, how to price airbnb, dynamic pricing airbnb",
   alternates: { canonical: 'https://hostcopyai.com/blog/airbnb-pricing-strategy' },
   openGraph: {
@@ -21,7 +21,7 @@ export default function BlogPost() {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     headline: "How to Price Your Airbnb Listing: A Beginner's Guide to Dynamic Pricing",
-    description: "Seasonality, weekends vs. weekdays, competitor analysis, and minimum stay tricks that actually move your Airbnb revenue. A practical pricing guide.",
+    description: "Airbnb pricing strategy and dynamic pricing basics: seasonality, weekends vs. weekdays, competitor analysis, and minimum-stay tricks that move revenue.",
     author: { "@type": "Organization", name: "HostCopy AI" },
     publisher: {
       "@type": "Organization",
