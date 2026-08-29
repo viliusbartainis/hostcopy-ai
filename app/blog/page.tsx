@@ -112,6 +112,11 @@ const posts = [
         title: "Airbnb vs Vrbo vs Booking.com in 2026: What Each Platform Actually Costs Now",
         description: "Airbnb moved most hosts to a single 15.5% fee in late 2025. Here's how that changes the math against Vrbo and Booking.com in 2026, and which platform fits which property.",
   },
+  {
+        slug: "common-airbnb-description-mistakes",
+        title: "9 Common Airbnb Description Mistakes That Cost Bookings",
+        description: "Clichéd openers, buried hooks, outdated details, and copy pasted unchanged across platforms — the mistakes that quietly cost bookings, and how to fix each one.",
+  },
 ];
 
 export default function BlogIndex() {
