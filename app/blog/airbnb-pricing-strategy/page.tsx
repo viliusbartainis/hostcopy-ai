@@ -144,6 +144,12 @@ export default function BlogPost() {
           <p>It works when it&apos;s based on your actual booking history and local demand patterns, not a generic algorithm applied blindly. Many hosts get better results adjusting manually within guardrails — a price floor and ceiling they set themselves — than handing full control to an automated tool with no minimum.</p>
           <p>Pricing is one lever that gets a guest to consider your listing. The words that make them pick yours over a nearly identical listing at a similar price are the other. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> helps with that second part, turning your listing details into ready-to-paste descriptions in under a minute.</p>
         </div>
+        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+          <p className="font-medium mb-1">Further reading</p>
+          <ul className="space-y-1">
+            <li><a href="https://www.airbnb.com/help/article/474" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Help Center &ndash; Set and customize nightly pricing</a></li>
+          </ul>
+        </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}
           <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.

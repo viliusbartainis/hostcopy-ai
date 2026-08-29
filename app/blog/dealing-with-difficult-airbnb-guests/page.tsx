@@ -92,6 +92,12 @@ export default function BlogPost() {
           <p>A reservation request that doesn&apos;t match the stated purpose &mdash; a large group booking a small listing while claiming only two people will stay &mdash; is worth a direct clarifying message before you confirm. A guest&apos;s past reviews showing a pattern of property damage or rule violations are worth weighing carefully even under Instant Book. Airbnb does allow host-initiated cancellations for genuine safety concerns without the usual penalty when properly documented, but repeated cancellations still hurt your Superhost status, so this is a tool to use sparingly and only when it&apos;s genuinely warranted.</p>
           <p>A lot of difficult-guest situations start with mismatched expectations set by the listing itself. A description that&apos;s accurate as well as appealing heads off some of these problems before they start, and <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> can help you write one in under a minute.</p>
         </div>
+        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+          <p className="font-medium mb-1">Further reading</p>
+          <ul className="space-y-1">
+            <li><a href="https://www.airbnb.com/help/article/3590" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Help Center &ndash; Find your Resolution Center requests</a></li>
+          </ul>
+        </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}
           <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.

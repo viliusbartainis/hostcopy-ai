@@ -97,6 +97,12 @@ const breadcrumbJsonLd = {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Recordkeeping habits that make tax season easier</h2>
           <p>Keep receipts from day one, even before your first confirmed booking. A separate bank account, or at minimum a clear way to track rental income apart from personal spending, saves hours later. If the property is also your home part of the year, log which dates were personal use and which were rental use, since many tax systems treat these periods differently.</p>
           <p>None of this replaces professional advice, but getting the business side organized early leaves more room to focus on the guest experience &mdash; including things like your listing description, which <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> can help you write in under a minute.</p>
+        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+          <p className="font-medium mb-1">Further reading</p>
+          <ul className="space-y-1">
+            <li><a href="https://www.irs.gov/businesses/gig-economy-tax-center" target="_blank" rel="noopener noreferrer" className="underline">IRS Gig Economy Tax Center</a> (US hosts; rules differ outside the US)</li>
+          </ul>
+        </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}
           <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.

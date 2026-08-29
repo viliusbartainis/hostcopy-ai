@@ -107,6 +107,12 @@ const breadcrumbJsonLd = {
             <li>Publishing with a rushed, half-finished description and photo set instead of waiting until the listing is actually ready</li>
           </ul>
           <p>Once the logistics are handled, the last thing standing between you and your first booking is often the listing description itself. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> turns your property details into a ready-to-paste description in under a minute.</p>
+        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+          <p className="font-medium mb-1">Further reading</p>
+          <ul className="space-y-1">
+            <li><a href="https://www.airbnb.com/help/article/3116" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Help Center &ndash; Essential resources for new hosts</a></li>
+          </ul>
+        </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}
           <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.
