@@ -4,6 +4,7 @@ import { getLocale, getMessages } from "next-intl/server";
 import CookieConsent from "@/components/CookieConsent";
 import Analytics from "@/components/Analytics";
 import FontLoader from "@/components/FontLoader";
+import ReadingAids from "@/components/ReadingAids";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -118,6 +119,7 @@ export default async function RootLayout({
         </NextIntlClientProvider>
         <CookieConsent />
         <Analytics />
+        <ReadingAids />
       </body>
     </html>
   );

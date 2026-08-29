@@ -136,6 +136,21 @@ export default function Home() {
   const [copied, setCopied] = useState(false);
   const [isPro, setIsPro] = useState(false);
   const [locationTouched, setLocationTouched] = useState(false);
+  const [toast, setToast] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    if (!toast) return;
+    const t = setTimeout(() => setToast(null), 2200);
+    return () => clearTimeout(t);
+  }, [toast]);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     const initial = readInitialState();
@@ -258,8 +273,12 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
       />
       <main className="min-h-screen bg-background">
-        <div className="hero-gradient">
-          <header className="max-w-5xl mx-auto px-6 pt-6 flex items-center justify-between">
+        <header
+          className={`sticky top-0 z-40 transition-shadow duration-200 ${
+            scrolled ? 'bg-background/95 backdrop-blur-sm shadow-card' : 'bg-transparent'
+          }`}
+        >
+          <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
                 <rect width="32" height="32" rx="10" fill="#3B2F26" />
@@ -298,8 +317,10 @@ export default function Home() {
                 </a>
               )}
             </div>
-          </header>
+          </div>
+        </header>
 
+        <div className="hero-gradient">
           <section className="max-w-5xl mx-auto px-6 pt-14 pb-16">
             <div className="grid md:grid-cols-[1.3fr_1fr] gap-10 items-center">
               <div className="text-center md:text-left">
@@ -319,7 +340,7 @@ export default function Home() {
         </div>
 
         <section className="max-w-2xl mx-auto px-6 -mt-8 pb-16 relative">
-          <div className="bg-parchment rounded-2xl shadow-card-lg border border-brass/20 p-8">
+          <div id="generator-form" className="bg-parchment rounded-2xl shadow-card-lg border border-brass/20 p-8 scroll-mt-24">
             <div className="grid gap-5">
               <div>
                 <label htmlFor="propertyType" className="block text-sm font-medium text-navy/80 mb-1">{tForm('propertyTypeLabel')}</label>
@@ -421,7 +442,23 @@ export default function Home() {
               )}
             </div>
 
-            {results && (
+            {loading && (
+              <div className="mt-6 animate-pulse" aria-hidden="true">
+                <div className="flex gap-1">
+                  <div className="h-9 w-24 bg-navy/10 rounded-t-lg" />
+                  <div className="h-9 w-24 bg-navy/5 rounded-t-lg" />
+                  <div className="h-9 w-24 bg-navy/5 rounded-t-lg" />
+                </div>
+                <div className="p-5 bg-parchment border border-navy/15 border-t-0 rounded-b-xl rounded-tr-xl space-y-3">
+                  <div className="h-4 bg-navy/10 rounded w-full" />
+                  <div className="h-4 bg-navy/10 rounded w-11/12" />
+                  <div className="h-4 bg-navy/10 rounded w-full" />
+                  <div className="h-4 bg-navy/10 rounded w-4/5" />
+                  <div className="h-4 bg-navy/10 rounded w-2/3" />
+                </div>
+              </div>
+            )}
+            {!loading && results && (
               <div className="mt-6">
                 <div className="flex gap-1">
                   {([
@@ -445,9 +482,15 @@ export default function Home() {
                     onClick={() => {
                       navigator.clipboard.writeText(results[activeTab]);
                       setCopied(true);
+                      setToast(tResults('copied'));
                       setTimeout(() => setCopied(false), 2000);
                     }}
-                    className="mt-4 text-sm font-medium text-teal underline">
+                    className="mt-4 text-sm font-medium text-teal underline inline-flex items-center gap-1.5">
+                    {copied && (
+                      <svg width="14" height="14" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                        <path d="M4 10.5l3.5 3.5L16 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    )}
                     {copied ? tResults('copied') : tResults('copy')}
                   </button>
                 </div>
@@ -623,6 +666,31 @@ export default function Home() {
             </a>
           </p>
         </footer>
+
+        {scrolled && !results && (
+          <div className="md:hidden fixed bottom-0 inset-x-0 z-40 p-3 bg-background/95 backdrop-blur-sm border-t border-navy/10 shadow-card print:hidden">
+            <a
+              href="#generator-form"
+              className="block w-full text-center bg-brass text-navy rounded-lg py-3 font-medium hover:bg-brass-dark transition-colors"
+            >
+              {genLabel}
+            </a>
+          </div>
+        )}
+
+        <div
+          role="status"
+          aria-live="polite"
+          className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-300 ${
+            toast ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2 pointer-events-none'
+          }`}
+        >
+          {toast && (
+            <div className="bg-navy text-parchment text-sm font-medium px-4 py-2.5 rounded-full shadow-card-lg">
+              {toast}
+            </div>
+          )}
+        </div>
       </main>
     </>
   );
