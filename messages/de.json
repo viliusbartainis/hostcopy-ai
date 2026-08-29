@@ -72,7 +72,14 @@
     "booking": "Booking.com",
     "instagram": "Instagram",
     "copy": "In Zwischenablage kopieren",
-    "copied": "Kopiert!"
+    "copied": "Kopiert!",
+    "regenerate": "Neu generieren",
+    "regenerating": "Wird neu generiert...",
+    "copyAll": "Alle 3 kopieren",
+    "copiedAll": "Alle 3 kopiert!",
+    "wordCount": "{count, plural, one {# Wort} other {# Wörter}}",
+    "feedbackQuestion": "War das hilfreich?",
+    "feedbackThanks": "Danke für dein Feedback!"
   },
   "Showcase": {
     "eyebrow": "So funktioniert's in echt",
@@ -151,5 +158,17 @@
   },
   "LanguageSwitcher": {
     "label": "Sprache"
+  },
+  "Templates": {
+    "title": "Schnellstart",
+    "beachApartment": "Strandwohnung",
+    "cityStudio": "Stadtstudio",
+    "familyHouse": "Familienhaus",
+    "businessLoft": "Business-Loft"
+  },
+  "History": {
+    "title": "Letzte Generierungen",
+    "load": "Laden",
+    "empty": "Deine letzten {limit} Generierungen erscheinen hier."
   }
 }
