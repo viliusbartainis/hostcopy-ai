@@ -450,8 +450,8 @@ export default function Home() {
           <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
               <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <rect width="32" height="32" rx="10" fill="#3B2F26" />
-                <text x="16" y="21.5" textAnchor="middle" fontFamily="Lora, serif" fontSize="13" fontWeight="600" fill="#FAF6EE">HC</text>
+                <rect width="32" height="32" rx="10" fill="var(--color-navy)" />
+                <text x="16" y="21.5" textAnchor="middle" fontFamily="Lora, serif" fontSize="13" fontWeight="600" fill="var(--background)">HC</text>
               </svg>
               <span className="font-display font-semibold text-navy text-lg">HostCopy AI</span>
             </div>

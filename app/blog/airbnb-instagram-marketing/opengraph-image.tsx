@@ -11,7 +11,7 @@ export default function Image() {
       'div',
       {
         style: {
-          background: 'linear-gradient(135deg, #EA580C 0%, #B45309 100%)',
+          background: 'linear-gradient(135deg, #B5652E 0%, #954F21 100%)',
           width: '100%',
           height: '100%',
           display: 'flex',

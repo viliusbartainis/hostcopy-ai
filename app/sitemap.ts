@@ -63,6 +63,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.6,
     },
+    {
+      url: 'https://hostcopyai.com/changelog',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.4,
+    },
     ...blogPosts.map((slug) => ({
       url: `https://hostcopyai.com/blog/${slug}`,
       lastModified: new Date(),
