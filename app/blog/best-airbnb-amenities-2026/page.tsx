@@ -155,7 +155,7 @@ export default function BlogPost() {
         <div className="mt-10 pt-8 border-t border-stone-200">
           <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
           <div className="space-y-2">
-            <Link href="/blog/airbnb-photography-tips" className="block text-stone-900 underline">Airbnb Photos That Get You Booked: A Host's Guide</Link>
+            <Link href="/blog/airbnb-photography-tips" className="block text-stone-900 underline">Airbnb Photos That Get You Booked: A Host&apos;s Guide</Link>
             <Link href="/blog/new-airbnb-host-checklist" className="block text-stone-900 underline">The Ultimate Airbnb Host Checklist for New Listings</Link>
           </div>
         </div>

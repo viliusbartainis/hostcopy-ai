@@ -18,8 +18,8 @@ export default function TermsPage() {
       <h1>Terms of Service</h1>
       <p className="text-sm">Last updated: August 2026</p>
       <p>
-        These Terms of Service ("Terms") govern your use of HostCopy AI
-        ("the Service"), operated from Vilnius, Lithuania. By using the
+        These Terms of Service (&quot;Terms&quot;) govern your use of HostCopy AI
+        (&quot;the Service&quot;), operated from Vilnius, Lithuania. By using the
         Service, you agree to these Terms.
       </p>
       <h2>The Service</h2>
@@ -32,20 +32,20 @@ export default function TermsPage() {
       <h2>Your responsibilities</h2>
       <ul>
         <li>You are responsible for the accuracy of the property details you submit.</li>
-        <li>You are responsible for reviewing generated content before publishing it on any platform, and for that platform's own rules.</li>
-        <li>You won't use the Service to generate misleading, illegal, or harmful content.</li>
+        <li>You are responsible for reviewing generated content before publishing it on any platform, and for that platform&apos;s own rules.</li>
+        <li>You won&apos;t use the Service to generate misleading, illegal, or harmful content.</li>
       </ul>
       <h2>Subscriptions and billing</h2>
       <ul>
         <li>Pro and Premium subscriptions renew automatically each month until canceled.</li>
-        <li>You can cancel anytime via the billing portal linked in your account; you'll retain access until the end of the current billing period.</li>
+        <li>You can cancel anytime via the billing portal linked in your account; you&apos;ll retain access until the end of the current billing period.</li>
         <li>Prices are shown inclusive of applicable VAT for EU customers.</li>
-        <li>We don't offer refunds for partial billing periods, except where required by law.</li>
+        <li>We don&apos;t offer refunds for partial billing periods, except where required by law.</li>
       </ul>
       <h2>No warranty</h2>
       <p>
-        The Service is provided "as is". AI-generated content may contain
-        errors or inaccuracies. We don't guarantee that using the Service
+        The Service is provided &quot;as is&quot;. AI-generated content may contain
+        errors or inaccuracies. We don&apos;t guarantee that using the Service
         will result in more bookings or any particular outcome.
       </p>
       <h2>Limitation of liability</h2>

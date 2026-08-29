@@ -77,7 +77,7 @@ export default function BlogPost() {
         <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts comparing Copy.ai against a purpose-built listing-copy generator.</p>
         <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
           <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
-          <p className="text-stone-800 leading-relaxed text-sm">Copy.ai is a general-purpose copywriting tool without a template built for Airbnb listings, so you'd adapt a generic template or write your own prompt. HostCopy AI skips that setup and generates an Airbnb, Booking.com, and Instagram version at once from one form.</p>
+          <p className="text-stone-800 leading-relaxed text-sm">Copy.ai is a general-purpose copywriting tool without a template built for Airbnb listings, so you&apos;d adapt a generic template or write your own prompt. HostCopy AI skips that setup and generates an Airbnb, Booking.com, and Instagram version at once from one form.</p>
         </div>
 
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">

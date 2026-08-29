@@ -160,7 +160,7 @@ export default function BlogPost() {
           <p className="text-sm font-medium text-stone-500 mb-3">Related guides</p>
           <div className="space-y-2">
            <Link href="/booking-com-description-generator" className="block text-stone-900 underline">Try the free Booking.com description generator</Link>
-            <Link href="/blog/airbnb-pricing-strategy" className="block text-stone-900 underline">How to Price Your Airbnb Listing: A Beginner's Guide to Dynamic Pricing</Link>
+            <Link href="/blog/airbnb-pricing-strategy" className="block text-stone-900 underline">How to Price Your Airbnb Listing: A Beginner&apos;s Guide to Dynamic Pricing</Link>
             <Link href="/blog/airbnb-startup-cost" className="block text-stone-900 underline">How Much Does It Cost to Start an Airbnb Business?</Link>
           </div>
         </div>
