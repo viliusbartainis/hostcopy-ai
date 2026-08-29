@@ -553,7 +553,7 @@ export default function Home() {
             </div>
 
             <div className="relative flex flex-col rounded-2xl border-2 border-navy bg-navy p-7 shadow-card-lg md:-mt-4 md:mb-4 card-hover">
-              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brass text-navy text-xs font-medium px-3 py-1 rounded-full">
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-brass text-navy text-xs font-semibold px-3 py-1 rounded-full shadow-card tracking-wide">
                 {tPricing('pro.badge')}
               </span>
               <p className="font-display text-lg text-parchment">{tPricing('pro.name')}</p>
@@ -582,6 +582,12 @@ export default function Home() {
               {checkoutError && (
                 <p className="text-xs text-red-300 mt-2 text-center">{tErrors('errorPrefix', { message: checkoutError })}</p>
               )}
+              <p className="flex items-center justify-center gap-1.5 text-xs text-parchment/50 mt-3">
+                <svg width="12" height="12" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                  <path d="M10 2l6 2.5v5c0 4.2-2.6 7.4-6 8.5-3.4-1.1-6-4.3-6-8.5v-5L10 2z" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round" />
+                </svg>
+                Secure checkout via Stripe
+              </p>
             </div>
 
             <div className="flex flex-col rounded-2xl border border-navy/15 bg-parchment p-7 card-hover">
