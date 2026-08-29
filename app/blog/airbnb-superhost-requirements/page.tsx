@@ -92,6 +92,12 @@ export default function BlogPost() {
           <p>For most hosts, meeting these thresholds is a natural side effect of running a decent listing, not a separate goal to chase. It&apos;s worth being careful about over-optimizing for the badge itself, like accepting every booking request regardless of fit just to avoid a cancellation — consistently good hosting tends to earn the badge on its own, without needing to bend your own rules for it.</p>
           <p>Because program details can change, this article reflects the general structure of the requirements rather than a guarantee of the exact current numbers — always check Airbnb&apos;s official Superhost page before making decisions based on it.</p>
         </div>
+        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+          <p className="font-medium mb-1">Sources</p>
+          <ul className="space-y-1">
+            <li><a href="https://www.airbnb.com/help/article/828" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Help Center &ndash; Understand the Superhost program</a></li>
+          </ul>
+        </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}
           <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.

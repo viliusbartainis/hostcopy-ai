@@ -134,6 +134,13 @@ export default function BlogPost() {
           <p>Airbnb rewards warmth and story &mdash; guests want to picture the trip, not just the room. Booking.com guests skim for hard facts, so lead with bed configuration, bathroom count, and distance to landmarks, and keep the flourish minimal. Vrbo guests care about space for the whole group, so square footage, separate bedrooms, kitchen size, and outdoor space deserve top billing. A description written for Airbnb and pasted unchanged into Booking.com or Vrbo usually undersells the property to a shopper who&apos;s looking for something different.</p>
           <p>Writing three genuinely different versions by hand takes real time for every listing you manage. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> generates copy matched to how guests actually read on Airbnb, Booking.com, and Instagram from a single form.</p>
         </div>
+        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+          <p className="font-medium mb-1">Sources</p>
+          <ul className="space-y-1">
+            <li><a href="https://www.airbnb.com/help/article/1857" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Help Center &ndash; Airbnb service fees</a></li>
+            <li><Link href="/blog/airbnb-vs-vrbo-vs-booking-2026" className="underline">Full source list in our 2026 fee update</Link></li>
+          </ul>
+        </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}
           <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.

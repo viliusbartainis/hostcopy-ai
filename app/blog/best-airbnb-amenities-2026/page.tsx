@@ -138,6 +138,13 @@ export default function BlogPost() {
           <p>Expensive gym equipment often sits unused relative to its upkeep and the space it takes up, unless a home gym is a genuine differentiator in your specific market. A hot tub&apos;s upkeep cost and liability can outweigh any booking lift depending on your location, and it can backfire hard in reviews the moment maintenance lapses. Heavily themed or novelty decor is fine as a style choice, but it should never replace comfortable basics &mdash; a great-looking room with a bad mattress still gets a mediocre review.</p>
           <p>Listing your amenities accurately, and describing them the way they actually are, matters more than the number of boxes you check. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> helps you turn your real amenities into a description guests can trust.</p>
         </div>
+        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+          <p className="font-medium mb-1">Sources</p>
+          <ul className="space-y-1">
+            <li><a href="https://www.airbnb.com/resources/hosting-homes/a/attract-guests-with-fast-reliable-wifi-433" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Resource Center &ndash; Attract guests with fast, reliable WiFi</a></li>
+            <li><a href="https://www.highspeedinternet.com/resources/best-wifi-for-airbnb" target="_blank" rel="noopener noreferrer" className="underline">HighSpeedInternet.com &ndash; Best WiFi for Airbnb and short-term rentals</a></li>
+          </ul>
+        </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}
           <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.

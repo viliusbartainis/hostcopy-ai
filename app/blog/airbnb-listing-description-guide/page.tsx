@@ -121,6 +121,13 @@ export default function BlogPost() {
           <p>Airbnb caps the main listing summary at 500 characters, and the app only shows roughly the first 295 of those before a guest has to tap &quot;Show more&quot; &mdash; with a separate Detailed Description section available for anything beyond that. Front-load your specific hook in that first stretch, since that&apos;s what most guests actually read before deciding whether to expand it.</p>
           <p>Writing three good versions by hand takes 20–30 minutes per listing. <Link href="/" className="text-stone-900 underline font-medium">HostCopy AI</Link> generates all three — matched to each platform — from one form, in under a minute.</p>
         </div>
+        <div className="mt-6 pt-4 border-t border-stone-200 text-xs text-stone-500">
+          <p className="font-medium mb-1">Sources</p>
+          <ul className="space-y-1">
+            <li><a href="https://www.airbnb.com/resources/hosting-homes/a/writing-an-effective-listing-description-13" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Resource Center &ndash; Writing an effective listing description</a></li>
+            <li><a href="https://community.withairbnb.com/t5/Help/How-do-I-write-more-than-500-characters-for-the-description-of/m-p/191686" target="_blank" rel="noopener noreferrer" className="underline">Airbnb Community &ndash; on the 500-character description limit</a></li>
+          </ul>
+        </div>
         <div className="mt-8 pt-6 border-t border-stone-200 text-sm text-stone-500">
           Written by the HostCopy AI team &mdash; a solo developer project.{" "}
           <Link href="/about" className="underline text-stone-700">Learn more about us</Link>.
