@@ -1052,22 +1052,24 @@ export default function Home() {
         </section>
 
         <footer className="max-w-2xl mx-auto px-6 pb-16 text-center">
-          <a href="/blog" className="text-sm text-navy/60 hover:text-navy underline">
-            {tFooter('blogLink')}
-          </a>
-          {' · '}
-          <a href="/booking-com-description-generator" className="text-sm text-navy/60 hover:text-navy underline">
-            Booking.com description generator
-          </a>
-          <p className="text-xs text-navy/40 mt-2">
-            <a href="/privacy" className="underline hover:text-navy/70">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2">
+            <a href="/blog" className="text-sm text-navy/60 hover:text-navy underline">
+              {tFooter('blogLink')}
+            </a>
+            <span className="hidden sm:inline text-navy/40" aria-hidden="true">&middot;</span>
+            <a href="/booking-com-description-generator" className="text-sm text-navy/60 hover:text-navy underline">
+              Booking.com description generator
+            </a>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 mt-2">
+            <a href="/privacy" className="text-xs text-navy/40 underline hover:text-navy/70">
               Privacy Policy
             </a>
-            {' · '}
-            <a href="/terms" className="underline hover:text-navy/70">
+            <span className="hidden sm:inline text-xs text-navy/40" aria-hidden="true">&middot;</span>
+            <a href="/terms" className="text-xs text-navy/40 underline hover:text-navy/70">
               Terms of Service
             </a>
-          </p>
+          </div>
           <p className="text-xs text-navy/40 mt-4">
             {tFooter('privacyNote')}{' '}
             <a href="mailto:vilius.bartainis67@gmail.com" className="underline">
