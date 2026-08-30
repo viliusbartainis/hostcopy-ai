@@ -449,9 +449,14 @@ export default function Home() {
         >
           <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                <rect width="32" height="32" rx="10" fill="#3B2F26" />
-                <text x="16" y="21.5" textAnchor="middle" fontFamily="Lora, serif" fontSize="13" fontWeight="600" fill="#FAF6EE">HC</text>
+              <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HostCopy AI logo">
+                <rect width="32" height="32" rx="10" fill="var(--color-navy)" />
+                <g transform="translate(16 16) rotate(15)" fill="none" stroke="var(--color-brass)" strokeWidth="2.2" strokeLinecap="round">
+                  <circle cx="-7" cy="0" r="4.2" />
+                  <line x1="-2.6" y1="0" x2="8.5" y2="0" />
+                  <line x1="4.5" y1="0" x2="4.5" y2="3.3" />
+                  <line x1="8" y1="0" x2="8" y2="2.4" />
+                </g>
               </svg>
               <span className="font-display font-semibold text-navy text-lg">HostCopy AI</span>
             </div>
