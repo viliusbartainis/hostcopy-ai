@@ -201,6 +201,7 @@ export default function Home() {
   const [locationTouched, setLocationTouched] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [copiedAll, setCopiedAll] = useState(false);
   const [feedbackGiven, setFeedbackGiven] = useState<'up' | 'down' | null>(null);
   const [history, setHistory] = useState<HistoryEntry[]>([]);
@@ -460,7 +461,7 @@ export default function Home() {
               </svg>
               <span className="font-display font-semibold text-navy text-lg">HostCopy AI</span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-5">
               <a
                 href="/blog"
                 className="text-sm font-medium text-navy/70 hover:text-navy transition-colors"
@@ -491,7 +492,66 @@ export default function Home() {
                 </a>
               )}
             </div>
+
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((v) => !v)}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
+              className="md:hidden flex items-center justify-center w-10 h-10 -mr-2 text-navy"
+            >
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                {mobileMenuOpen ? (
+                  <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                ) : (
+                  <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                )}
+              </svg>
+            </button>
           </div>
+
+          {mobileMenuOpen && (
+            <div
+              id="mobile-menu"
+              className="md:hidden absolute top-full inset-x-0 bg-background border-t border-navy/10 shadow-card-lg"
+            >
+              <div className="flex flex-col gap-5 px-6 py-6">
+                <a
+                  href="/blog"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-sm font-medium text-navy/80 hover:text-navy transition-colors"
+                >
+                  {tHeader('blog')}
+                </a>
+                <LanguageSwitcher />
+                {hydrated && isPro ? (
+                  <div className="flex flex-col items-start gap-3">
+                    <a
+                      href="https://billing.stripe.com/p/login/5kQ00j6KIa888b53S09k400"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-sm font-medium text-navy/80 hover:text-navy underline"
+                    >
+                      {tHeader('manageSubscription')}
+                    </a>
+                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-300 rounded-full px-3 py-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> {tHeader('proActive')}
+                    </span>
+                  </div>
+                ) : (
+                  <a
+                    href="#pricing"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-sm font-medium text-navy bg-brass hover:bg-brass-dark rounded-full px-4 py-2.5 text-center transition-colors"
+                  >
+                    {tHeader('buyPremium')}
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
         </header>
 
         <div className="hero-gradient">
