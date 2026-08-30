@@ -575,12 +575,12 @@ export default function Home() {
 
         <section className="max-w-2xl mx-auto px-6 -mt-8 pb-16 relative">
           {showIntro && (
-            <div className="mb-4 flex items-start gap-3 bg-teal/10 border border-teal/25 rounded-xl px-4 py-3">
-              <p className="text-sm text-navy/80 flex-1">{tOnboarding('intro')}</p>
+            <div className="mb-4 flex items-start gap-3 bg-navy border border-navy rounded-xl px-4 py-3">
+              <p className="text-sm text-parchment/90 flex-1">{tOnboarding('intro')}</p>
               <button
                 type="button"
                 onClick={dismissIntro}
-                className="text-sm font-medium text-teal underline shrink-0"
+                className="text-sm font-medium text-parchment underline hover:text-white shrink-0"
               >
                 {tOnboarding('dismiss')}
               </button>
