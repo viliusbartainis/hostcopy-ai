@@ -20,11 +20,10 @@ export default function PriceTagIllustration({ className }: { className?: string
       </g>
 
       {/* coin stack */}
-      <g stroke="var(--color-teal)" strokeWidth="2.5" fill="none">
-        <ellipse cx="150" cy="118" rx="20" ry="7" />
-        <path d="M130 118 v8" />
-        <path d="M170 118 v8" />
-        <ellipse cx="150" cy="126" rx="20" ry="7" />
+      <g stroke="var(--color-teal)" strokeWidth="2.4" fill="var(--color-parchment)">
+        <ellipse cx="150" cy="128" rx="19" ry="6" />
+        <ellipse cx="150" cy="119" rx="19" ry="6" />
+        <ellipse cx="150" cy="110" rx="19" ry="6" />
       </g>
     </svg>
   );
