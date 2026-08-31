@@ -201,6 +201,7 @@ export default function Home() {
   const [locationTouched, setLocationTouched] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [copiedAll, setCopiedAll] = useState(false);
   const [feedbackGiven, setFeedbackGiven] = useState<'up' | 'down' | null>(null);
   const [history, setHistory] = useState<HistoryEntry[]>([]);
@@ -449,13 +450,18 @@ export default function Home() {
         >
           <div className="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
             <div className="flex items-center gap-2.5">
-              <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+              <svg width="30" height="30" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="HostCopy AI logo">
                 <rect width="32" height="32" rx="10" fill="var(--color-navy)" />
-                <text x="16" y="21.5" textAnchor="middle" fontFamily="Lora, serif" fontSize="13" fontWeight="600" fill="var(--background)">HC</text>
+                <g transform="translate(16 16) rotate(15)" fill="none" stroke="var(--color-brass)" strokeWidth="2.2" strokeLinecap="round">
+                  <circle cx="-7" cy="0" r="4.2" />
+                  <line x1="-2.6" y1="0" x2="8.5" y2="0" />
+                  <line x1="4.5" y1="0" x2="4.5" y2="3.3" />
+                  <line x1="8" y1="0" x2="8" y2="2.4" />
+                </g>
               </svg>
               <span className="font-display font-semibold text-navy text-lg">HostCopy AI</span>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-5">
               <a
                 href="/blog"
                 className="text-sm font-medium text-navy/70 hover:text-navy transition-colors"
@@ -486,7 +492,66 @@ export default function Home() {
                 </a>
               )}
             </div>
+
+            <button
+              type="button"
+              onClick={() => setMobileMenuOpen((v) => !v)}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
+              className="md:hidden flex items-center justify-center w-10 h-10 -mr-2 text-navy"
+            >
+              <svg width="22" height="22" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                {mobileMenuOpen ? (
+                  <path d="M5 5l10 10M15 5L5 15" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                ) : (
+                  <path d="M3 6h14M3 10h14M3 14h14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                )}
+              </svg>
+            </button>
           </div>
+
+          {mobileMenuOpen && (
+            <div
+              id="mobile-menu"
+              className="md:hidden absolute top-full inset-x-0 bg-background border-t border-navy/10 shadow-card-lg"
+            >
+              <div className="flex flex-col gap-5 px-6 py-6">
+                <a
+                  href="/blog"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-sm font-medium text-navy/80 hover:text-navy transition-colors"
+                >
+                  {tHeader('blog')}
+                </a>
+                <LanguageSwitcher />
+                {hydrated && isPro ? (
+                  <div className="flex flex-col items-start gap-3">
+                    <a
+                      href="https://billing.stripe.com/p/login/5kQ00j6KIa888b53S09k400"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-sm font-medium text-navy/80 hover:text-navy underline"
+                    >
+                      {tHeader('manageSubscription')}
+                    </a>
+                    <span className="inline-flex items-center gap-1.5 text-xs font-medium text-emerald-700 bg-emerald-50 border border-emerald-300 rounded-full px-3 py-1.5">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" /> {tHeader('proActive')}
+                    </span>
+                  </div>
+                ) : (
+                  <a
+                    href="#pricing"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="text-sm font-medium text-navy bg-brass hover:bg-brass-dark rounded-full px-4 py-2.5 text-center transition-colors"
+                  >
+                    {tHeader('buyPremium')}
+                  </a>
+                )}
+              </div>
+            </div>
+          )}
         </header>
 
         <div className="hero-gradient">
@@ -510,12 +575,12 @@ export default function Home() {
 
         <section className="max-w-2xl mx-auto px-6 -mt-8 pb-16 relative">
           {showIntro && (
-            <div className="mb-4 flex items-start gap-3 bg-teal/10 border border-teal/25 rounded-xl px-4 py-3">
-              <p className="text-sm text-navy/80 flex-1">{tOnboarding('intro')}</p>
+            <div className="mb-4 flex items-start gap-3 bg-navy border border-navy rounded-xl px-4 py-3">
+              <p className="text-sm text-parchment/90 flex-1">{tOnboarding('intro')}</p>
               <button
                 type="button"
                 onClick={dismissIntro}
-                className="text-sm font-medium text-teal underline shrink-0"
+                className="text-sm font-medium text-parchment underline hover:text-white shrink-0"
               >
                 {tOnboarding('dismiss')}
               </button>
@@ -987,22 +1052,24 @@ export default function Home() {
         </section>
 
         <footer className="max-w-2xl mx-auto px-6 pb-16 text-center">
-          <a href="/blog" className="text-sm text-navy/60 hover:text-navy underline">
-            {tFooter('blogLink')}
-          </a>
-          {' · '}
-          <a href="/booking-com-description-generator" className="text-sm text-navy/60 hover:text-navy underline">
-            Booking.com description generator
-          </a>
-          <p className="text-xs text-navy/40 mt-2">
-            <a href="/privacy" className="underline hover:text-navy/70">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-1.5 sm:gap-2">
+            <a href="/blog" className="text-sm text-navy/60 hover:text-navy underline">
+              {tFooter('blogLink')}
+            </a>
+            <span className="hidden sm:inline text-navy/40" aria-hidden="true">&middot;</span>
+            <a href="/booking-com-description-generator" className="text-sm text-navy/60 hover:text-navy underline">
+              Booking.com description generator
+            </a>
+          </div>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2 mt-2">
+            <a href="/privacy" className="text-xs text-navy/40 underline hover:text-navy/70">
               Privacy Policy
             </a>
-            {' · '}
-            <a href="/terms" className="underline hover:text-navy/70">
+            <span className="hidden sm:inline text-xs text-navy/40" aria-hidden="true">&middot;</span>
+            <a href="/terms" className="text-xs text-navy/40 underline hover:text-navy/70">
               Terms of Service
             </a>
-          </p>
+          </div>
           <p className="text-xs text-navy/40 mt-4">
             {tFooter('privacyNote')}{' '}
             <a href="mailto:vilius.bartainis67@gmail.com" className="underline">
