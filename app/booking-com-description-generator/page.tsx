@@ -75,7 +75,7 @@ export default function BookingComGeneratorPage() {
           same property details you&apos;d use anywhere else.
         </p>
         <Link
-          href="/#pricing"
+          href="/"
           className="inline-block bg-navy text-parchment rounded-lg px-6 py-3 font-medium hover:bg-navy-light transition-colors mb-12"
         >
           Try it free — 3 generations, no signup
@@ -181,7 +181,7 @@ export default function BookingComGeneratorPage() {
         </section>
         <div className="mt-10 text-center">
           <Link
-            href="/#pricing"
+            href="/"
             className="inline-block bg-brass text-white rounded-lg px-6 py-3 font-medium hover:bg-brass-dark transition-colors"
           >
             Generate your Booking.com description free
