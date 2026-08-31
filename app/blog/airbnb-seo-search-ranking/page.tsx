@@ -72,10 +72,10 @@ export default function BlogPost() {
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           SEO for Airbnb: How to Rank Higher in Airbnb Search Results
         </h1>
-        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts trying to understand why their listing isn't showing up higher in Airbnb search.</p>
+        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts trying to understand why their listing isn&apos;t showing up higher in Airbnb search.</p>
         <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
           <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
-          <p className="text-stone-800 leading-relaxed text-sm">Airbnb's search ranking rewards fast response times, Instant Book, high occupancy, and strong reviews and photos more than keyword-stuffed text — the moves that actually shift ranking are mostly operational, not just wording changes.</p>
+          <p className="text-stone-800 leading-relaxed text-sm">Airbnb&apos;s search ranking rewards fast response times, Instant Book, high occupancy, and strong reviews and photos more than keyword-stuffed text — the moves that actually shift ranking are mostly operational, not just wording changes.</p>
         </div>
 
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
@@ -111,7 +111,7 @@ export default function BlogPost() {
               How to Write an Airbnb Listing Description That Actually Books
             </Link>
             <Link href="/blog/airbnb-photography-tips" className="block text-stone-900 underline">
-              Airbnb Photos That Get You Booked: A Host's Guide
+              Airbnb Photos That Get You Booked: A Host&apos;s Guide
             </Link>
           </div>
         </div>

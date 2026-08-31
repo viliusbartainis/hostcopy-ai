@@ -72,7 +72,7 @@ export default function BlogPost() {
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           How to Write an Airbnb Title That Gets Clicks
         </h1>
-        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts rewriting an Airbnb title that isn't getting clicks.</p>
+        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts rewriting an Airbnb title that isn&apos;t getting clicks.</p>
         <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
           <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
           <p className="text-stone-800 leading-relaxed text-sm">A title that gets clicks leads with property type, one real differentiator, and a location cue — in that order — and drops filler words like “amazing” or “cozy” that get cut off on mobile before they add anything.</p>

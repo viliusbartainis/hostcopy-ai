@@ -75,7 +75,7 @@ export default function BlogPost() {
         <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: People weighing whether to start a short-term rental and budgeting the real costs.</p>
         <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
           <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
-          <p className="text-stone-800 leading-relaxed text-sm">Starting an Airbnb typically means furnishing and setup costs up front, then recurring costs — cleaning, utilities, platform fees, insurance — that eat into revenue. Realistic profit depends heavily on city size and occupancy, not a single number you can copy from someone else's listing.</p>
+          <p className="text-stone-800 leading-relaxed text-sm">Starting an Airbnb typically means furnishing and setup costs up front, then recurring costs — cleaning, utilities, platform fees, insurance — that eat into revenue. Realistic profit depends heavily on city size and occupancy, not a single number you can copy from someone else&apos;s listing.</p>
         </div>
 
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">

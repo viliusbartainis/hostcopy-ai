@@ -75,7 +75,7 @@ export default function BlogPost() {
         <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: New hosts deciding when to publish their first listing.</p>
         <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
           <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
-          <p className="text-stone-800 leading-relaxed text-sm">List your Airbnb four to eight weeks before your local peak season so you can build reviews and search ranking before demand actually peaks. If you can't control your launch date, focus on the operational basics — photos, pricing, response rate — that matter regardless of timing.</p>
+          <p className="text-stone-800 leading-relaxed text-sm">List your Airbnb four to eight weeks before your local peak season so you can build reviews and search ranking before demand actually peaks. If you can&apos;t control your launch date, focus on the operational basics — photos, pricing, response rate — that matter regardless of timing.</p>
         </div>
 
         <div className="prose prose-stone max-w-none text-stone-700 leading-relaxed space-y-5">
@@ -83,7 +83,7 @@ export default function BlogPost() {
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Why launch timing matters more than people think</h2>
           <p>Airbnb&apos;s search ranking rewards listings with a track record: completed stays, guest reviews, a solid <Link href="/blog/airbnb-hosting-glossary#response-rate" className="underline">response rate</Link>, and low cancellations. None of that exists on day one. A listing published right as peak season starts is competing against established listings with dozens of reviews, while still trying to earn its first one. That gap costs bookings during the exact weeks demand is highest.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">The case for listing before the season starts</h2>
-          <p>If your market's busy months are, say, June through August, publishing in February or March gives your listing several months to collect its first reviews and build a response history at lower stakes, since off-peak demand is more forgiving of an unranked, review-less listing. By the time real demand arrives, you&apos;re not starting from zero anymore.</p>
+          <p>If your market&apos;s busy months are, say, June through August, publishing in February or March gives your listing several months to collect its first reviews and build a response history at lower stakes, since off-peak demand is more forgiving of an unranked, review-less listing. By the time real demand arrives, you&apos;re not starting from zero anymore.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">If you can&apos;t control your launch date</h2>
           <p>Sometimes a property just isn&apos;t ready until later, and that&apos;s fine. A few things help close the gap: price a little below comparable listings for your first few bookings to get reviews in faster, keep minimum-stay requirements loose so more guests can book you, and reply to inquiries quickly, since response time and rate both factor into how Airbnb ranks new listings.</p>
           <h2 className="text-xl font-display font-semibold text-stone-900 pt-4">Seasonality isn&apos;t the same everywhere</h2>

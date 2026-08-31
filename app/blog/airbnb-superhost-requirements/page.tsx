@@ -72,7 +72,7 @@ export default function BlogPost() {
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           Airbnb Superhost Requirements Explained (2026 Update)
         </h1>
-        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts checking their Superhost eligibility or deciding whether it's worth chasing.</p>
+        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts checking their Superhost eligibility or deciding whether it&apos;s worth chasing.</p>
         <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
           <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
           <p className="text-stone-800 leading-relaxed text-sm">Superhost status requires meeting four thresholds — reviews, response rate, cancellations, and completed stays — reviewed quarterly, and it mainly buys extra search visibility and a badge rather than guaranteed bookings.</p>

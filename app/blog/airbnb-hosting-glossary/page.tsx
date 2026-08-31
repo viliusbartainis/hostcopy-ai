@@ -166,7 +166,7 @@ export default function GlossaryPost() {
         <h1 className="text-3xl md:text-4xl font-display font-semibold text-stone-900 mt-4 mb-6">
           Airbnb Hosting Glossary: 21 Terms Every Host Should Know
         </h1>
-        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts who keep running into hosting jargon that isn't explained clearly anywhere else.</p>
+        <p className="text-sm text-stone-500 italic mt-4 mb-4">Who this guide is for: Hosts who keep running into hosting jargon that isn&apos;t explained clearly anywhere else.</p>
         <div className="bg-stone-100 border border-stone-200 rounded-xl p-5 mb-6">
           <p className="text-xs font-semibold text-stone-500 uppercase tracking-wide mb-1">TL;DR</p>
           <p className="text-stone-800 leading-relaxed text-sm">This glossary defines 20 terms Airbnb hosts run into constantly — Superhost, Instant Book, response rate, occupancy rate, and more — in plain language, without the marketing spin some of these terms get elsewhere.</p>
